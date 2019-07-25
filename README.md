@@ -7,7 +7,7 @@ These are the evaluation criteria we use for performance evaluation and leveling
 3. Collaboration & Communication
 4. Community & Citizenship
 
-Jump to copetencies for a particular leve:
+Jump to competencies for a particular level:
 
 * [Software Engineering Intern](software-engineering-intern)
 * [Software Engineer](software-engineer)
