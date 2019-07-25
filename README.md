@@ -54,7 +54,7 @@ Evaluation metrics we use for peer reviews.
 - You do things that benefit your peers and community such as providing feedback on product features, filing detailed bugs, and providing constructive comments.
 - You fix out of date code, tests, scripts and documentation.
 
-##Software Engineer 2
+## Software Engineer 2
 
 ### Software Engineering & Design
 
