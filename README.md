@@ -1,6 +1,20 @@
 # Codecademy Engineering Competencies
 
-Evaluation metrics we use for peer reviews.
+These are the evaluation criteria we use for performance evaluation and leveling on the Codecademy engineering team. The compentencies at each level are broken down into four categories:
+
+1. Software Engineering & Design
+2. Execution & Results
+3. Collaboration & Communication
+4. Community & Citizenship
+
+Jump to copetencies for a particular leve:
+
+* [Software Engineering Intern](software-engineering-intern)
+* [Software Engineer](software-engineer)
+* [Software Engineer 2](software-engineer-2)
+* [Senior Software Engineer](senior-software-engineer)
+* [Staff Software Engineer](staff-software-engineer)
+
 
 ## Software Engineering Intern
 
@@ -25,7 +39,7 @@ Evaluation metrics we use for peer reviews.
 - You proactively communicate your progress and blockers to stakeholders (eg. PM, Design, Ops, etc.), your team, and manager and ensure timely project delivery.
 - You work with your manager and senior engineers to challenge assumptions and make sure you are solving the right problems.
 
-### Citizenship
+### Community & Citizenship
 
 - You do things to benefit your peers and community such as participating in meetings and providing constructive feedback on ideas and initiatives.
 
