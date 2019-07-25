@@ -85,7 +85,7 @@ Evaluation metrics we use for peer reviews.
 - You fix out of date code, tests, scripts, runbooks, and documentation.
 - You are interviewing trained and share the interview load for your team.
 
-### Senior Software Engineer
+## Senior Software Engineer
 
 ### Software Engineering & Design
 
@@ -118,7 +118,8 @@ Evaluation metrics we use for peer reviews.
 - You fix out of date code, tests, scripts, runbooks, and documentation.
 - You are interview-trained and share the interview load for your team.
 - You mentor members of your team and help them grow and develop.
-  Staff Software Engineer
+  
+## Staff Software Engineer
 
 ### Software Engineering & Design
 
