@@ -51,7 +51,8 @@ Jump to competencies for a particular level:
 - You are learning and applying our standards around design, testing, error handling, monitoring, alerting, and documentation.
 - You proactively maintain, debug, and fix problems in your code.
 - You seek out and learn industry best practices and standards.
-  Execution & Results
+
+### Execution & Results
 - You effectively manage your time and know when to ask for help to unblock yourself. When blocked, you are resourceful and take initiative in finding other tasks to complete.
 - You are given a set of large tasks and are able to effectively break them down into smaller tasks, which are easier to complete.
 - You actively participate in your team’s on-call rotation.
