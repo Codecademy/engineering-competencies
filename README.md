@@ -51,7 +51,8 @@ Jump to competencies for a particular level:
 - You are learning and applying our standards around design, testing, error handling, monitoring, alerting, and documentation.
 - You proactively maintain, debug, and fix problems in your code.
 - You seek out and learn industry best practices and standards.
-  Execution & Results
+
+### Execution & Results
 - You effectively manage your time and know when to ask for help to unblock yourself. When blocked, you are resourceful and take initiative in finding other tasks to complete.
 - You are given a set of large tasks and are able to effectively break them down into smaller tasks, which are easier to complete.
 - You actively participate in your team’s on-call rotation.
@@ -109,7 +110,8 @@ Jump to competencies for a particular level:
 - You have established a track record of handling the responsibility of delivery of your code including design, coding, testing, monitoring/alerts, deployment and rollout.
 - Your code handles interactions between multiple systems/components that span multiple diffs to address complex projects.
 - You have established a track record of seeking out and learning industry best practices and standards, which you incorporate in your coding patterns, design & architecture. You instill these best practices and standards into our engineering team.
-  Execution & Results
+
+### Execution & Results
 - You have established a track record of effectively managing your time and know when to ask for help to unblock yourself. When blocked, you are resourceful and take initiative in finding other tasks to complete.
 - You help create organization and structure around large projects & problems that aren’t well defined, thereby setting your team up to successfully deliver on initiatives.
 - You have established a track record of investigating and vetting the reuse of existing components and services when approaching new projects and feature requests.
