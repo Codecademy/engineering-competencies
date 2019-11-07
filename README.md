@@ -1,6 +1,6 @@
 # Codecademy Engineering Competencies
 
-These are the evaluation criteria we use for performance evaluation and leveling on the Codecademy engineering team. The compentencies at each level are broken down into four categories:
+These are the evaluation criteria we use for performance evaluation and leveling on the Codecademy engineering team. Hooray! The compentencies at each level are broken down into four categories:
 
 1. Software Engineering & Design
 2. Execution & Results
@@ -175,6 +175,14 @@ Jump to competencies for a particular level:
 - You introduce frameworks and abstractions that improve the efficiency of other engineers.
 
 ## FAQ
+
+### Why these competencies?
+
+We believe a team should prosper and grow _as a team_: that its success is measured by both the quality and throughput of its output _and_ the personal growth and enjoyment of its individual members.
+Strong technical achievements are only half of that.
+Fostering a collaborative community is also necessary for us to be a great place to work.
+
+We've found that these four competency areas capture much of what's worked well for us.
 
 ### Do I have to do everything at my level to meet expectations?
 
