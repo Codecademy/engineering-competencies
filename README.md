@@ -9,12 +9,11 @@ These are the evaluation criteria we use for performance evaluation and leveling
 
 Jump to competencies for a particular level:
 
-* [Software Engineering Intern](#software-engineering-intern)
-* [Software Engineer](#software-engineer)
-* [Software Engineer 2](#software-engineer-2)
-* [Senior Software Engineer](#senior-software-engineer)
-* [Staff Software Engineer](#staff-software-engineer)
-
+- [Software Engineering Intern](#software-engineering-intern)
+- [Software Engineer](#software-engineer)
+- [Software Engineer 2](#software-engineer-2)
+- [Senior Software Engineer](#senior-software-engineer)
+- [Staff Software Engineer](#staff-software-engineer)
 
 ## Software Engineering Intern
 
@@ -41,7 +40,8 @@ Jump to competencies for a particular level:
 
 ### Community & Citizenship
 
-- You do things to benefit your peers and community such as participating in meetings and providing constructive feedback on ideas and initiatives.
+- You do things to benefit your peers and community such as participating in meetings, including providing constructive feedback on ideas and initiatives.
+- You advocate for yourself and others when something is unclear or you believe there is an alternate approach worth discussion.
 
 ## Software Engineer
 
@@ -53,6 +53,7 @@ Jump to competencies for a particular level:
 - You seek out and learn industry best practices and standards.
 
 ### Execution & Results
+
 - You effectively manage your time and know when to ask for help to unblock yourself. When blocked, you are resourceful and take initiative in finding other tasks to complete.
 - You are given a set of large tasks and are able to effectively break them down into smaller tasks, which are easier to complete.
 - You actively participate in your team’s on-call rotation.
@@ -66,7 +67,9 @@ Jump to competencies for a particular level:
 
 ### Community & Citizenship
 
-- You do things that benefit your peers and community such as providing feedback on product features, filing detailed bugs, and providing constructive comments.
+- You do things to benefit your peers and community such as participating in meetings, including providing constructive feedback on ideas and initiatives.
+- You advocate for yourself and others when something is unclear or you believe there is an alternate approach worth discussion.
+- You provide feedback on product features, file detailed bugs, and voice constructive comments in small- and large-group discussions.
 - You fix out of date code, tests, scripts and documentation.
 
 ## Software Engineer 2
@@ -96,7 +99,9 @@ Jump to competencies for a particular level:
 
 ### Community & Citizenship
 
-- You do things that benefit your peers and community such as providing feedback on product features, filing detailed bugs and providing constructive comments.
+- You do things to benefit your peers and community such as participating in meetings, including providing constructive feedback on ideas and initiatives.
+- You advocate for yourself and others when something is unclear or you believe there is an alternate approach worth discussion.
+- You provide feedback on product features, file detailed bugs, and voice constructive comments in small- and large-group discussions.
 - You fix out of date code, tests, scripts, runbooks, and documentation.
 - You are interviewing trained and share the interview load for your team.
 
@@ -112,6 +117,7 @@ Jump to competencies for a particular level:
 - You have established a track record of seeking out and learning industry best practices and standards, which you incorporate in your coding patterns, design & architecture. You instill these best practices and standards into our engineering team.
 
 ### Execution & Results
+
 - You have established a track record of effectively managing your time and know when to ask for help to unblock yourself. When blocked, you are resourceful and take initiative in finding other tasks to complete.
 - You help create organization and structure around large projects & problems that aren’t well defined, thereby setting your team up to successfully deliver on initiatives.
 - You have established a track record of investigating and vetting the reuse of existing components and services when approaching new projects and feature requests.
@@ -134,7 +140,7 @@ Jump to competencies for a particular level:
 - You fix out of date code, tests, scripts, runbooks, and documentation.
 - You are interview-trained and share the interview load for your team.
 - You mentor members of your team and help them grow and develop.
-  
+
 ## Staff Software Engineer
 
 ### Software Engineering & Design
