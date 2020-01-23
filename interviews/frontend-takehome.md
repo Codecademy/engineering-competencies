@@ -16,7 +16,7 @@ We also welcome any feedback you have on these!
 
 In our opinion, an ideal takehome assignment should:
 
-* Expect (and state) a maximum time spent as 2 hours
+* Expect (and state) a maximum time spent as 2-3 hours
 * Explain clear, easy-to-understand instructions, including:
     * Minimum requirements for a successful submission
     * Areas of work we expect the candidate to focus on
