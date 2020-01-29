@@ -22,7 +22,7 @@ Code is generally well-organized and easy to understand.
 
 ### Data structures and runtime
 
-Data structures are chosen appropriately for low complexity and low memory allocation
+Data structures are chosen appropriately for low complexity and low memory allocation.
 
 - 💖 4 - Appropriate data structures; efficient use of conditionals/loops; minimal array scanning; appropriate passing of parameters and return values
 - 👍 3 - Reasonable use of data structures; some opportunity for reduction of costly repeated operations; some inefficiency in usage of parameters and return values
@@ -31,7 +31,7 @@ Data structures are chosen appropriately for low complexity and low memory alloc
 
 ### Testing
 
-While unit tests are not required, some form of test that verifies that the code is working appropriately needs to exist
+Unit tests verify the code is working appropriately.
 
 - 💖 4 - Unit tests or script that tests various logic branches including edge cases; tests are granular and tied to specific functions
 - 👍 3 - Unit tests or script that tests main logic branches but not edge cases; tests not tied to specific functions but rather groups of them
