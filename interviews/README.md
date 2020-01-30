@@ -1,11 +1,11 @@
 # Takehome Grading
 
 Hi!
-This is our grading rubric for takehome projects.
+These are our grading guidelines for takehome projects.
 Thanks for taking a look!
 
-These are the scores by which our engineering team evaluate backend takehome assignments.
-We _don't_ establish a hard minimum of score for any opening -- these scores are a general rubric, not a hard rule.
+These are the criteria our engineering team uses to evaluate takehome assignments.
+We don't set a minimum score for any opening, and although we take these criteria very seriously, we also reserve the right to use considerations beyond these rubrics in our decision making.
 
 ## Rubrics
 
