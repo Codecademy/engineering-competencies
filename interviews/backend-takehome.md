@@ -20,7 +20,7 @@ Code is generally well-organized and easy to understand.
 - 👎 2 - Not idiomatic for language chosen; difficult to understand and trace
 - 🛑 1 - Very difficult to understand; non-standard formatting; variable names confusing
 
-### Data structures and runtime
+### Data Structures and Organization
 
 Data structures are chosen appropriately for low complexity and low memory allocation.
 
