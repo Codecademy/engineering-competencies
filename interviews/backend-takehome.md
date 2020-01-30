@@ -15,10 +15,10 @@ All requirements are met as outlined by the assignment's requirements.
 
 Code is generally well-organized and easy to understand.
 
-- 💖 4 - Well-organized, DRY, easily readable, good variable/function names, would pass linter with few issues
-- 👍 3 - Minor repetition in logic, a couple of confusing variable/function names, minor formatting issues
-- 👎 2 - Not idiomatic for language chosen, difficult to understand and trace
-- 🛑 1 - Very difficult to understand, non-standard formatting, variable names confusing
+- 💖 4 - Well-organized; DRY; easily readable; good variable/function names; would pass linter with few issues
+- 👍 3 - Minor repetition in logic; a couple of confusing variable/function names; minor formatting issues
+- 👎 2 - Not idiomatic for language chosen; difficult to understand and trace
+- 🛑 1 - Very difficult to understand; non-standard formatting; variable names confusing
 
 ### Data structures and runtime
 
@@ -33,7 +33,7 @@ Data structures are chosen appropriately for low complexity and low memory alloc
 
 Unit tests verify the code is working appropriately.
 
-- 💖 4 - Unit tests or script that tests all non-trivial logic branches, including edge cases; tests are granular and tied to specific functions
+- 💖 4 - Unit tests or script that tests all non-trivial logic branches; including edge cases; tests are granular and tied to specific functions
 - 👍 3 - Unit tests or script that tests main logic branches but not edge cases; tests not tied to specific functions but rather groups of them
 - 👎 2 - Unit tests/script are not repeatable
 - 🛑 1 - No unit tests or scripts

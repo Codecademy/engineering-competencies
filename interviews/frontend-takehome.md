@@ -17,7 +17,7 @@ Application can be used smoothly and without visible bugs.
 
 - 💖 4: Works smoothly and delightfully without any bugs
 - 👍 3: Works well with little to no buggy behavior on edge cases
-- 👎 2: Moderate bug or two on a major feature, or major bugs on edge cases
+- 👎 2: Moderate bug or two on a major feature; or major bugs on edge cases
 - 🛑 1: Significant buggy behavior
 
 ### Code Quality

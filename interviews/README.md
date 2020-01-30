@@ -9,13 +9,15 @@ We don't set a minimum score for any opening, and although we take these criteri
 
 ## Rubrics
 
+Here are the specific grading rubrics we use to evaluate each of our takehome assignments:
+
 - [Intern Backend Takehome](./frontend-takehome.md)
 - [Intern Frontend Takehome](./backend-takehome.md)
 
 ## Why?
 
 We believe in openness and transparency in our engineering practices.
-There must be _some_ criteria by which we evaluate takehome submissions, and if candidates are meant to be taking them, we'd like them to be clear to everyone.
+There must be _some_ criteria by which we evaluate takehome submissions, and we'd like them to be clear to everyone.
 
 We also welcome any feedback you have on these!
 
