@@ -11,8 +11,8 @@ We don't set a minimum score for any opening, and although we take these criteri
 
 Here are the specific grading rubrics we use to evaluate each of our takehome assignments:
 
-- [Backend Takehome](./frontend-takehome.md)
-- [Frontend Takehome](./backend-takehome.md)
+- [Backend Takehome](./backend-takehome.md)
+- [Frontend Takehome](./frontend-takehome.md)
 
 ## Why?
 
