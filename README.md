@@ -16,7 +16,7 @@ Jump to competencies for a particular level:
 * [Staff Software Engineer](#staff-software-engineer)
 
 
-## Software Engineering Intern
+## Software Engineering Intern / Apprentice
 
 ### Software Engineering & Design
 
