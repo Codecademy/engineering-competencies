@@ -2,24 +2,6 @@
 
 ## Section Scores
 
-### Solution Completion
-
-All requirements are met as outlined by the assignment's requirements.
-
-- 💖 4: Completely completed, including discoverable edge cases
-- 👍 3: Completed except for one or two minor edge cases
-- 👎 2: Missing a major feature or a several smaller features
-- 🛑 1: Missing major features or is generally not functional
-
-### Solution Quality
-
-Application can be used smoothly and without visible bugs.
-
-- 💖 4: Works smoothly and delightfully without any bugs
-- 👍 3: Works well with little to no buggy behavior on edge cases
-- 👎 2: Moderate bug or two on a major feature; or major bugs on edge cases
-- 🛑 1: Significant buggy behavior
-
 ### Code Quality
 
 Code is generally well-organized and easy to understand.
@@ -38,6 +20,16 @@ See [Frontend Specifics](#frontend-specifics) below.
 - 👍 3: All but one or two pieces of 4
 - 👎 2: All but one or two pieces of 1
 - 🛑 1: Suboptimal API choices; common anti-patterns; inconsistent or misleading syntax choices
+
+### Solution Completion
+
+All requirements are met as outlined by the assignment's requirements.
+Application can be used smoothly and without visible bugs.
+
+- 💖 4: Completely completed, including discoverable edge cases
+- 👍 3: Completed except for one or two minor edge cases and/or a little buggy behavior on edge cases
+- 👎 2: Missing a major feature or several smaller features, and/or is very buggy
+- 🛑 1: Missing major features or is generally not functional
 
 ### Delighters
 
