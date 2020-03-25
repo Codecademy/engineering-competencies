@@ -28,7 +28,7 @@ Application can be used smoothly and without visible bugs.
 
 - 💖 4: Completely completed, including discoverable edge cases
 - 👍 3: Completed except for one or two minor edge cases and/or a little buggy behavior on edge cases
-- 👎 2: Missing a major feature or a several smaller features, and/or is very buggy
+- 👎 2: Missing a major feature or several smaller features, and/or is very buggy
 - 🛑 1: Missing major features or is generally not functional
 
 ### Delighters
