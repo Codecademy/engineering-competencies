@@ -180,6 +180,7 @@ Jump to competencies for a particular level:
 ### Why these competencies?
 
 We've found that these four competency areas capture much of what's worked well for us.
+The attributes espoused here have been what we've commonly seen help engineers thrive at Codecademy and similar engineering organizations.
 
 We believe a team should prosper and grow _as a team_: that its success is measured by both the quality and throughput of its output _and_ the personal growth and enjoyment of its individual members.
 Strong technical achievements are only half of that.
@@ -195,7 +196,8 @@ We need engineers who bring in those fresh ideas to be able to produce our best
 #### Why Execution & Results?
 
 On top of the core development fundamentals, successful engineers are ones who ship products and are able to reliably do so on time with high quality.
-You'll need to balance the various tasks they're given and, to an extent, manage their own time.
+They need to balance the various tasks they're given and, to an extent, manage their own time.
+Engineers have uniquely deep insight into their work, and often need to drive it forward.
 
 #### Why Collaboration & Communication?
 
