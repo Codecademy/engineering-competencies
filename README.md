@@ -202,8 +202,7 @@ Engineers have uniquely deep insight into their work, and often need to drive it
 #### Why Collaboration & Communication?
 
 Teams are more than the sum of their parts, and as an engineer, part of your responsibilities are that everyone is given the resources to work their best.
-On one level, we need team members to be active participants in bettering the code and documentation around them.
-On a higher level, we also need active participation in the processes that shape our code and documentation.
+Strong team members both communicate the current progress and blockers of their own work, in order to keep their peers from getting stuck, and share feedback regularly that shape the code and product to be the best it can be
 
 #### Why Community & Citizenship?
 
