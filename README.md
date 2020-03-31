@@ -1,6 +1,6 @@
 # Codecademy Engineering Competencies
 
-These are the evaluation criteria we use for performance evaluation and leveling on the Codecademy engineering team. The compentencies at each level are broken down into four categories:
+These are the evaluation criteria we use for performance evaluation and leveling on the Codecademy engineering team. Hooray! The compentencies at each level are broken down into four categories:
 
 1. Software Engineering & Design
 2. Execution & Results
@@ -9,12 +9,11 @@ These are the evaluation criteria we use for performance evaluation and leveling
 
 Jump to competencies for a particular level:
 
-* [Software Engineering Intern / Apprentice](#software-engineering-intern--apprentice)
-* [Software Engineer](#software-engineer)
-* [Software Engineer 2](#software-engineer-2)
-* [Senior Software Engineer](#senior-software-engineer)
-* [Staff Software Engineer](#staff-software-engineer)
-
+- [Software Engineering Intern / Apprentice](#software-engineering-intern--apprentice)
+- [Software Engineer](#software-engineer)
+- [Software Engineer 2](#software-engineer-2)
+- [Senior Software Engineer](#senior-software-engineer)
+- [Staff Software Engineer](#staff-software-engineer)
 
 ## Software Engineering Intern / Apprentice
 
@@ -53,6 +52,7 @@ Jump to competencies for a particular level:
 - You seek out and learn industry best practices and standards.
 
 ### Execution & Results
+
 - You effectively manage your time and know when to ask for help to unblock yourself. When blocked, you are resourceful and take initiative in finding other tasks to complete.
 - You are given a set of large tasks and are able to effectively break them down into smaller tasks, which are easier to complete.
 - You actively participate in your team’s on-call rotation.
@@ -112,6 +112,7 @@ Jump to competencies for a particular level:
 - You have established a track record of seeking out and learning industry best practices and standards, which you incorporate in your coding patterns, design & architecture. You instill these best practices and standards into our engineering team.
 
 ### Execution & Results
+
 - You have established a track record of effectively managing your time and know when to ask for help to unblock yourself. When blocked, you are resourceful and take initiative in finding other tasks to complete.
 - You help create organization and structure around large projects & problems that aren’t well defined, thereby setting your team up to successfully deliver on initiatives.
 - You have established a track record of investigating and vetting the reuse of existing components and services when approaching new projects and feature requests.
@@ -134,7 +135,7 @@ Jump to competencies for a particular level:
 - You fix out of date code, tests, scripts, runbooks, and documentation.
 - You are interview-trained and share the interview load for your team.
 - You mentor members of your team and help them grow and develop.
-  
+
 ## Staff Software Engineer
 
 ### Software Engineering & Design
@@ -175,6 +176,39 @@ Jump to competencies for a particular level:
 - You introduce frameworks and abstractions that improve the efficiency of other engineers.
 
 ## FAQ
+
+### Why these competencies?
+
+We've found that these four competency areas capture much of what's worked well for us.
+The attributes espoused here have been what we've commonly seen help engineers thrive at Codecademy and similar engineering organizations.
+
+We believe a team should prosper and grow _as a team_: that its success is measured by both the quality and throughput of its output _and_ the personal growth and enjoyment of its individual members.
+Strong technical achievements are only half of that.
+Fostering a collaborative community is also necessary for us to be a great place to work.
+
+#### Why Software Engineering & Design?
+
+To be a strong engineer, you need strong development chops.
+That spans the gamut of the core tasks you'll be doing here, from the granular act of writing code to the larger-scale process of designing and maintaining systems.
+We actively appreciate that our industry is rapidly evolving and new best practices and standards are always around the corner.
+We need engineers who bring in those fresh ideas to be able to produce our best work.
+
+#### Why Execution & Results?
+
+On top of the core development fundamentals, successful engineers are ones who ship products and are able to reliably do so on time with high quality.
+They need to balance the various tasks they're given and, to an extent, manage their own time.
+Engineers have uniquely deep insight into their work, and often need to drive it forward.
+
+#### Why Collaboration & Communication?
+
+Teams are more than the sum of their parts, and as an engineer, part of your responsibilities are that everyone is given the resources to work their best.
+Strong team members both communicate the current progress and blockers of their own work, in order to keep their peers from getting stuck, and share feedback regularly that shape the code and product to be the best it can be
+
+#### Why Community & Citizenship?
+
+Part of being on a team is contributing to benefit the whole -- beyond accomplishing your own todo list.
+We want everyone to push the team culture forward and actively participate in it.
+Strong team players will identify areas of improvement in our culture and work towards making them better.
 
 ### Do I have to do everything at my level to meet expectations?
 
