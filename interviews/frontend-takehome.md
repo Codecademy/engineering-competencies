@@ -35,9 +35,9 @@ Application can be used smoothly and without visible bugs.
 
 Non-core features encouraged for completion after the core features.
 
-- 💖 +2: Requested delighter content completed fully and Solution Completion is 💖4
-- 👍 +1: Requested delighter completed with bugs, or completed well but Solution Completion is 👍3
-- 👎 0: No delighter content was completed, or Solution Completion is 🛑1 or 👎2
+- 💖 +2: Requested delighter content completed fully
+- 👍 +1: Requested delighter mostly completed or completed with a few minor bugs/flaws
+- 👎 0: Little to no delighter content was completed
 
 ## Frontend Specifics
 
