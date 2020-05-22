@@ -40,7 +40,9 @@ Jump to competencies for a particular level:
 
 ### Community & Citizenship
 
-- You do things to benefit your peers and community such as participating in meetings and providing constructive feedback on ideas and initiatives.
+- You do things to benefit your peers and community such as participating in meetings, including providing constructive feedback on ideas and initiatives.
+- You advocate for yourself and others when something is unclear.
+- You ask questions about approaches to solving problems and suggest alternate options.
 
 ## Software Engineer
 
@@ -66,7 +68,10 @@ Jump to competencies for a particular level:
 
 ### Community & Citizenship
 
-- You do things that benefit your peers and community such as providing feedback on product features, filing detailed bugs, and providing constructive comments.
+- You do things to benefit your peers and community such as participating in meetings, including providing constructive feedback on ideas and initiatives.
+- You advocate for yourself and others when something is unclear.
+- You ask questions about approaches to solving problems and suggest alternate options.
+- You escalate early and often with feedback on product features, product bug reports, and constructive criticism.
 - You fix out of date code, tests, scripts and documentation.
 
 ## Software Engineer 2
@@ -96,7 +101,10 @@ Jump to competencies for a particular level:
 
 ### Community & Citizenship
 
-- You do things that benefit your peers and community such as providing feedback on product features, filing detailed bugs and providing constructive comments.
+- You do things to benefit your peers and community such as participating in meetings, including providing constructive feedback on ideas and initiatives.
+- You advocate for yourself and others when something is unclear.
+- You ask questions about approaches to solving problems and suggest alternate options.
+- You provide feedback on product features, file detailed bugs, and voice constructive comments in small- and large-group discussions.
 - You fix out of date code, tests, scripts, runbooks, and documentation.
 - You are interviewing trained and share the interview load for your team.
 
@@ -133,6 +141,8 @@ Jump to competencies for a particular level:
 
 - You do things that benefit your peers and community such as providing feedback on product features, filing detailed bugs and providing constructive comments.
 - You fix out of date code, tests, scripts, runbooks, and documentation.
+- You advocate for yourself and others when something is unclear.
+- You ask questions about approaches to solving problems and suggest alternate options.
 - You are interview-trained and share the interview load for your team.
 - You mentor members of your team and help them grow and develop.
 
