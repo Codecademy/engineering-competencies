@@ -1,0 +1,12 @@
+{ 
+    "compilerOptions": {
+        "esModuleInterop": true,
+        "target": "es2015",
+        "moduleResolution": "node",
+        "module": "commonjs",
+        "declaration": true,
+        "outDir": "typings/",
+    },
+    
+    "exclude": ["node_modules", "compiled_js", "typings"]
+}
