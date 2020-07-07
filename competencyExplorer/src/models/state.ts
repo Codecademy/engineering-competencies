@@ -26,7 +26,7 @@ export const STATE = new _State(
     levels: [],
     competencies: [],
     hiddenLevels: ["Engineering Manager", "Director", "VP"],
-    display: "list",
+    display: "matrix",
   },
   {
     categories: createModelTransform(MSet) as any,

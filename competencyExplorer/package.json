@@ -26,6 +26,7 @@
     "webpack-cli": "^3.3.12"
   },
   "dependencies": {
+    "@toolkip/comparable": "^2.2.3",
     "@toolkip/create-elements": "^2.2.8",
     "@toolkip/model": "^2.2.8",
     "@toolkip/object-helpers": "^2.3.0",

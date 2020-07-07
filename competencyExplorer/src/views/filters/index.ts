@@ -6,6 +6,12 @@ export const renderFilterBar = () => {
   return createElement({
     cls: "filterBar",
     styles: {
+      ".label": {
+        fontSize: "0.8rem",
+        opacity: "0.8",
+        fontFamily: "Zilla Slab",
+      },
+
       ".filterBar": {
         height: "100%",
         backgroundColor: "#333",
@@ -13,27 +19,28 @@ export const renderFilterBar = () => {
         color: "#FFF",
         display: "flex",
         flexDirection: "column",
-      },
-      ".label": {
-        fontSize: "0.8rem",
-        opacity: "0.8",
-        marginBottom: "0.25rem",
-        fontFamily: "Zilla Slab",
-      },
 
-      ".title": {
-        fontSize: "1.2rem",
-        marginLeft: "1rem",
-        marginBottom: "1rem",
-      },
+        nested: {
+          ".label": {
+            marginBottom: "0.25rem",
+          },
 
-      ".subtitle": {
-        fontSize: "0.7rem",
-        marginLeft: "1rem",
-        marginTop: "1rem",
-        marginBottom: "0.2rem",
+          ".title": {
+            fontSize: "1.2rem",
+            marginLeft: "1rem",
+            marginBottom: "1rem",
+          },
+
+          ".subtitle": {
+            fontSize: "0.7rem",
+            marginLeft: "1rem",
+            marginTop: "1rem",
+            marginBottom: "0.2rem",
+          },
+        },
       },
     },
+
     children: [
       { cls: "subtitle", content: "Competency Explorer" },
       { cls: "title", content: "Codecademy Engineering" },

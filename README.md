@@ -9,13 +9,13 @@ These are the evaluation criteria we use for performance evaluation and leveling
 
 Jump to competencies for a particular level:
 
-- [Software Engineering Intern / Apprentice](#eng-0)
+- [Software Engineering Apprentice](#eng-0)
 - [Software Engineer](#eng-1)
 - [Software Engineer 2](#eng-2)
 - [Senior Software Engineer](#eng-3)
 - [Staff Software Engineer](#eng-4)
 
-## Software Engineering Intern / Apprentice {#eng-0}
+## Software Engineering Apprentice {#eng-0}
 
 ### Software Engineering & Design
 
