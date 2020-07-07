@@ -18,7 +18,7 @@ module.exports = {
     },
     output: {
         filename: 'compMatrix.js',
-        path: path.resolve(__dirname, 'compiled_js'),
+        path: path.resolve(__dirname, 'dist'),
         
     },
     optimization: {

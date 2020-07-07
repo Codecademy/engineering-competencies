@@ -9,13 +9,13 @@ These are the evaluation criteria we use for performance evaluation and leveling
 
 Jump to competencies for a particular level:
 
-- [Software Engineering Intern / Apprentice](#software-engineering-intern--apprentice)
-- [Software Engineer](#software-engineer)
-- [Software Engineer 2](#software-engineer-2)
-- [Senior Software Engineer](#senior-software-engineer)
-- [Staff Software Engineer](#staff-software-engineer)
+- [Software Engineering Intern / Apprentice](#eng-0)
+- [Software Engineer](#eng-1)
+- [Software Engineer 2](#eng-2)
+- [Senior Software Engineer](#eng-3)
+- [Staff Software Engineer](#eng-4)
 
-## Software Engineering Intern / Apprentice
+## Software Engineering Intern / Apprentice {#eng-0}
 
 ### Software Engineering & Design
 
@@ -44,7 +44,7 @@ Jump to competencies for a particular level:
 - You advocate for yourself and others when something is unclear.
 - You ask questions about approaches to solving problems and suggest alternate options.
 
-## Software Engineer
+## Software Engineer {#eng-1}
 
 ### Software Engineering & Design
 
@@ -74,7 +74,7 @@ Jump to competencies for a particular level:
 - You escalate early and often with feedback on product features, product bug reports, and constructive criticism.
 - You fix out of date code, tests, scripts and documentation.
 
-## Software Engineer 2
+## Software Engineer 2 {#eng-2}
 
 ### Software Engineering & Design
 
@@ -108,7 +108,7 @@ Jump to competencies for a particular level:
 - You fix out of date code, tests, scripts, runbooks, and documentation.
 - You are interviewing trained and share the interview load for your team.
 
-## Senior Software Engineer
+## Senior Software Engineer {#eng-3}
 
 ### Software Engineering & Design
 
@@ -146,7 +146,7 @@ Jump to competencies for a particular level:
 - You are interview-trained and share the interview load for your team.
 - You mentor members of your team and help them grow and develop.
 
-## Staff Software Engineer
+## Staff Software Engineer {#eng-4}
 
 ### Software Engineering & Design
 

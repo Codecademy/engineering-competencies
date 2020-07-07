@@ -8,5 +8,5 @@
         "outDir": "typings/",
     },
     
-    "exclude": ["node_modules", "compiled_js", "typings"]
+    "exclude": ["node_modules", "dist", "typings"]
 }
