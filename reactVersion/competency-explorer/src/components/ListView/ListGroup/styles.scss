@@ -1,0 +1,34 @@
+.hidden {
+    display: none;
+}
+
+.column {
+    font-size: 0.9em;
+    width: 50vw;
+    margin-bottom: 1em;
+
+    &.collapsed .colName img {
+        transform: rotate(0deg);
+    }
+
+    &.collapsed .groupChildren {
+        display: none;
+    }
+}
+
+.colName {
+    margin: 1rem;
+    font-family: 'Zilla Slab';
+    font-size: 0.9em;
+    font-weight: 500;
+    cursor: pointer;
+    display: flex;
+    margin-left: -1.2em;
+
+    img {
+        width: 1.5em;
+        height: 1.5em;
+        transform: rotate(180deg);
+        transform-origin: 50% 50%;
+    }
+}
