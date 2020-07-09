@@ -9,13 +9,13 @@ These are the evaluation criteria we use for performance evaluation and leveling
 
 Jump to competencies for a particular level:
 
-- [Software Engineering Apprentice](#eng-0)
-- [Software Engineer](#eng-1)
-- [Software Engineer 2](#eng-2)
-- [Senior Software Engineer](#eng-3)
-- [Staff Software Engineer](#eng-4)
+- [Software Engineering Apprentice](#software-engineering-apprentice)
+- [Software Engineer](#software-engineer)
+- [Software Engineer 2](#software-engineer-2)
+- [Senior Software Engineer](#senior-software-engineer)
+- [Staff Software Engineer](#staff-software-engineer)
 
-## Software Engineering Apprentice {#eng-0}
+## Software Engineering Apprentice
 
 ### Software Engineering & Design
 
@@ -44,7 +44,7 @@ Jump to competencies for a particular level:
 - You advocate for yourself and others when something is unclear.
 - You ask questions about approaches to solving problems and suggest alternate options.
 
-## Software Engineer {#eng-1}
+## Software Engineer
 
 ### Software Engineering & Design
 

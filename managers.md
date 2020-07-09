@@ -2,7 +2,7 @@
 
 The engineering manager ladder consists of three levels, Engineering Manager, Director and VP.
 
-## Engineering Manager {#em-1}
+## Engineering Manager
 
 You are a frontline manager who is responsible for a functional area and leads a small team of up to six engineers.
 
@@ -52,7 +52,7 @@ You are a frontline manager who is responsible for a functional area and leads a
 - You cultivate blameless culture that focuses on fixing problems not pointing fingers.
 - You attend and contribute to conversations within our tech community (e.g. book club, lighting talks, blog posts)
 
-## Director {#em-2}
+## Director
 
 You are a manager who is responsible for multiple functional areas, owns a budget, and leads a larger, cross-functional team.
 
@@ -107,7 +107,7 @@ You are a manager who is responsible for multiple functional areas, owns a budge
 - You cultivate blameless culture that focuses on fixing problems not pointing fingers.
 - You are a leader within and contribute to our tech community (e.g. book club, lighting talks, blog posts).
 
-## VP {#em-3}
+## VP
 
 You are a manager who is responsible for an entire department, contributes to the company strategy and supports other departments across the organization.
 

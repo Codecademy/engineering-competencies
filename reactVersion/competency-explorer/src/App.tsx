@@ -1,10 +1,17 @@
-import React from 'react';
-import './App.css';
-import { FilterBar } from './components/FilterBar';
-import { ListView } from './components/ListView';
-import { MatrixView } from './components/MatrixView';
+import React, { useEffect } from "react";
+import "./App.css";
+import { FilterBar } from "./components/FilterBar";
+import { ListView } from "./components/ListView";
+import { MatrixView } from "./components/MatrixView";
+import { useDispatch } from "react-redux";
+import { loadFiles } from "./actions/load";
 
 function App() {
+  const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(loadFiles());
+  });
+
   return (
     <div className="layout">
       <FilterBar />

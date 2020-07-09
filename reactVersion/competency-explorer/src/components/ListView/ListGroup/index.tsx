@@ -1,103 +1,109 @@
-import React, { useCallback, useState } from 'react';
-import { Category, Level, State } from '../../../models';
-import cx from 'classnames';
-import 'styles.scss';
-import { useSelector, useDispatch } from 'react-redux';
-import { selectLevelVisibility, selectCategoryVisibility } from '../../../selectors/visibility';
-import { createLevelAction, createFilterAction } from '../../../reducers';
+import React, { useCallback, useState } from "react";
+import { Category, Level, State } from "../../../models";
+import cx from "classnames";
+import "./styles.scss";
+import { useSelector, useDispatch } from "react-redux";
+import {
+  selectLevelVisibility,
+  selectCategoryVisibility,
+} from "../../../selectors/visibility";
+import { createFilterAction } from "../../../reducers";
+import { selectCategories } from "../../../selectors/categories";
+import { selectCompetenciesForLevelAndCategory } from "../../../selectors/competencies";
+import { ListItem } from "../ListItem";
 
 export type ListGroupProps = {
-    category?: Category;
-    level: Level;
-}
-
-export const ListGroup = ({ level, category }: ListGroupProps)  => {
-    const [isExpanded, setIsExpanded] = useState(true);
-    const isLevelHidden = useSelector((s: State) => selectLevelVisibility(s, level));
-    const isCategoryHidden = useSelector((s: State) => selectCategoryVisibility(s, category || ''));
-    const dispatch = useDispatch();
-
-    const onExpandCollapse = useCallback(() => {
-        setIsExpanded(!isExpanded);
-    }, [isExpanded])
-
-    const onDelete = useCallback((event) => {
-        dispatch(createFilterAction(level, 'HIDE_LEVEL'))
-        event.stopPropagation();
-    }, [dispatch]);
-
-    return (
-        <div className={cx(
-            'column', 
-            (isLevelHidden || (category && isCategoryHidden)) && 'hidden'
-        )}>
-
-        {/** header */}
-        
-        {/** content */}
-        (category ? 
-
-        )
-        </div>
-    )
-}
-
-/**
- * 
-
+  category?: Category;
+  level: Level;
 };
 
-export const renderGroup = (level: Level, category?: Category) => {
-  const isGroupOfGroups = !category;
-  const label = category || level;
+export const ListGroup = ({ level, category }: ListGroupProps) => {
+  const [isExpanded, setIsExpanded] = useState(true);
+  const isLevelHidden = useSelector((s: State) =>
+    selectLevelVisibility(s, level)
+  );
+  const isCategoryHidden = useSelector((s: State) =>
+    selectCategoryVisibility(s, category || "")
+  );
+  const categories = useSelector(selectCategories);
+  const competencies = useSelector((s: State) =>
+    selectCompetenciesForLevelAndCategory(s, level, category || "")
+  );
 
-  // get the appropriate selector
-  let children;
-  let elem;
-  if (!category) {
-    children = selectCategories().mapSelect((category) => {
-      return renderGroup(level, category);
-    });
-  } else {
-    children = selectCompetenciesForLevelAndCategory(level, category).mapSelect(
-      (competency) => {
-        const out = renderCompetency(competency, level);
-        return out;
-      }
+  const dispatch = useDispatch();
+
+  const onExpandCollapse = useCallback(() => {
+    setIsExpanded(!isExpanded);
+  }, [isExpanded]);
+
+  const onDelete = useCallback(() => {
+    dispatch(createFilterAction(level, "HIDE_LEVEL"));
+  }, [dispatch, level]);
+
+  return (
+    <div
+      className={cx(
+        "column",
+        (isLevelHidden || (category && isCategoryHidden)) && "hidden"
+      )}
+    >
+      {/** header */}
+      <ListGroupHeader
+        category={category}
+        level={level}
+        onDelete={onDelete}
+        onExpandCollapse={onExpandCollapse}
+      />
+
+      {/** content */}
+      <span className="groupChildren">
+        {category
+          ? competencies.map((comp) => (
+              <ListItem level={level} competency={comp} />
+            ))
+          : [...categories].map((cat) => (
+              <ListGroup level={level} category={cat} />
+            ))}
+      </span>
+    </div>
+  );
+};
+
+export type ListGroupHeaderProps = ListGroupProps & {
+  onDelete: () => void;
+  onExpandCollapse: () => void;
+};
+
+export const ListGroupHeader = ({
+  level,
+  category,
+  onDelete,
+  onExpandCollapse,
+}: ListGroupHeaderProps) => {
+  const collapseIcon = (
+    <img alt="collapse this level" src="./res/down_caret.png"></img>
+  );
+  if (category) {
+    return (
+      <span className="colName" onClick={onExpandCollapse}>
+        {collapseIcon}
+        <h3>{category}</h3>
+      </span>
     );
   }
 
-
-
-  // listeners
-
-
-  // generate the actual element
-  elem = createElement({
-    cls: clsSelector,
-    styles,
-    children: [
-      {
-        cls: "colName",
-        eventListeners: { click: () => onExpandCollapse() },
-        children: [
-          { type: "img", attr: { src: "./res/down_caret.png" } },
-          { content: label },
-          {
-            type: "img",
-            attr: { src: "./res/ex.png" },
-            cls: isGroupOfGroups ? "icon" : "hidden",
-            eventListeners: { click: (e) => onDelete(e) },
-          },
-        ],
-      },
-      {
-        cls: "groupChildren",
-        children,
-      },
-    ],
-  });
-
-  return elem;
+  return (
+    <span className="colName">
+      {collapseIcon}
+      <h2>{level}</h2>
+      <img
+        alt="delete this level"
+        src="./res/ex.png"
+        onClick={(e) => {
+          onDelete();
+          e.stopPropagation();
+        }}
+      ></img>
+    </span>
+  );
 };
- */
