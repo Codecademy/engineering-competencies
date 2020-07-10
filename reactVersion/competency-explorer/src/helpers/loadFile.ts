@@ -1,3 +1,6 @@
+// import ic from '../../../../README.md';
+// import em from '../../../../managers.md';
+
 const loadFile = async ({ filename }: { filename: string }) => {
   // return new Promise<string>((resolve) => {
   //   const rawFile = new XMLHttpRequest();
@@ -14,6 +17,7 @@ const loadFile = async ({ filename }: { filename: string }) => {
   const response = await fetch(filename);
   return response.text();
 };
+
 export const loadEngCompetencies = async () => {
   const fileContents = await loadFile({ filename: "../../../README.md" });
   return fileContents;
