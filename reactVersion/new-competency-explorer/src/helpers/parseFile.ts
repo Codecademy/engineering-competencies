@@ -47,6 +47,7 @@ const getLinesInFile = (fileContents: string) => {
  */
 const parseLine = (line: string, props: ParseLineProps) => {
   const { lastLevel } = props;
+
   // nothing to do if we aren't yet on the competencies
   const levelHeader = matchLevel(line);
   if (!lastLevel && !levelHeader) {
@@ -124,6 +125,7 @@ const parseCompetency = (competency: string, props: ParseLineProps) => {
       name: competency,
       levels: [props.lastLevel],
       category: props.lastCategory,
+      originLevel: props.lastLevel
     };
   }
 };

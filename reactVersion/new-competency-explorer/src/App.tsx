@@ -4,7 +4,7 @@ import { FilterBar } from "./components/FilterBar";
 import { ListView } from "./components/ListView";
 import { MatrixView } from "./components/MatrixView";
 import { useDispatch } from "react-redux";
-import { loadFiles } from "./actions/load";
+import { loadFiles } from "./thunks/load";
 
 function App() {
   const dispatch = useDispatch();

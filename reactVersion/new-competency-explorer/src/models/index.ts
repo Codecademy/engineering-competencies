@@ -11,6 +11,7 @@ export type Competency = {
     name: string;
     category: Category;
     levels: Level[];
+    originLevel: Level;
 }
 
 export type State = {

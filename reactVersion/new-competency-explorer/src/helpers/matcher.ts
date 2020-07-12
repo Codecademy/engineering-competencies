@@ -1,5 +1,5 @@
 const EXCLUDE_HEADERS = ["FAQ"];
-const LEVEL_REGEX = /^\s*?##\s*?([\w &/]+)\s*?\$/;
+const LEVEL_REGEX = /^\s*?##\s*?([\w &/]+)\s*?$/;
 const CATEGORY_REGEX = /^\s*?###\s*?(.+)$/;
 const COMPETENCY_REGEX = /^\s*?[*-]\s*?(.+)$/;
 

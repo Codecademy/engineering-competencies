@@ -1,7 +1,7 @@
 import { Category } from '../models';
 import type { Action } from 'redux';
 
-export const ADD_CATEGORIES = 'ADD_LEVELS';
+export const ADD_CATEGORIES = 'ADD_CATEGORIES';
 
 export type CategoryAction = { 
     categories: Set<Category>, 

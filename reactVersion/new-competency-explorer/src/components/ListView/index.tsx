@@ -17,7 +17,7 @@ export const ListView: React.FC = () => {
   return (
     <div className="list">
       {[...levels].map((l) => (
-        <ListGroup level={l} />
+        <ListGroup key={l} level={l} />
       ))}
     </div>
   );

@@ -1,5 +1,6 @@
 import { Level } from '../models';
 import type {Action} from 'redux';
+
 export const HIDE_LEVEL = 'HIDE_LEVEL';
 export const SHOW_LEVEL = 'SHOW_LEVEL';
 export const TOGGLE_LEVEL = 'TOGGLE_LEVEL';
@@ -46,8 +47,8 @@ const showLevel = (hiddenLevels: Set<Level>, level: Level) => {
 
 const toggleLevel = (hiddenLevels: Set<Level>, level: Level) => {
     if (hiddenLevels.has(level)) {
-        return hideLevel(hiddenLevels, level);
-    } else {
         return showLevel(hiddenLevels, level);
+    } else {
+        return hideLevel(hiddenLevels, level);
     }
 }

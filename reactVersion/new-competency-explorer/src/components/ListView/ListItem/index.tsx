@@ -1,5 +1,6 @@
 import React from 'react';
 import { Level, Competency } from '../../../models';
+import './styles.scss';
 import cx from 'classnames';
 
 type ListItemProps = {
@@ -16,16 +17,16 @@ export const ListItem = ({ competency, level }: ListItemProps) => {
                 {competency.name}
             </div>
 
-            (otherLevels.length !== 0 && 
+            {otherLevels.length !== 0 && 
                 <div className='levels'>
                     <div>Also in:</div>
                     <ul>
-                        {otherLevels.map((level) => 
-                            <li>{level}</li>
+                        {otherLevels.map((l) => 
+                            <li key={`${competency.id}-${l}`}>{l}</li>
                         )}
                     </ul>
                 </div>
-            )
+            }
         </div>
     )
 }

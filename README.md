@@ -74,7 +74,7 @@ Jump to competencies for a particular level:
 - You escalate early and often with feedback on product features, product bug reports, and constructive criticism.
 - You fix out of date code, tests, scripts and documentation.
 
-## Software Engineer 2 {#eng-2}
+## Software Engineer 2
 
 ### Software Engineering & Design
 
@@ -108,7 +108,7 @@ Jump to competencies for a particular level:
 - You fix out of date code, tests, scripts, runbooks, and documentation.
 - You are interviewing trained and share the interview load for your team.
 
-## Senior Software Engineer {#eng-3}
+## Senior Software Engineer
 
 ### Software Engineering & Design
 
@@ -146,7 +146,7 @@ Jump to competencies for a particular level:
 - You are interview-trained and share the interview load for your team.
 - You mentor members of your team and help them grow and develop.
 
-## Staff Software Engineer {#eng-4}
+## Staff Software Engineer
 
 ### Software Engineering & Design
 

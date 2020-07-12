@@ -8,8 +8,15 @@ export type DisplayModeAction = {
   type: typeof SET_DISPLAY_MODE;
 };
 
+export const createDisplayModeAction = (displayMode: DisplayMode) => {
+  return {
+    type: SET_DISPLAY_MODE,
+    displayMode
+  }
+}
+
 export const displayMode = (
-  state: DisplayMode = "list",
+  state: DisplayMode = "matrix",
   action: Action<any>
 ) => {
   switch (action.type) {
