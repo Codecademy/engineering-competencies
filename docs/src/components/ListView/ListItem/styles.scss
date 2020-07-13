@@ -1,0 +1,34 @@
+.competency {
+    padding: 0.5rem;
+    margin: 0.5rem;
+    font-size: 0.6em;
+    border-top: 1px solid #eee;
+    font-family: 'Anonymous Pro';
+    position: relative;
+
+    .name {
+        opacity: 0.5;
+        cursor: pointer;
+    }
+
+    .name.bold {
+        opacity: 1;
+    }
+
+    .category, .levels {
+        margin-top: 0.5rem;
+        font-size: 0.8rem;
+        display: none;
+        position: absolute;
+        background-color: #FFF;
+        border-radius: 10px;
+        box-shadow: 1px 1px 3px 2px rgba(0, 0, 0, 0.2);
+        padding: 0.5rem;
+    }
+
+    &:hover .levels {
+        display: block;
+        z-index: 5;
+    }
+
+}

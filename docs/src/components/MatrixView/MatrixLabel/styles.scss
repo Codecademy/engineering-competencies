@@ -1,0 +1,13 @@
+.matrix .label {
+    align-self: center;
+    height: 100%;
+    font-size: 1rem;
+
+    &.top {
+        margin-left: 1rem;
+    }
+
+    &.left {
+        margin-top: 0;
+    }
+}
