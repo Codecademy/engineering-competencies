@@ -264,6 +264,1098 @@ eval("module.exports = __webpack_require__(/*! regenerator-runtime */ \"./node_m
 
 /***/ }),
 
+/***/ "./node_modules/@toolkip/async/dist/index.js":
+/*!***************************************************!*\
+  !*** ./node_modules/@toolkip/async/dist/index.js ***!
+  \***************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+eval("\nfunction __export(m) {\n    for (var p in m) if (!exports.hasOwnProperty(p)) exports[p] = m[p];\n}\nObject.defineProperty(exports, \"__esModule\", { value: true });\n__export(__webpack_require__(/*! ./promiseTypes */ \"./node_modules/@toolkip/async/dist/promiseTypes.js\"));\n\n\n//# sourceURL=webpack:///./node_modules/@toolkip/async/dist/index.js?");
+
+/***/ }),
+
+/***/ "./node_modules/@toolkip/async/dist/promiseTypes.js":
+/*!**********************************************************!*\
+  !*** ./node_modules/@toolkip/async/dist/promiseTypes.js ***!
+  \**********************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+eval("\nObject.defineProperty(exports, \"__esModule\", { value: true });\nfunction wait(timeInMs) {\n    return new Promise((resolve) => {\n        window.setTimeout(resolve, timeInMs);\n    });\n}\nexports.wait = wait;\nfunction nextRender() {\n    return new Promise((resolve) => {\n        requestAnimationFrame(() => {\n            resolve();\n        });\n    });\n}\nexports.nextRender = nextRender;\n\n\n//# sourceURL=webpack:///./node_modules/@toolkip/async/dist/promiseTypes.js?");
+
+/***/ }),
+
+/***/ "./node_modules/@toolkip/code-event/dist/_typeguards.js":
+/*!**************************************************************!*\
+  !*** ./node_modules/@toolkip/code-event/dist/_typeguards.js ***!
+  \**************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+eval("\nObject.defineProperty(exports, \"__esModule\", { value: true });\nexports.isListenable = (test) => {\n    if (test.addEventListener) {\n        return true;\n    }\n    return false;\n};\n\n\n//# sourceURL=webpack:///./node_modules/@toolkip/code-event/dist/_typeguards.js?");
+
+/***/ }),
+
+/***/ "./node_modules/@toolkip/code-event/dist/codeEvent.js":
+/*!************************************************************!*\
+  !*** ./node_modules/@toolkip/code-event/dist/codeEvent.js ***!
+  \************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+eval("\nObject.defineProperty(exports, \"__esModule\", { value: true });\nclass CodeEvent {\n    constructor(name) {\n        this._name = name;\n        this._listeners = new Map();\n    }\n    get listeners() { return new Map(this._listeners); }\n    dispatch(target, data) {\n        let dispatchData = data;\n        dispatchData.target = target;\n        dispatchData.name = this._name;\n        let listeners = [];\n        listeners = listeners.concat(this._listeners.get(target));\n        listeners = listeners.concat(this._listeners.get(null));\n        for (let cb of listeners) {\n            if (!cb) {\n                continue;\n            }\n            cb(dispatchData);\n        }\n    }\n    addEventListener(cb, target) {\n        if (!target) {\n            target = null;\n        }\n        let listeners = this._listeners.get(target);\n        if (!listeners) {\n            listeners = [];\n        }\n        listeners.push(cb);\n        this._listeners.set(target, listeners);\n    }\n}\nexports.CodeEvent = CodeEvent;\n\n\n//# sourceURL=webpack:///./node_modules/@toolkip/code-event/dist/codeEvent.js?");
+
+/***/ }),
+
+/***/ "./node_modules/@toolkip/code-event/dist/index.js":
+/*!********************************************************!*\
+  !*** ./node_modules/@toolkip/code-event/dist/index.js ***!
+  \********************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+eval("\nfunction __export(m) {\n    for (var p in m) if (!exports.hasOwnProperty(p)) exports[p] = m[p];\n}\nObject.defineProperty(exports, \"__esModule\", { value: true });\n__export(__webpack_require__(/*! ./codeEvent */ \"./node_modules/@toolkip/code-event/dist/codeEvent.js\"));\n__export(__webpack_require__(/*! ./_typeguards */ \"./node_modules/@toolkip/code-event/dist/_typeguards.js\"));\n\n\n//# sourceURL=webpack:///./node_modules/@toolkip/code-event/dist/index.js?");
+
+/***/ }),
+
+/***/ "./node_modules/@toolkip/comparable/dist/_interfaces.js":
+/*!**************************************************************!*\
+  !*** ./node_modules/@toolkip/comparable/dist/_interfaces.js ***!
+  \**************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+eval("\nObject.defineProperty(exports, \"__esModule\", { value: true });\nvar SortOrderEnum;\n(function (SortOrderEnum) {\n    SortOrderEnum[SortOrderEnum[\"INCORRECT_ORDER\"] = 1] = \"INCORRECT_ORDER\";\n    SortOrderEnum[SortOrderEnum[\"SAME\"] = 0] = \"SAME\";\n    SortOrderEnum[SortOrderEnum[\"CORRECT_ORDER\"] = -1] = \"CORRECT_ORDER\";\n})(SortOrderEnum = exports.SortOrderEnum || (exports.SortOrderEnum = {}));\n\n\n//# sourceURL=webpack:///./node_modules/@toolkip/comparable/dist/_interfaces.js?");
+
+/***/ }),
+
+/***/ "./node_modules/@toolkip/comparable/dist/_typeguards.js":
+/*!**************************************************************!*\
+  !*** ./node_modules/@toolkip/comparable/dist/_typeguards.js ***!
+  \**************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+eval("\nObject.defineProperty(exports, \"__esModule\", { value: true });\nconst shared_types_1 = __webpack_require__(/*! @toolkip/shared-types */ \"./node_modules/@toolkip/shared-types/dist/index.js\");\nfunction isEquatable(obj) {\n    if (shared_types_1.isNullOrUndefined(obj)) {\n        return false;\n    }\n    if (obj.equals) {\n        return true;\n    }\n    return false;\n}\nexports.isEquatable = isEquatable;\nfunction isComparable(obj) {\n    if (shared_types_1.isNullOrUndefined(obj)) {\n        return false;\n    }\n    let comp = obj;\n    if (comp.lessThan && comp.greaterThan && comp.equals) {\n        return true;\n    }\n    return false;\n}\nexports.isComparable = isComparable;\n\n\n//# sourceURL=webpack:///./node_modules/@toolkip/comparable/dist/_typeguards.js?");
+
+/***/ }),
+
+/***/ "./node_modules/@toolkip/comparable/dist/comparisons.js":
+/*!**************************************************************!*\
+  !*** ./node_modules/@toolkip/comparable/dist/comparisons.js ***!
+  \**************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+eval("\nObject.defineProperty(exports, \"__esModule\", { value: true });\nconst _typeguards_1 = __webpack_require__(/*! ./_typeguards */ \"./node_modules/@toolkip/comparable/dist/_typeguards.js\");\nconst shared_types_1 = __webpack_require__(/*! @toolkip/shared-types */ \"./node_modules/@toolkip/shared-types/dist/index.js\");\nfunction equals(orig, comparison) {\n    if (_typeguards_1.isEquatable(orig)) {\n        return orig.equals(comparison);\n    }\n    if (shared_types_1.isPrimitive(orig)) {\n        return (orig === comparison);\n    }\n    else if (shared_types_1.isDate(orig)) {\n        return (+orig === +comparison);\n    }\n    else {\n        return (JSON.stringify(orig) === JSON.stringify(comparison));\n    }\n}\nexports.equals = equals;\nfunction lesserThan(orig, comparison) {\n    if (_typeguards_1.isComparable(orig)) {\n        return orig.lesserThan(comparison);\n    }\n    return (orig < comparison);\n}\nexports.lesserThan = lesserThan;\nfunction greaterThan(orig, comparison) {\n    if (_typeguards_1.isComparable(orig)) {\n        return orig.greaterThan(comparison);\n    }\n    return (orig > comparison);\n}\nexports.greaterThan = greaterThan;\n\n\n//# sourceURL=webpack:///./node_modules/@toolkip/comparable/dist/comparisons.js?");
+
+/***/ }),
+
+/***/ "./node_modules/@toolkip/comparable/dist/index.js":
+/*!********************************************************!*\
+  !*** ./node_modules/@toolkip/comparable/dist/index.js ***!
+  \********************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+eval("\nfunction __export(m) {\n    for (var p in m) if (!exports.hasOwnProperty(p)) exports[p] = m[p];\n}\nObject.defineProperty(exports, \"__esModule\", { value: true });\n__export(__webpack_require__(/*! ./comparisons */ \"./node_modules/@toolkip/comparable/dist/comparisons.js\"));\n__export(__webpack_require__(/*! ./_typeguards */ \"./node_modules/@toolkip/comparable/dist/_typeguards.js\"));\n__export(__webpack_require__(/*! ./_interfaces */ \"./node_modules/@toolkip/comparable/dist/_interfaces.js\"));\n\n\n//# sourceURL=webpack:///./node_modules/@toolkip/comparable/dist/index.js?");
+
+/***/ }),
+
+/***/ "./node_modules/@toolkip/create-elements/dist/_constants.js":
+/*!******************************************************************!*\
+  !*** ./node_modules/@toolkip/create-elements/dist/_constants.js ***!
+  \******************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+eval("\nObject.defineProperty(exports, \"__esModule\", { value: true });\nexports.SVG_NAMESPACE = \"http://www.w3.org/2000/svg\";\n\n\n//# sourceURL=webpack:///./node_modules/@toolkip/create-elements/dist/_constants.js?");
+
+/***/ }),
+
+/***/ "./node_modules/@toolkip/create-elements/dist/_coreCreateElement.js":
+/*!**************************************************************************!*\
+  !*** ./node_modules/@toolkip/create-elements/dist/_coreCreateElement.js ***!
+  \**************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+eval("\nObject.defineProperty(exports, \"__esModule\", { value: true });\nconst shared_types_1 = __webpack_require__(/*! @toolkip/shared-types */ \"./node_modules/@toolkip/shared-types/dist/index.js\");\nconst style_helpers_1 = __webpack_require__(/*! @toolkip/style-helpers */ \"./node_modules/@toolkip/style-helpers/dist/index.js\");\nconst style_libraries_1 = __webpack_require__(/*! @toolkip/style-libraries */ \"./node_modules/@toolkip/style-libraries/dist/index.js\");\nconst object_helpers_1 = __webpack_require__(/*! @toolkip/object-helpers */ \"./node_modules/@toolkip/object-helpers/dist/index.js\");\nconst _typeGuards_1 = __webpack_require__(/*! ./_typeGuards */ \"./node_modules/@toolkip/create-elements/dist/_typeGuards.js\");\nconst model_1 = __webpack_require__(/*! @toolkip/model */ \"./node_modules/@toolkip/model/dist/index.js\");\nfunction _coreCreateElements(objs, keyedElems, recurseVia) {\n    if (!shared_types_1.isArray(objs)) {\n        return [this._coreCreateElement(objs, keyedElems, recurseVia)];\n    }\n    else {\n        const out = [];\n        for (let obj of objs) {\n            out.push(this._coreCreateElement(obj, keyedElems, recurseVia));\n        }\n        return out;\n    }\n}\nexports._coreCreateElements = _coreCreateElements;\nfunction _coreCreateElement(obj, keyedElems, recurseVia) {\n    let elem;\n    let drawable;\n    if (obj.drawable) {\n        drawable = _createDrawable(obj.drawable);\n        elem = drawable.base;\n    }\n    else {\n        elem = _createStandardElement(obj);\n    }\n    if (!recurseVia) {\n        recurseVia = _coreCreateElement;\n    }\n    _setElemIdentfiers(elem, obj, keyedElems, drawable);\n    _setElemClass(elem, obj);\n    _setElemStyles(elem, obj);\n    _setElemAttributes(elem, obj);\n    _setElemStyle(elem, obj);\n    _setEventListeners(elem, obj);\n    if (obj.children) {\n        _addElemChildren(elem, obj, keyedElems, recurseVia);\n    }\n    else {\n        _setElemBaseContent(elem, obj);\n    }\n    _setElemSelector(obj, elem);\n    _appendElemToParent(obj, elem);\n    return elem;\n}\nexports._coreCreateElement = _coreCreateElement;\nfunction _createDrawable(ctor) {\n    let child;\n    try {\n        child = ctor();\n    }\n    catch (e) {\n        child = new ctor();\n    }\n    return child;\n}\nfunction _createStandardElement(obj) {\n    let elem;\n    let type = obj.type || \"div\";\n    if (obj.namespace) {\n        elem = document.createElementNS(obj.namespace, type);\n    }\n    else {\n        elem = document.createElement(type);\n    }\n    return elem;\n}\nfunction _setElemIdentfiers(elem, obj, keyedElems, drawable) {\n    if (obj.id) {\n        _handleSelector(obj.id, (id) => elem.setAttribute(\"id\", id));\n    }\n    if (obj.key && keyedElems) {\n        if (drawable) {\n            keyedElems[obj.key] = drawable;\n        }\n        else {\n            keyedElems[obj.key] = elem;\n        }\n    }\n}\nfunction _setElemClass(elem, obj) {\n    const cls = obj.cls;\n    if (!cls) {\n        return;\n    }\n    _handleSelector(cls, (v) => _innerSetElemClass(elem, v, obj));\n}\nfunction _innerSetElemClass(elem, cls, obj) {\n    if (_typeGuards_1.isClassDefinition(cls)) {\n        _setElemStyles(elem, { styles: cls.styles });\n        _setElemClassName(elem, cls.name);\n    }\n    else {\n        _setElemClassName(elem, cls);\n    }\n}\nfunction _setElemClassName(elem, name) {\n    style_helpers_1.clearClass(elem);\n    if (shared_types_1.isString(name)) {\n        style_helpers_1.addClass(elem, name);\n    }\n    else if (shared_types_1.isArray(name)) {\n        style_helpers_1.addClass(elem, name.join(\" \"));\n    }\n    ;\n}\nfunction _setElemStyles(elem, obj) {\n    const styles = obj.styles;\n    if (!styles) {\n        return;\n    }\n    let styleArray;\n    if (shared_types_1.isArray(styles)) {\n        styleArray = [...styles];\n    }\n    else {\n        styleArray = [styles];\n    }\n    for (let s of styleArray) {\n        _handleSelector(s, (v) => _innerSetElemStyles(elem, v));\n    }\n}\nfunction _innerSetElemStyles(elem, styles) {\n    const flattenedStyles = style_helpers_1.flattenStyles(styles);\n    object_helpers_1.map(flattenedStyles, (value, selector) => {\n        style_libraries_1.createCssClass(selector, value, 'create_elements');\n    });\n}\nfunction _setElemAttributes(elem, obj) {\n    if (!obj.attr) {\n        obj.attr = {};\n    }\n    if (_isFocusable(obj)) {\n        obj.focusable = true;\n    }\n    if (_needsTabIndex(obj)) {\n        obj.attr.tabindex = 0;\n    }\n    object_helpers_1.map(obj.attr, (value, key) => {\n        _handleSelector(value, (v) => _innerSetAttribute(elem, v, key));\n    });\n}\nfunction _innerSetAttribute(elem, value, key) {\n    if (shared_types_1.isNullOrUndefined(value)) {\n        return;\n    }\n    if (value.key) {\n        let pair = value;\n        _setElemAttribute(elem, pair.key, pair.val);\n    }\n    else {\n        _setElemAttribute(elem, key, value);\n    }\n}\nfunction _setElemAttribute(elem, key, value) {\n    switch (key) {\n        case \"value\":\n            elem.value = value;\n            break;\n        default:\n            elem.setAttribute(key, value);\n            break;\n    }\n}\nfunction _isFocusable(obj) {\n    if (!shared_types_1.isNullOrUndefined(obj.focusable)) {\n        return obj.focusable;\n    }\n    if (!obj.eventListeners) {\n        return false;\n    }\n    if (!obj.eventListeners.click) {\n        return false;\n    }\n    return true;\n}\nfunction _needsTabIndex(obj) {\n    if (!_isFocusable(obj)) {\n        return false;\n    }\n    if (obj.attr.tabIndex) {\n        return false;\n    }\n    return true;\n}\nfunction _setElemStyle(elem, obj) {\n    if (!obj.style) {\n        return;\n    }\n    _handleSelector(obj.style, (style) => {\n        object_helpers_1.map(style, (val, key) => {\n            elem.style[key] = val;\n        });\n    });\n}\nfunction _setEventListeners(elem, obj) {\n    if (!obj.eventListeners) {\n        return;\n    }\n    if (obj.focusable && obj.eventListeners.click && !obj.eventListeners.keypress) {\n        let clickFunc = obj.eventListeners.click;\n        obj.eventListeners.keypress = (e) => {\n            if (e.keyCode !== 13 && e.keyCode !== 32) {\n                return;\n            }\n            clickFunc(e);\n            e.preventDefault();\n        };\n        let preventFocus = false;\n        obj.eventListeners.mousedown = (e) => {\n            preventFocus = true;\n            elem.blur();\n        };\n        obj.eventListeners.mouseup = (e) => {\n            preventFocus = false;\n        };\n        obj.eventListeners.focus = (e) => {\n            if (preventFocus) {\n                e.preventDefault();\n                elem.blur();\n                return false;\n            }\n        };\n    }\n    object_helpers_1.map(obj.eventListeners, (listener, key) => {\n        elem.addEventListener(key, listener);\n    });\n}\nfunction _setElemBaseContent(elem, obj) {\n    if (obj.content) {\n        _handleSelector(obj.content, (innerHTML) => elem.innerHTML = innerHTML);\n    }\n    else if (obj.innerHTML) {\n        _handleSelector(obj.innerHTML, (innerHTML) => elem.innerHTML = innerHTML);\n    }\n    else if (obj.innerText) {\n        _handleSelector(obj.innerText, (innerText) => elem.innerText = innerText);\n    }\n}\nfunction _addElemChildren(elem, obj, keyedElems, recurseVia) {\n    if (!obj.children) {\n        return;\n    }\n    _handleSelector(obj.children, (v) => {\n        elem.innerHTML = \"\";\n        _innerAddElemChildren(elem, v, obj.namespace, keyedElems, recurseVia);\n    });\n}\nfunction _innerAddElemChildren(elem, children, namespace, keyedElems, recurseVia) {\n    for (let c of children) {\n        if (!c) {\n            console.warn(\"cannot append non-existent child element\");\n            continue;\n        }\n        _handleSelector(c, (v) => {\n            _innerAddElemChild(elem, v, namespace, keyedElems, recurseVia);\n        });\n    }\n}\nfunction _innerAddElemChild(elem, child, namespace, keyedElems, recurseVia) {\n    if (shared_types_1.isArray(child)) {\n        _innerAddElemChildren(elem, child, namespace, keyedElems, recurseVia);\n    }\n    else if (shared_types_1.isDrawable(child)) {\n        child.draw(elem);\n    }\n    else if (child.setAttribute) {\n        elem.appendChild(child);\n    }\n    else {\n        let def = child;\n        if (namespace) {\n            def.namespace = namespace;\n        }\n        let c = recurseVia(def, keyedElems);\n        elem.appendChild(c);\n    }\n}\nfunction _appendElemToParent(obj, elem) {\n    if (!obj.parent) {\n        return;\n    }\n    if (shared_types_1.isDrawable(elem)) {\n        elem.draw(obj.parent);\n    }\n    else {\n        obj.parent.appendChild(elem);\n    }\n}\nconst _setElemSelector = (obj, elem) => {\n    if (!obj.selector) {\n        return;\n    }\n    const { selector, applyCb } = obj.selector;\n    selector.apply((payload) => { applyCb(payload, elem); });\n    const value = selector.getData();\n    applyCb({ value, eventType: 'none' }, elem);\n};\nconst _handleSelector = (value, cb) => {\n    if (model_1.isSelector(value)) {\n        value.apply((payload) => {\n            const { value } = payload;\n            cb(value, payload);\n        });\n    }\n    else {\n        cb(value, {});\n    }\n};\n\n\n//# sourceURL=webpack:///./node_modules/@toolkip/create-elements/dist/_coreCreateElement.js?");
+
+/***/ }),
+
+/***/ "./node_modules/@toolkip/create-elements/dist/_typeGuards.js":
+/*!*******************************************************************!*\
+  !*** ./node_modules/@toolkip/create-elements/dist/_typeGuards.js ***!
+  \*******************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+eval("\nObject.defineProperty(exports, \"__esModule\", { value: true });\nconst shared_types_1 = __webpack_require__(/*! @toolkip/shared-types */ \"./node_modules/@toolkip/shared-types/dist/index.js\");\nfunction isIElemDefinition(test) {\n    let out;\n    let comp = {\n        attr: null,\n        children: null,\n        cls: \"\",\n        content: \"\",\n        id: \"\",\n        parent: null,\n        type: \"\"\n    };\n    if (shared_types_1.isInterface(test, comp)) {\n        return true;\n    }\n    return false;\n}\nexports.isIElemDefinition = isIElemDefinition;\nfunction isClassDefinition(test) {\n    if (shared_types_1.isString(test)) {\n        return false;\n    }\n    if (shared_types_1.isArray(test)) {\n        return false;\n    }\n    return true;\n}\nexports.isClassDefinition = isClassDefinition;\n\n\n//# sourceURL=webpack:///./node_modules/@toolkip/create-elements/dist/_typeGuards.js?");
+
+/***/ }),
+
+/***/ "./node_modules/@toolkip/create-elements/dist/createElement.js":
+/*!*********************************************************************!*\
+  !*** ./node_modules/@toolkip/create-elements/dist/createElement.js ***!
+  \*********************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+eval("\nObject.defineProperty(exports, \"__esModule\", { value: true });\nconst _coreCreateElement_1 = __webpack_require__(/*! ./_coreCreateElement */ \"./node_modules/@toolkip/create-elements/dist/_coreCreateElement.js\");\nconst _constants_1 = __webpack_require__(/*! ./_constants */ \"./node_modules/@toolkip/create-elements/dist/_constants.js\");\nfunction createElement(obj, keyedElems) {\n    if (!obj) {\n        return;\n    }\n    return _coreCreateElement_1._coreCreateElement(obj, keyedElems);\n}\nexports.createElement = createElement;\nfunction createElements(objs, keyedElems) {\n    if (!objs) {\n        return;\n    }\n    return _coreCreateElement_1._coreCreateElements(objs, keyedElems);\n}\nexports.createElements = createElements;\nfunction createCustomElement(obj, keyedElems, recurseVia) {\n    if (!obj) {\n        return;\n    }\n    return _coreCreateElement_1._coreCreateElement(obj, keyedElems, recurseVia);\n}\nexports.createCustomElement = createCustomElement;\nfunction createSVGElement(def, keyedElems) {\n    if (!def) {\n        return;\n    }\n    def.type = \"svg\";\n    def.namespace = _constants_1.SVG_NAMESPACE;\n    return _coreCreateElement_1._coreCreateElement(def, keyedElems);\n}\nexports.createSVGElement = createSVGElement;\nfunction createSVGElements(defs, keyedElems) {\n    if (!defs) {\n        return;\n    }\n    const out = [];\n    for (let d of defs) {\n        out.push(createSVGElement(d, keyedElems));\n    }\n    return out;\n}\nexports.createSVGElements = createSVGElements;\n\n\n//# sourceURL=webpack:///./node_modules/@toolkip/create-elements/dist/createElement.js?");
+
+/***/ }),
+
+/***/ "./node_modules/@toolkip/create-elements/dist/createInputs.js":
+/*!********************************************************************!*\
+  !*** ./node_modules/@toolkip/create-elements/dist/createInputs.js ***!
+  \********************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+eval("\nObject.defineProperty(exports, \"__esModule\", { value: true });\nconst identifiable_1 = __webpack_require__(/*! @toolkip/identifiable */ \"./node_modules/@toolkip/identifiable/dist/index.js\");\nconst createElement_1 = __webpack_require__(/*! ./createElement */ \"./node_modules/@toolkip/create-elements/dist/createElement.js\");\nfunction createInput(def, keyedElems) {\n    const convertedDef = Object.assign(Object.assign({}, def), { type: 'input', attr: Object.assign(Object.assign({}, def.attr), { value: def.value, type: def.type }), eventListeners: {\n            change: def.onChange\n        } });\n    return createElement_1.createElement(convertedDef, keyedElems);\n}\nexports.createInput = createInput;\nfunction createLabeledInput(lblDef, inputDef, keyedElems) {\n    if (!inputDef.id) {\n        const id = identifiable_1.IdentifierAssigner.generateUniqueId(\"input\", \"genInput\");\n        inputDef.id = id;\n        inputDef.attr = Object.assign(Object.assign({}, inputDef.attr), { name: id });\n    }\n    lblDef.type = 'label';\n    lblDef.attr = Object.assign(Object.assign({}, lblDef.attr), { for: inputDef.id });\n    return [\n        createElement_1.createElement(lblDef, keyedElems),\n        createInput(inputDef, keyedElems)\n    ];\n}\nexports.createLabeledInput = createLabeledInput;\nfunction createButton(def, keyedElems) {\n    const convertedDef = Object.assign(Object.assign({}, def), { type: 'button', eventListeners: {\n            click: def.onClick\n        }, content: def.label });\n    return createElement_1.createElement(convertedDef, keyedElems);\n}\nexports.createButton = createButton;\n\n\n//# sourceURL=webpack:///./node_modules/@toolkip/create-elements/dist/createInputs.js?");
+
+/***/ }),
+
+/***/ "./node_modules/@toolkip/create-elements/dist/createTables.js":
+/*!********************************************************************!*\
+  !*** ./node_modules/@toolkip/create-elements/dist/createTables.js ***!
+  \********************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+eval("\nObject.defineProperty(exports, \"__esModule\", { value: true });\nconst createElement_1 = __webpack_require__(/*! ./createElement */ \"./node_modules/@toolkip/create-elements/dist/createElement.js\");\nfunction createTable(tableID, tableClass, elements, rowNum, colNum) {\n    let tbl;\n    let row;\n    let cell;\n    let elem;\n    let rIdx;\n    let cIdx;\n    if (!rowNum) {\n        rowNum = (elements && elements.length) || 0;\n    }\n    tbl = createElement_1.createElement({\n        type: \"table\",\n        cls: tableClass\n    });\n    for (rIdx = 0; rIdx < rowNum; rIdx += 1) {\n        if (!colNum) {\n            colNum = elements[rIdx].length;\n        }\n        row = tbl.insertRow(-1);\n        for (cIdx = 0; cIdx < colNum; cIdx += 1) {\n            elem = elements[rIdx][cIdx];\n            cell = row.insertCell(-1);\n            processCellContents(elem, cell);\n        }\n    }\n    return tbl;\n}\nexports.createTable = createTable;\nfunction processCellContents(data, cell) {\n    ;\n    let content;\n    let key;\n    if (!data) {\n        return cell;\n    }\n    if (typeof data == \"string\") {\n        cell.innerHTML = data;\n    }\n    else if (data.appendChild) {\n        cell.appendChild(data);\n    }\n    else {\n        if (data.create) {\n            content = createElement_1.createElement(data.create);\n            cell.appendChild(content);\n        }\n        else {\n            cell.innerHTML = data.content;\n        }\n        for (key in data.attr) {\n            if (data.attr.hasOwnProperty(key)) {\n                cell.setAttribute(key, data.attr[key]);\n            }\n        }\n    }\n    return cell;\n}\nexports.processCellContents = processCellContents;\n;\nfunction addRow(table, elements, idx, colNum) {\n    ;\n    let row;\n    let cell;\n    let cIdx;\n    let data;\n    if (!idx && (idx !== 0)) {\n        idx = -1;\n    }\n    if (!colNum && colNum !== 0) {\n        colNum = elements.length;\n    }\n    if (!table)\n        return;\n    if (!table.insertRow)\n        return;\n    row = table.insertRow(idx);\n    for (cIdx = 0; cIdx < colNum; cIdx += 1) {\n        cell = row.insertCell(-1);\n        data = elements[cIdx] || \"\";\n        processCellContents(data, cell);\n    }\n    return row;\n}\nexports.addRow = addRow;\n;\n\n\n//# sourceURL=webpack:///./node_modules/@toolkip/create-elements/dist/createTables.js?");
+
+/***/ }),
+
+/***/ "./node_modules/@toolkip/create-elements/dist/index.js":
+/*!*************************************************************!*\
+  !*** ./node_modules/@toolkip/create-elements/dist/index.js ***!
+  \*************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+eval("\nfunction __export(m) {\n    for (var p in m) if (!exports.hasOwnProperty(p)) exports[p] = m[p];\n}\nObject.defineProperty(exports, \"__esModule\", { value: true });\n__export(__webpack_require__(/*! ./_constants */ \"./node_modules/@toolkip/create-elements/dist/_constants.js\"));\n__export(__webpack_require__(/*! ./_typeGuards */ \"./node_modules/@toolkip/create-elements/dist/_typeGuards.js\"));\n__export(__webpack_require__(/*! ./createElement */ \"./node_modules/@toolkip/create-elements/dist/createElement.js\"));\n__export(__webpack_require__(/*! ./createInputs */ \"./node_modules/@toolkip/create-elements/dist/createInputs.js\"));\n__export(__webpack_require__(/*! ./createTables */ \"./node_modules/@toolkip/create-elements/dist/createTables.js\"));\n\n\n//# sourceURL=webpack:///./node_modules/@toolkip/create-elements/dist/index.js?");
+
+/***/ }),
+
+/***/ "./node_modules/@toolkip/history/dist/history.js":
+/*!*******************************************************!*\
+  !*** ./node_modules/@toolkip/history/dist/history.js ***!
+  \*******************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+eval("\nObject.defineProperty(exports, \"__esModule\", { value: true });\nconst historyNode_1 = __webpack_require__(/*! ./historyNode */ \"./node_modules/@toolkip/history/dist/historyNode.js\");\nconst object_helpers_1 = __webpack_require__(/*! @toolkip/object-helpers */ \"./node_modules/@toolkip/object-helpers/dist/index.js\");\nclass HistoryChain {\n    get currentState() { return this._curNode.data; }\n    push(data) {\n        if (this._preventAdditions) {\n            return;\n        }\n        let node = new historyNode_1.HistoryNode(data);\n        if (!this._start) {\n            this._start = node;\n            this._end = node;\n            this._curNode = node;\n            return;\n        }\n        if (this._curNode !== this._end) {\n            this._clearToCurIdx();\n        }\n        this._end.next = node;\n        node.previous = this._end;\n        this._end = node;\n        this._curNode = this._end;\n    }\n    _clearToCurIdx() {\n        this._end = this._curNode;\n        this._curNode.next = null;\n    }\n    navigateBack(cb) {\n        if (!this._curNode.previous) {\n            return null;\n        }\n        const out = this._curNode.previous.data;\n        this._curNode = this._curNode.previous;\n        if (cb) {\n            this._handleNavigateCallback(out, cb);\n        }\n        return out;\n    }\n    navigateForward(cb) {\n        if (!this._curNode.next) {\n            return null;\n        }\n        const out = this._curNode.next.data;\n        this._curNode = this._curNode.next;\n        if (cb) {\n            this._handleNavigateCallback(out, cb);\n        }\n        return out;\n    }\n    _handleNavigateCallback(state, cb) {\n        this._preventAdditions = true;\n        cb(state);\n        this._preventAdditions = false;\n    }\n    updateCurrentState(newState) {\n        if (!this._curNode) {\n            return false;\n        }\n        let curState = this._curNode.data;\n        let combinedState = object_helpers_1.combineObjects(curState, newState, true);\n        this._curNode.data = combinedState;\n        return true;\n    }\n}\nexports.HistoryChain = HistoryChain;\n\n\n//# sourceURL=webpack:///./node_modules/@toolkip/history/dist/history.js?");
+
+/***/ }),
+
+/***/ "./node_modules/@toolkip/history/dist/historyNode.js":
+/*!***********************************************************!*\
+  !*** ./node_modules/@toolkip/history/dist/historyNode.js ***!
+  \***********************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+eval("\nObject.defineProperty(exports, \"__esModule\", { value: true });\nclass HistoryNode {\n    constructor(data) {\n        this.data = data;\n    }\n}\nexports.HistoryNode = HistoryNode;\n\n\n//# sourceURL=webpack:///./node_modules/@toolkip/history/dist/historyNode.js?");
+
+/***/ }),
+
+/***/ "./node_modules/@toolkip/history/dist/index.js":
+/*!*****************************************************!*\
+  !*** ./node_modules/@toolkip/history/dist/index.js ***!
+  \*****************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+eval("\nfunction __export(m) {\n    for (var p in m) if (!exports.hasOwnProperty(p)) exports[p] = m[p];\n}\nObject.defineProperty(exports, \"__esModule\", { value: true });\n__export(__webpack_require__(/*! ./history */ \"./node_modules/@toolkip/history/dist/history.js\"));\n__export(__webpack_require__(/*! ./historyNode */ \"./node_modules/@toolkip/history/dist/historyNode.js\"));\n__export(__webpack_require__(/*! ./undoChain */ \"./node_modules/@toolkip/history/dist/undoChain.js\"));\n\n\n//# sourceURL=webpack:///./node_modules/@toolkip/history/dist/index.js?");
+
+/***/ }),
+
+/***/ "./node_modules/@toolkip/history/dist/undoChain.js":
+/*!*********************************************************!*\
+  !*** ./node_modules/@toolkip/history/dist/undoChain.js ***!
+  \*********************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+eval("\nObject.defineProperty(exports, \"__esModule\", { value: true });\nconst history_1 = __webpack_require__(/*! ./history */ \"./node_modules/@toolkip/history/dist/history.js\");\nclass _UndoChain extends history_1.HistoryChain {\n    constructor() {\n        super();\n        window.addEventListener(\"keyup\", (event) => {\n            if (!event.ctrlKey) {\n                return;\n            }\n            if (event.keyCode !== 90) {\n                return;\n            }\n            if (this._shouldIgnoreEvent(event)) {\n                return;\n            }\n            if (event.shiftKey) {\n                this.redo();\n            }\n            else {\n                this.undo();\n            }\n        });\n    }\n    undo() {\n        let undoable = this.navigateBack();\n        if (!undoable || !undoable.reverseFunction) {\n            return;\n        }\n        undoable.reverseFunction();\n    }\n    redo() {\n        let undoable = this.navigateForward();\n        if (!undoable || !undoable.forwardFunction) {\n            return;\n        }\n        undoable.forwardFunction();\n    }\n}\nexports._UndoChain = _UndoChain;\n\n\n//# sourceURL=webpack:///./node_modules/@toolkip/history/dist/undoChain.js?");
+
+/***/ }),
+
+/***/ "./node_modules/@toolkip/html-helpers/dist/_typeguards.js":
+/*!****************************************************************!*\
+  !*** ./node_modules/@toolkip/html-helpers/dist/_typeguards.js ***!
+  \****************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+eval("\nObject.defineProperty(exports, \"__esModule\", { value: true });\nconst shared_types_1 = __webpack_require__(/*! @toolkip/shared-types */ \"./node_modules/@toolkip/shared-types/dist/index.js\");\nfunction isHTMLElement(test) {\n    return (test instanceof HTMLElement);\n}\nexports.isHTMLElement = isHTMLElement;\nfunction hasOffsets(test) {\n    if (shared_types_1.isNullOrUndefined(test.offsetHeight)) {\n        return false;\n    }\n    return true;\n}\nexports.hasOffsets = hasOffsets;\nfunction isSelectable(test) {\n    return !!test.select;\n}\nexports.isSelectable = isSelectable;\n\n\n//# sourceURL=webpack:///./node_modules/@toolkip/html-helpers/dist/_typeguards.js?");
+
+/***/ }),
+
+/***/ "./node_modules/@toolkip/html-helpers/dist/elementPositioning.js":
+/*!***********************************************************************!*\
+  !*** ./node_modules/@toolkip/html-helpers/dist/elementPositioning.js ***!
+  \***********************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+eval("\nObject.defineProperty(exports, \"__esModule\", { value: true });\nfunction globalOffsetLeft(elem, parent, useStandardParent) {\n    return _auxGlobalOffset(elem, \"offsetLeft\", parent, useStandardParent);\n}\nexports.globalOffsetLeft = globalOffsetLeft;\n;\nfunction globalOffsetTop(elem, parent, useStandardParent) {\n    return _auxGlobalOffset(elem, \"offsetTop\", parent, useStandardParent);\n}\nexports.globalOffsetTop = globalOffsetTop;\n;\nfunction globalOffsets(elem, parent, useStandardParent) {\n    ;\n    return {\n        left: globalOffsetLeft(elem, parent, useStandardParent),\n        top: globalOffsetTop(elem, parent, useStandardParent)\n    };\n}\nexports.globalOffsets = globalOffsets;\n;\nfunction _auxGlobalOffset(elem, type, parent, useStandardParent) {\n    let offset = 0;\n    while (elem && (elem !== parent)) {\n        if (elem[type]) {\n            offset += elem[type];\n        }\n        if (useStandardParent) {\n            elem = elem.parentNode;\n        }\n        else {\n            elem = elem.offsetParent;\n        }\n    }\n    return offset;\n}\n;\nfunction getScrollPosition() {\n    let out = {\n        x: (window.pageXOffset) ? window.pageXOffset : document.body.scrollLeft,\n        y: (window.pageYOffset) ? window.pageYOffset : document.body.scrollTop\n    };\n    return out;\n}\nexports.getScrollPosition = getScrollPosition;\nfunction measureElement(elem, parent) {\n    let added = false;\n    if (!elem.parentNode) {\n        added = true;\n        let origOpacity = elem.style.opacity;\n        elem.style.opacity = \"0\";\n        window.setTimeout(() => { elem.style.opacity = origOpacity; });\n        if (!parent) {\n            parent = document.body;\n        }\n        parent.appendChild(elem);\n    }\n    let rect = elem.getBoundingClientRect();\n    if (added) {\n        parent.removeChild(elem);\n    }\n    return rect;\n}\nexports.measureElement = measureElement;\nfunction findCommonParent(elem_a, elem_b) {\n    let parent_a;\n    let parent_b;\n    if (!elem_a || !elem_b)\n        return undefined;\n    parent_a = elem_a;\n    parent_b = elem_b;\n    while (parent_a) {\n        while (parent_b) {\n            if (parent_a === parent_b)\n                return parent_a;\n            parent_b = parent_b.parentNode;\n        }\n        parent_a = parent_a.parentNode;\n        parent_b = elem_b;\n    }\n    return undefined;\n}\nexports.findCommonParent = findCommonParent;\n;\nfunction moveRelToElem(elem, ref, x, y, no_move) {\n    let offset_me;\n    let offset_them;\n    let dx;\n    let dy;\n    offset_me = globalOffsets(elem);\n    offset_them = globalOffsets(elem);\n    dx = (offset_them.left + x) - offset_me.left;\n    dy = (offset_them.top + y) - offset_me.top;\n    if (!no_move) {\n        elem.style.position = \"absolute\";\n        elem.style.left = dx + \"px\";\n        elem.style.top = dy + \"px\";\n    }\n    return { x: dx, y: dy };\n}\nexports.moveRelToElem = moveRelToElem;\n;\nfunction isInDOM(elem) {\n    let parentNode = elem.parentNode;\n    while (parentNode) {\n        if (parentNode === document.body) {\n            return true;\n        }\n        parentNode = parentNode.parentNode;\n    }\n    return false;\n}\nexports.isInDOM = isInDOM;\n\n\n//# sourceURL=webpack:///./node_modules/@toolkip/html-helpers/dist/elementPositioning.js?");
+
+/***/ }),
+
+/***/ "./node_modules/@toolkip/html-helpers/dist/generalHelpers.js":
+/*!*******************************************************************!*\
+  !*** ./node_modules/@toolkip/html-helpers/dist/generalHelpers.js ***!
+  \*******************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+eval("\nObject.defineProperty(exports, \"__esModule\", { value: true });\nconst style_helpers_1 = __webpack_require__(/*! @toolkip/style-helpers */ \"./node_modules/@toolkip/style-helpers/dist/index.js\");\nconst _typeguards_1 = __webpack_require__(/*! ./_typeguards */ \"./node_modules/@toolkip/html-helpers/dist/_typeguards.js\");\nconst shared_types_1 = __webpack_require__(/*! @toolkip/shared-types */ \"./node_modules/@toolkip/shared-types/dist/index.js\");\nfunction removeSubclassFromAllElements(cls, subcls, exception) {\n    let elems;\n    let e;\n    let elem;\n    elems = document.getElementsByClassName(cls);\n    for (e = 0; e < elems.length; e += 1) {\n        elem = elems[e];\n        if (elem !== exception) {\n            style_helpers_1.removeClass(elem, subcls);\n        }\n    }\n}\nexports.removeSubclassFromAllElements = removeSubclassFromAllElements;\n;\nfunction addResizingElement(elem, fixedRatio, forceInitW, forceInitH) {\n}\n;\nfunction resizeElement(obj) {\n}\n;\nfunction isChildEventTarget(ev, root) {\n    return isChild(root, ev.target);\n}\nexports.isChildEventTarget = isChildEventTarget;\n;\nfunction isChild(root, child) {\n    ;\n    let parent;\n    parent = child;\n    while (parent) {\n        if (parent === root)\n            return true;\n        parent = parent.parentNode;\n    }\n    return false;\n}\nexports.isChild = isChild;\n;\nfunction appendChildren(parent, ...kids) {\n    ;\n    let idx;\n    for (idx = 0; idx < kids.length; idx += 1) {\n        parent.appendChild(kids[idx]);\n    }\n}\nexports.appendChildren = appendChildren;\nfunction clearChildren(parent) {\n    for (let idx = parent.children.length - 1; idx >= 0; idx -= 1) {\n        let child = parent.children[idx];\n        parent.removeChild(child);\n    }\n}\nexports.clearChildren = clearChildren;\nfunction moveElemRelativePosition(elem, distance) {\n    let top = parseInt(elem.style.top) || 0;\n    let left = parseInt(elem.style.left) || 0;\n    elem.style.top = (top + distance.y) + \"px\";\n    elem.style.left = (left + distance.x) + \"px\";\n}\nexports.moveElemRelativePosition = moveElemRelativePosition;\nfunction resetPageFocus() {\n    let oldTabIndex = -1;\n    if (shared_types_1.isNullOrUndefined(document.body.tabIndex)) {\n        oldTabIndex = document.body.tabIndex;\n    }\n    document.body.tabIndex = 0;\n    document.body.focus();\n    document.body.tabIndex = oldTabIndex;\n}\nexports.resetPageFocus = resetPageFocus;\nfunction removeElement(elem) {\n    if (!elem.parentNode) {\n        return;\n    }\n    elem.parentNode.removeChild(elem);\n}\nexports.removeElement = removeElement;\nfunction select(htmlElem) {\n    if (_typeguards_1.isSelectable(htmlElem)) {\n        htmlElem.select();\n    }\n    else {\n        let range = document.createRange();\n        range.selectNodeContents(htmlElem);\n        let selection = window.getSelection();\n        selection.removeAllRanges();\n        selection.addRange(range);\n    }\n}\nexports.select = select;\nexports.HTML_TAB = \"&nbsp;&nbsp;&nbsp;&nbsp;\";\nfunction encodeForHTML(data) {\n    data = data.replace(/&/g, \"&amp;\");\n    data = data.replace(/</g, \"&lt;\");\n    data = data.replace(/>/g, \"&gt;\");\n    data = data.replace(/\\\\n/g, \"<br>\");\n    data = data.replace(/\\\\t/g, exports.HTML_TAB);\n    return data;\n}\nexports.encodeForHTML = encodeForHTML;\nfunction decodeFromHTML(data) {\n    data = data.replace(/&amp;/g, \"&\");\n    data = data.replace(/&lt;/g, \"<\");\n    data = data.replace(/&gt;/g, \">\");\n    data = data.replace(/&quot;/g, \"\\\"\");\n    data = data.replace(/&apos;/g, \"'\");\n    data = data.replace(/<br>/g, \"\\n\");\n    data = data.replace(new RegExp(exports.HTML_TAB, \"g\"), \"\\t\");\n    data = data.replace(/&nbsp;/g, \" \");\n    return data;\n}\nexports.decodeFromHTML = decodeFromHTML;\nfunction replaceElemWithElem(elemToReplace, replacement) {\n    if (!elemToReplace.parentNode) {\n        return;\n    }\n    let nextChild = elemToReplace.nextSibling;\n    let parent = elemToReplace.parentNode;\n    parent.removeChild(elemToReplace);\n    parent.insertBefore(replacement, nextChild);\n}\nexports.replaceElemWithElem = replaceElemWithElem;\nfunction isVisible(elem) {\n    if (_typeguards_1.hasOffsets(elem)) {\n        if (elem.offsetWidth !== 0) {\n            return true;\n        }\n        if (elem.offsetHeight !== 0) {\n            return true;\n        }\n    }\n    else {\n        if (elem.clientWidth !== 0) {\n            return true;\n        }\n        if (elem.clientHeight !== 0) {\n            return true;\n        }\n    }\n    return false;\n}\nexports.isVisible = isVisible;\nfunction getElementsBySelector(selector) {\n    let list = document.body.querySelectorAll(selector);\n    let out = [];\n    for (let l of list) {\n        out.push(l);\n    }\n    return out;\n}\nexports.getElementsBySelector = getElementsBySelector;\nfunction doesElementMatchSelector(elem, selector) {\n    if (!elem) {\n        return false;\n    }\n    if (!elem.matches) {\n        return false;\n    }\n    return elem.matches(selector);\n}\nexports.doesElementMatchSelector = doesElementMatchSelector;\n\n\n//# sourceURL=webpack:///./node_modules/@toolkip/html-helpers/dist/generalHelpers.js?");
+
+/***/ }),
+
+/***/ "./node_modules/@toolkip/html-helpers/dist/index.js":
+/*!**********************************************************!*\
+  !*** ./node_modules/@toolkip/html-helpers/dist/index.js ***!
+  \**********************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+eval("\nfunction __export(m) {\n    for (var p in m) if (!exports.hasOwnProperty(p)) exports[p] = m[p];\n}\nObject.defineProperty(exports, \"__esModule\", { value: true });\n__export(__webpack_require__(/*! ./_typeguards */ \"./node_modules/@toolkip/html-helpers/dist/_typeguards.js\"));\n__export(__webpack_require__(/*! ./elementPositioning */ \"./node_modules/@toolkip/html-helpers/dist/elementPositioning.js\"));\n__export(__webpack_require__(/*! ./generalHelpers */ \"./node_modules/@toolkip/html-helpers/dist/generalHelpers.js\"));\n\n\n//# sourceURL=webpack:///./node_modules/@toolkip/html-helpers/dist/index.js?");
+
+/***/ }),
+
+/***/ "./node_modules/@toolkip/identifiable/dist/_typeGuards.js":
+/*!****************************************************************!*\
+  !*** ./node_modules/@toolkip/identifiable/dist/_typeGuards.js ***!
+  \****************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+eval("\nObject.defineProperty(exports, \"__esModule\", { value: true });\nexports.isIdentifiable = (test) => {\n    if (test.id) {\n        return true;\n    }\n    return false;\n};\n\n\n//# sourceURL=webpack:///./node_modules/@toolkip/identifiable/dist/_typeGuards.js?");
+
+/***/ }),
+
+/***/ "./node_modules/@toolkip/identifiable/dist/index.js":
+/*!**********************************************************!*\
+  !*** ./node_modules/@toolkip/identifiable/dist/index.js ***!
+  \**********************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+eval("\nfunction __export(m) {\n    for (var p in m) if (!exports.hasOwnProperty(p)) exports[p] = m[p];\n}\nObject.defineProperty(exports, \"__esModule\", { value: true });\n__export(__webpack_require__(/*! ./_typeGuards */ \"./node_modules/@toolkip/identifiable/dist/_typeGuards.js\"));\n__export(__webpack_require__(/*! ./uniqueId */ \"./node_modules/@toolkip/identifiable/dist/uniqueId.js\"));\n\n\n//# sourceURL=webpack:///./node_modules/@toolkip/identifiable/dist/index.js?");
+
+/***/ }),
+
+/***/ "./node_modules/@toolkip/identifiable/dist/uniqueId.js":
+/*!*************************************************************!*\
+  !*** ./node_modules/@toolkip/identifiable/dist/uniqueId.js ***!
+  \*************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+eval("\nObject.defineProperty(exports, \"__esModule\", { value: true });\nclass _IdentifierAssigner {\n    constructor() {\n        this._lastIds = { \"id\": 0 };\n    }\n    getLastId(uniqueKey) { return this._lastIds[uniqueKey]; }\n    _cleanUniqueKey(suffix) {\n        if (!suffix) {\n            return \"id\";\n        }\n        return suffix.replace(/-/g, \"_\");\n    }\n    _getNumericId(lastId) {\n        const pieces = lastId.split(\"-\");\n        let numericId = NaN;\n        for (let pc of pieces) {\n            const parsedPiece = parseInt(pc);\n            if (!isNaN(parsedPiece)) {\n                numericId = parsedPiece;\n            }\n        }\n        return numericId;\n    }\n    generateUniqueId(uniqueKey, supplementalSuffix) {\n        uniqueKey = this._cleanUniqueKey(uniqueKey);\n        const nextId = (this._lastIds[uniqueKey] || 0) + 1;\n        this._lastIds[uniqueKey] = nextId;\n        if (supplementalSuffix) {\n            return `${nextId}-${supplementalSuffix}`;\n        }\n        else {\n            return `${nextId}`;\n        }\n    }\n    registerId(idToRegister, uniqueKey) {\n        const lastId = this._getNumericId(idToRegister);\n        const key = this._cleanUniqueKey(uniqueKey);\n        if (isNaN(lastId)) {\n            return false;\n        }\n        if (lastId <= this._lastIds[key]) {\n            return false;\n        }\n        this._lastIds[key] = lastId;\n        return true;\n    }\n    reset(uniqueKey) {\n        const key = this._cleanUniqueKey(uniqueKey);\n        this._lastIds[key] = 0;\n    }\n}\nexports.IdentifierAssigner = new _IdentifierAssigner();\nfunction generateUniqueId(uniqueKey, supplementalSuffix) {\n    return exports.IdentifierAssigner.generateUniqueId(uniqueKey, supplementalSuffix);\n}\nexports.generateUniqueId = generateUniqueId;\nfunction registerUniqueId(lastId, uniqueKey) {\n    return this.IdentifierAssigner.registerId(lastId, uniqueKey);\n}\nexports.registerUniqueId = registerUniqueId;\n\n\n//# sourceURL=webpack:///./node_modules/@toolkip/identifiable/dist/uniqueId.js?");
+
+/***/ }),
+
+/***/ "./node_modules/@toolkip/managers/dist/_typeguards.js":
+/*!************************************************************!*\
+  !*** ./node_modules/@toolkip/managers/dist/_typeguards.js ***!
+  \************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+eval("\nObject.defineProperty(exports, \"__esModule\", { value: true });\nconst dataManager_1 = __webpack_require__(/*! ./dataManager */ \"./node_modules/@toolkip/managers/dist/dataManager.js\");\nfunction isDataManager(test) {\n    return test instanceof dataManager_1.DataManager;\n}\nexports.isDataManager = isDataManager;\n\n\n//# sourceURL=webpack:///./node_modules/@toolkip/managers/dist/_typeguards.js?");
+
+/***/ }),
+
+/***/ "./node_modules/@toolkip/managers/dist/asyncManager.js":
+/*!*************************************************************!*\
+  !*** ./node_modules/@toolkip/managers/dist/asyncManager.js ***!
+  \*************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+eval("\nvar __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {\n    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }\n    return new (P || (P = Promise))(function (resolve, reject) {\n        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }\n        function rejected(value) { try { step(generator[\"throw\"](value)); } catch (e) { reject(e); } }\n        function step(result) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }\n        step((generator = generator.apply(thisArg, _arguments || [])).next());\n    });\n};\nObject.defineProperty(exports, \"__esModule\", { value: true });\nconst dataManager_1 = __webpack_require__(/*! ./dataManager */ \"./node_modules/@toolkip/managers/dist/dataManager.js\");\nclass AsyncManager extends dataManager_1.DataManager {\n    constructor(load, create) {\n        super();\n        this._innerLoad = load;\n        this._innerCreate = create;\n        this._inFlight = {};\n    }\n    _createAndAddDefault(d) {\n        let model = this.create(d);\n        this.add(model);\n        return this;\n    }\n    getOrCreate(id) {\n        return __awaiter(this, void 0, void 0, function* () {\n            if (!id) {\n                throw new Error(\"no ID provided\");\n            }\n            let datum = this.get(id);\n            if (datum) {\n                return datum;\n            }\n            if (this._inFlight[id]) {\n                return this._inFlight[id];\n            }\n            this._inFlight[id] = this._loadAndCreate(id);\n            return this._inFlight[id];\n        });\n    }\n    _loadAndCreate(id) {\n        return __awaiter(this, void 0, void 0, function* () {\n            let d = yield this.load(id);\n            if (!d) {\n                throw new Error(\"no data found for id '\" + id + \"'\");\n            }\n            ;\n            let model = this.create(d);\n            let datum = model;\n            this.add(datum);\n            return datum;\n        });\n    }\n    create(d) {\n        if (this._innerCreate) {\n            return this._innerCreate(d);\n        }\n        else\n            return d;\n    }\n    load(id) {\n        return __awaiter(this, void 0, void 0, function* () {\n            if (!this._innerLoad) {\n                Promise.reject('innerLoad not defined');\n            }\n            return this._innerLoad(id);\n        });\n    }\n}\nexports.AsyncManager = AsyncManager;\n\n\n//# sourceURL=webpack:///./node_modules/@toolkip/managers/dist/asyncManager.js?");
+
+/***/ }),
+
+/***/ "./node_modules/@toolkip/managers/dist/dataManager.js":
+/*!************************************************************!*\
+  !*** ./node_modules/@toolkip/managers/dist/dataManager.js ***!
+  \************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+eval("\nObject.defineProperty(exports, \"__esModule\", { value: true });\nconst object_helpers_1 = __webpack_require__(/*! @toolkip/object-helpers */ \"./node_modules/@toolkip/object-helpers/dist/index.js\");\nclass DataManager {\n    constructor() {\n        this._data = {};\n        this._populateWithDefaultData();\n    }\n    _populateWithDefaultData() { }\n    _createAndAddDefault(data) {\n        this.add(data);\n    }\n    add(datum) {\n        if (this.contains(datum.id)) {\n            return false;\n        }\n        this._data[datum.id] = datum;\n        return true;\n    }\n    remove(id) {\n        if (!this.contains(id)) {\n            return null;\n        }\n        let out = this.get(id);\n        delete this._data[id];\n        return out;\n    }\n    contains(id) {\n        return !!this._data[id];\n    }\n    clear() {\n        this._data = {};\n    }\n    get(id) {\n        if (!this.contains(id)) {\n            return null;\n        }\n        return this._data[id];\n    }\n    map(mapFunc) {\n        object_helpers_1.map(this._data, mapFunc);\n    }\n    toArray() {\n        let out = [];\n        this.map((elem) => {\n            out.push(elem);\n        });\n        return out;\n    }\n    toDictionary() {\n        let out = {};\n        this.map((elem, id) => {\n            out[id] = elem;\n        });\n        return out;\n    }\n    clone() {\n        const out = new DataManager();\n        const dataAsArray = this.toArray();\n        for (let datum of dataAsArray) {\n            out.add(datum);\n        }\n        return out;\n    }\n}\nexports.DataManager = DataManager;\n\n\n//# sourceURL=webpack:///./node_modules/@toolkip/managers/dist/dataManager.js?");
+
+/***/ }),
+
+/***/ "./node_modules/@toolkip/managers/dist/index.js":
+/*!******************************************************!*\
+  !*** ./node_modules/@toolkip/managers/dist/index.js ***!
+  \******************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+eval("\nfunction __export(m) {\n    for (var p in m) if (!exports.hasOwnProperty(p)) exports[p] = m[p];\n}\nObject.defineProperty(exports, \"__esModule\", { value: true });\n__export(__webpack_require__(/*! ./asyncManager */ \"./node_modules/@toolkip/managers/dist/asyncManager.js\"));\n__export(__webpack_require__(/*! ./dataManager */ \"./node_modules/@toolkip/managers/dist/dataManager.js\"));\n__export(__webpack_require__(/*! ./_typeguards */ \"./node_modules/@toolkip/managers/dist/_typeguards.js\"));\n\n\n//# sourceURL=webpack:///./node_modules/@toolkip/managers/dist/index.js?");
+
+/***/ }),
+
+/***/ "./node_modules/@toolkip/model/dist/_shared/_event.js":
+/*!************************************************************!*\
+  !*** ./node_modules/@toolkip/model/dist/_shared/_event.js ***!
+  \************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+eval("\nObject.defineProperty(exports, \"__esModule\", { value: true });\nconst code_event_1 = __webpack_require__(/*! @toolkip/code-event */ \"./node_modules/@toolkip/code-event/dist/index.js\");\nclass ModelEvent extends code_event_1.CodeEvent {\n}\nexports.ModelEvent = ModelEvent;\n\n\n//# sourceURL=webpack:///./node_modules/@toolkip/model/dist/_shared/_event.js?");
+
+/***/ }),
+
+/***/ "./node_modules/@toolkip/model/dist/_shared/index.js":
+/*!***********************************************************!*\
+  !*** ./node_modules/@toolkip/model/dist/_shared/index.js ***!
+  \***********************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+eval("\nfunction __export(m) {\n    for (var p in m) if (!exports.hasOwnProperty(p)) exports[p] = m[p];\n}\nObject.defineProperty(exports, \"__esModule\", { value: true });\n__export(__webpack_require__(/*! ./_event */ \"./node_modules/@toolkip/model/dist/_shared/_event.js\"));\n\n\n//# sourceURL=webpack:///./node_modules/@toolkip/model/dist/_shared/index.js?");
+
+/***/ }),
+
+/***/ "./node_modules/@toolkip/model/dist/_typeguards/core.js":
+/*!**************************************************************!*\
+  !*** ./node_modules/@toolkip/model/dist/_typeguards/core.js ***!
+  \**************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+eval("\nObject.defineProperty(exports, \"__esModule\", { value: true });\nconst _model_1 = __webpack_require__(/*! ../abstractClasses/_model */ \"./node_modules/@toolkip/model/dist/abstractClasses/_model.js\");\nexports.isModel = (test) => {\n    if (test instanceof _model_1._Model) {\n        return true;\n    }\n    return false;\n};\n\n\n//# sourceURL=webpack:///./node_modules/@toolkip/model/dist/_typeguards/core.js?");
+
+/***/ }),
+
+/***/ "./node_modules/@toolkip/model/dist/_typeguards/index.js":
+/*!***************************************************************!*\
+  !*** ./node_modules/@toolkip/model/dist/_typeguards/index.js ***!
+  \***************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+eval("\nfunction __export(m) {\n    for (var p in m) if (!exports.hasOwnProperty(p)) exports[p] = m[p];\n}\nObject.defineProperty(exports, \"__esModule\", { value: true });\n__export(__webpack_require__(/*! ./core */ \"./node_modules/@toolkip/model/dist/_typeguards/core.js\"));\n__export(__webpack_require__(/*! ./specific */ \"./node_modules/@toolkip/model/dist/_typeguards/specific.js\"));\n\n\n//# sourceURL=webpack:///./node_modules/@toolkip/model/dist/_typeguards/index.js?");
+
+/***/ }),
+
+/***/ "./node_modules/@toolkip/model/dist/_typeguards/specific.js":
+/*!******************************************************************!*\
+  !*** ./node_modules/@toolkip/model/dist/_typeguards/specific.js ***!
+  \******************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+eval("\nObject.defineProperty(exports, \"__esModule\", { value: true });\nconst identifiableModel_1 = __webpack_require__(/*! ../objectModels/identifiableModel */ \"./node_modules/@toolkip/model/dist/objectModels/identifiableModel.js\");\nconst objectModels_1 = __webpack_require__(/*! ../objectModels */ \"./node_modules/@toolkip/model/dist/objectModels/index.js\");\nconst primitiveModels_1 = __webpack_require__(/*! ../primitiveModels */ \"./node_modules/@toolkip/model/dist/primitiveModels/index.js\");\nconst arrayModels_1 = __webpack_require__(/*! ../arrayModels */ \"./node_modules/@toolkip/model/dist/arrayModels/index.js\");\nconst selectors_1 = __webpack_require__(/*! ../helpers/selectors */ \"./node_modules/@toolkip/model/dist/helpers/selectors.js\");\nexports.isPrimitiveModel = (test) => {\n    if (test instanceof primitiveModels_1.MPrimitive) {\n        return true;\n    }\n    return false;\n};\nexports.isDateModel = (test) => {\n    if (test instanceof primitiveModels_1.MDate) {\n        return true;\n    }\n    return false;\n};\nexports.isObjectModel = (test) => {\n    if (test instanceof objectModels_1.MObject) {\n        return true;\n    }\n    return false;\n};\nexports.isArrayModel = (test) => {\n    if (test instanceof arrayModels_1.MArray) {\n        return true;\n    }\n    return false;\n};\nexports.isManagerModel = (test) => {\n    if (test instanceof arrayModels_1.MManager) {\n        return true;\n    }\n    return false;\n};\nexports.isIdentifiableModel = (model) => {\n    if (model instanceof identifiableModel_1.MIdentifiable) {\n        return true;\n    }\n    return false;\n};\nexports.isSelector = (test) => {\n    if (test instanceof selectors_1.Selector) {\n        return true;\n    }\n    return false;\n};\n\n\n//# sourceURL=webpack:///./node_modules/@toolkip/model/dist/_typeguards/specific.js?");
+
+/***/ }),
+
+/***/ "./node_modules/@toolkip/model/dist/abstractClasses/_keyedModel.js":
+/*!*************************************************************************!*\
+  !*** ./node_modules/@toolkip/model/dist/abstractClasses/_keyedModel.js ***!
+  \*************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+eval("\nObject.defineProperty(exports, \"__esModule\", { value: true });\nconst _model_1 = __webpack_require__(/*! ./_model */ \"./node_modules/@toolkip/model/dist/abstractClasses/_model.js\");\nconst core_1 = __webpack_require__(/*! ../_typeguards/core */ \"./node_modules/@toolkip/model/dist/_typeguards/core.js\");\nconst shared_types_1 = __webpack_require__(/*! @toolkip/shared-types */ \"./node_modules/@toolkip/shared-types/dist/index.js\");\nclass _KeyedModel extends _model_1._Model {\n    constructor(data, transforms) {\n        super(data, transforms);\n    }\n    getType() { return 'keyed'; }\n    addKeyedListener(key, cbFunc) {\n        this._event.addEventListener((payload) => {\n            if (payload.key !== key) {\n                return;\n            }\n            cbFunc(payload);\n        }, this);\n    }\n    _getApplicableTransforms(key) {\n        if (!key) {\n            return super._getApplicableTransforms();\n        }\n        return this._transforms[key];\n    }\n    get(key) {\n        return this._innerGet(key);\n    }\n    _innerGet(key) {\n        const model = this._getValue(this._innerModel, key);\n        return core_1.isModel(model) ? model.getData() : undefined;\n    }\n    _innerGetData() {\n        if (shared_types_1.isNullOrUndefined(this._innerModel)) {\n            return this._innerModel;\n        }\n        const out = this._getDefaultValues();\n        this._map(this._innerModel, (val, key) => {\n            if (!core_1.isModel(val)) {\n                return;\n            }\n            this._setValue(out, key, val.getData());\n        });\n        return out;\n    }\n    getModel(key) {\n        const m = this._getValue(this._innerModel, key);\n        if (!core_1.isModel(m)) {\n            return null;\n        }\n        switch (m.getType()) {\n            case 'array': return m;\n            case 'keyed': return m;\n            case 'primitive': return m;\n        }\n    }\n    update(key, newValue) {\n        const value = Object.assign(Object.assign({}, this.get(key)), newValue);\n        this._innerSet({ key, value });\n    }\n    set(key, value) {\n        this._innerSet({ key, value });\n    }\n    _innerSet(payload) {\n        const { value, key } = payload;\n        const oldModel = this.getModel(key);\n        if (core_1.isModel(oldModel)) {\n            oldModel.setData(value);\n            this._setValue(this._innerModel, key, oldModel);\n        }\n        else {\n            const oldValue = payload.oldValue || this.get(key);\n            const newModel = this._wrapInModel(value, key);\n            this._setValue(this._innerModel, key, newModel);\n            this._sendUpdate(Object.assign(Object.assign({}, payload), { oldValue, value: newModel.getData() }));\n        }\n        return this.getModel(key);\n    }\n    _innerSetData(payload) {\n        const { value } = payload;\n        if (core_1.isModel(value)) {\n            super._innerSetData(Object.assign(Object.assign({}, payload), { value: this._wrapInModel(value) }));\n        }\n        else if (shared_types_1.isNullOrUndefined(value)) {\n            super._innerSetData(payload);\n        }\n        else {\n            const modelValue = this._getDefaultValues();\n            this._map(value, (val, key) => {\n                let updatedVal = this._wrapInModel(val, key);\n                this._setValue(modelValue, key, updatedVal);\n            });\n            super._innerSetData(Object.assign(Object.assign({}, payload), { value: modelValue }));\n        }\n    }\n    _innerImport(data) {\n        const out = this._getDefaultValues();\n        this._map(data, (val, key) => {\n            var _a;\n            let updatedValue = val;\n            const transform = (_a = this._getApplicableTransforms(key)) === null || _a === void 0 ? void 0 : _a.incoming;\n            if (transform) {\n                updatedValue = transform(val);\n            }\n            this._setValue(out, key, this._wrapInModel(updatedValue, key));\n        });\n        return out;\n    }\n    _innerExport() {\n        const out = this._getDefaultValues();\n        this._map(this._innerModel, (val, key) => {\n            let outValue = core_1.isModel(val) ? val.export() : val;\n            const transform = this._getApplicableTransforms(key);\n            if (transform === null || transform === void 0 ? void 0 : transform.outgoing) {\n                outValue = transform.outgoing(outValue);\n            }\n            this._setValue(out, key, outValue);\n        });\n        return out;\n    }\n}\nexports._KeyedModel = _KeyedModel;\n\n\n//# sourceURL=webpack:///./node_modules/@toolkip/model/dist/abstractClasses/_keyedModel.js?");
+
+/***/ }),
+
+/***/ "./node_modules/@toolkip/model/dist/abstractClasses/_keyedModels.js":
+/*!**************************************************************************!*\
+  !*** ./node_modules/@toolkip/model/dist/abstractClasses/_keyedModels.js ***!
+  \**************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+eval("\nObject.defineProperty(exports, \"__esModule\", { value: true });\nconst _keyedModel_1 = __webpack_require__(/*! ./_keyedModel */ \"./node_modules/@toolkip/model/dist/abstractClasses/_keyedModel.js\");\nconst comparable_1 = __webpack_require__(/*! @toolkip/comparable */ \"./node_modules/@toolkip/comparable/dist/index.js\");\nconst shared_types_1 = __webpack_require__(/*! @toolkip/shared-types */ \"./node_modules/@toolkip/shared-types/dist/index.js\");\nconst core_1 = __webpack_require__(/*! ../_typeguards/core */ \"./node_modules/@toolkip/model/dist/_typeguards/core.js\");\nclass _KeyedModels extends _keyedModel_1._KeyedModel {\n    _getType() { return 'array'; }\n    remove(key) {\n        const out = this.get(key);\n        this._innerSet({\n            key,\n            value: undefined\n        });\n        return out;\n    }\n    findIndex(val) {\n        let out;\n        this._map(this._innerModel, (v, key) => {\n            if (comparable_1.equals(val, core_1.isModel(v) ? v.getData() : v)) {\n                out = key;\n            }\n        });\n        return out;\n    }\n    contains(val) {\n        const key = this.findIndex(val);\n        if (shared_types_1.isUndefined(key)) {\n            return false;\n        }\n        return true;\n    }\n    clear() {\n        this._innerSetData({\n            eventType: 'remove',\n            value: this._getDefaultValues()\n        });\n    }\n}\nexports._KeyedModels = _KeyedModels;\n\n\n//# sourceURL=webpack:///./node_modules/@toolkip/model/dist/abstractClasses/_keyedModels.js?");
+
+/***/ }),
+
+/***/ "./node_modules/@toolkip/model/dist/abstractClasses/_model.js":
+/*!********************************************************************!*\
+  !*** ./node_modules/@toolkip/model/dist/abstractClasses/_model.js ***!
+  \********************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+eval("\nObject.defineProperty(exports, \"__esModule\", { value: true });\nconst comparable_1 = __webpack_require__(/*! @toolkip/comparable */ \"./node_modules/@toolkip/comparable/dist/index.js\");\nconst object_helpers_1 = __webpack_require__(/*! @toolkip/object-helpers */ \"./node_modules/@toolkip/object-helpers/dist/index.js\");\nconst history_1 = __webpack_require__(/*! @toolkip/history */ \"./node_modules/@toolkip/history/dist/index.js\");\nconst _shared_1 = __webpack_require__(/*! ../_shared */ \"./node_modules/@toolkip/model/dist/_shared/index.js\");\nconst core_1 = __webpack_require__(/*! ../_typeguards/core */ \"./node_modules/@toolkip/model/dist/_typeguards/core.js\");\nconst shared_types_1 = __webpack_require__(/*! @toolkip/shared-types */ \"./node_modules/@toolkip/shared-types/dist/index.js\");\nclass _Model {\n    constructor(data, transforms) {\n        this._innerModel = this._getDefaultValues();\n        this.__history = new history_1.HistoryChain();\n        this._event = new _shared_1.ModelEvent('modelchange');\n        if (transforms) {\n            this._transforms = transforms;\n        }\n        else {\n            this._transforms = {};\n        }\n        if (!shared_types_1.isNullOrUndefined(data)) {\n            this.import(data);\n        }\n    }\n    getType() { return 'primitive'; }\n    addEventListener(cbFunc) {\n        this._event.addEventListener(cbFunc);\n    }\n    static addEventListener(cbFunc) {\n        this._event.addEventListener(cbFunc);\n    }\n    _dispatchEvent(payload) {\n        this._event.dispatch(this, payload);\n        _Model._event.dispatch(this, payload);\n    }\n    _copyEvent(modelToCopyFrom, modelToCopyTo) {\n        modelToCopyTo._event = modelToCopyFrom._event;\n    }\n    _notifyListeners(payload) {\n        const { oldValue, value: newValue, eventChain } = payload;\n        if (comparable_1.equals(oldValue, newValue)) {\n            return;\n        }\n        if (!payload.eventType) {\n            payload.eventType = this._calculateChangeType(oldValue, newValue, eventChain);\n        }\n        this._dispatchEvent(payload);\n    }\n    _calculateChangeType(oldVal, newVal, eventChain) {\n        if (eventChain) {\n            return eventChain.eventType;\n        }\n        if (newVal && !oldVal) {\n            return 'add';\n        }\n        if (oldVal && !newVal) {\n            return 'remove';\n        }\n        return 'modify';\n    }\n    _getApplicableTransforms() {\n        return this._transforms[\"_\"];\n    }\n    _updateHistory() {\n        this.__history.push(this.getData());\n    }\n    undo() {\n        this.__history.navigateBack((lastState) => {\n            if (!lastState) {\n                return;\n            }\n            this.import(lastState);\n            return;\n        });\n    }\n    redo() {\n        this.__history.navigateForward((nextState) => {\n            if (!nextState) {\n                return;\n            }\n            this.import(nextState);\n            return;\n        });\n    }\n    getData() {\n        return this._innerGetData();\n    }\n    _innerGetData() {\n        return this._cloneData(this._innerModel);\n    }\n    setData(newData) {\n        this._innerSetData({ value: newData });\n    }\n    _innerSetData(payload) {\n        const oldValue = this.getData();\n        const { value: newData } = payload;\n        const clonedData = this._cloneData(newData);\n        this._innerModel = clonedData;\n        this._sendUpdate(Object.assign(Object.assign({}, payload), { oldValue, value: this.getData() }));\n    }\n    _sendUpdate(payload) {\n        this._updateHistory();\n        this._notifyListeners(payload);\n    }\n    import(data) {\n        var _a;\n        const transform = (_a = this._getApplicableTransforms()) === null || _a === void 0 ? void 0 : _a.incoming;\n        let importedData;\n        if (transform) {\n            importedData = transform(data);\n        }\n        else {\n            importedData = this._innerImport(data);\n        }\n        this.setData(importedData);\n    }\n    ;\n    _innerImport(data) {\n        return data;\n    }\n    export() {\n        var _a;\n        const transform = (_a = this._getApplicableTransforms()) === null || _a === void 0 ? void 0 : _a.outgoing;\n        if (transform) {\n            return transform(this.getData());\n        }\n        else {\n            return this._innerExport();\n        }\n    }\n    _innerExport() {\n        return this.getData();\n    }\n    equals(otherModel) {\n        if (!core_1.isModel(otherModel)) {\n            return false;\n        }\n        return comparable_1.equals(otherModel.getData(), this.getData());\n    }\n    clone(tx) {\n        const transforms = tx || this._transforms;\n        const Ctor = this.constructor;\n        const newModel = new Ctor(this.getData(), transforms);\n        newModel._event = this._event;\n        return newModel;\n    }\n    _cloneData(data) {\n        return object_helpers_1.clone(data);\n    }\n    _wrapInModel(dataToWrap, key) {\n        const newModel = _Model.createModel(dataToWrap);\n        if (!core_1.isModel(dataToWrap)) {\n            let oldValue = newModel.getData();\n            newModel.addEventListener((payload) => {\n                if (shared_types_1.isNullOrUndefined(key)) {\n                    return;\n                }\n                const { target, eventType } = payload;\n                const value = core_1.isModel(target) ? target.getData() : target;\n                this._sendUpdate({\n                    eventType,\n                    key,\n                    oldValue,\n                    value,\n                    eventChain: payload\n                });\n                oldValue = value;\n            });\n        }\n        return newModel;\n    }\n}\nexports._Model = _Model;\n_Model._event = new _shared_1.ModelEvent('modelchange');\n\n\n//# sourceURL=webpack:///./node_modules/@toolkip/model/dist/abstractClasses/_model.js?");
+
+/***/ }),
+
+/***/ "./node_modules/@toolkip/model/dist/abstractClasses/index.js":
+/*!*******************************************************************!*\
+  !*** ./node_modules/@toolkip/model/dist/abstractClasses/index.js ***!
+  \*******************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+eval("\nfunction __export(m) {\n    for (var p in m) if (!exports.hasOwnProperty(p)) exports[p] = m[p];\n}\nObject.defineProperty(exports, \"__esModule\", { value: true });\n__export(__webpack_require__(/*! ./_model */ \"./node_modules/@toolkip/model/dist/abstractClasses/_model.js\"));\n__export(__webpack_require__(/*! ./_keyedModel */ \"./node_modules/@toolkip/model/dist/abstractClasses/_keyedModel.js\"));\n__export(__webpack_require__(/*! ./_keyedModels */ \"./node_modules/@toolkip/model/dist/abstractClasses/_keyedModels.js\"));\n\n\n//# sourceURL=webpack:///./node_modules/@toolkip/model/dist/abstractClasses/index.js?");
+
+/***/ }),
+
+/***/ "./node_modules/@toolkip/model/dist/arrayModels/arrayModel.js":
+/*!********************************************************************!*\
+  !*** ./node_modules/@toolkip/model/dist/arrayModels/arrayModel.js ***!
+  \********************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+eval("\nObject.defineProperty(exports, \"__esModule\", { value: true });\nconst abstractClasses_1 = __webpack_require__(/*! ../abstractClasses */ \"./node_modules/@toolkip/model/dist/abstractClasses/index.js\");\nconst object_helpers_1 = __webpack_require__(/*! @toolkip/object-helpers */ \"./node_modules/@toolkip/object-helpers/dist/index.js\");\nconst shared_types_1 = __webpack_require__(/*! @toolkip/shared-types */ \"./node_modules/@toolkip/shared-types/dist/index.js\");\nclass MArray extends abstractClasses_1._KeyedModels {\n    _getDefaultValues() {\n        return [];\n    }\n    _map(data, mapFunc) {\n        object_helpers_1.map(data, mapFunc);\n    }\n    _getValue(output, key) {\n        return output[key];\n    }\n    _setValue(output, key, value) {\n        if (this._shouldSplice(output, key, value)) {\n            output.splice(key, 1);\n        }\n        else {\n            output[key] = value;\n        }\n    }\n    _shouldSplice(output, key, value) {\n        if (key < 0) {\n            return false;\n        }\n        if (key >= output.length) {\n            return false;\n        }\n        if (value === undefined) {\n            return true;\n        }\n        if (shared_types_1.isUndefined(value.getData())) {\n            return true;\n        }\n        return false;\n    }\n    add(element) {\n        this._innerSet({\n            key: this._innerModel.length,\n            value: element\n        });\n        return true;\n    }\n}\nexports.MArray = MArray;\n\n\n//# sourceURL=webpack:///./node_modules/@toolkip/model/dist/arrayModels/arrayModel.js?");
+
+/***/ }),
+
+/***/ "./node_modules/@toolkip/model/dist/arrayModels/index.js":
+/*!***************************************************************!*\
+  !*** ./node_modules/@toolkip/model/dist/arrayModels/index.js ***!
+  \***************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+eval("\nfunction __export(m) {\n    for (var p in m) if (!exports.hasOwnProperty(p)) exports[p] = m[p];\n}\nObject.defineProperty(exports, \"__esModule\", { value: true });\n__export(__webpack_require__(/*! ./arrayModel */ \"./node_modules/@toolkip/model/dist/arrayModels/arrayModel.js\"));\n__export(__webpack_require__(/*! ./mSet */ \"./node_modules/@toolkip/model/dist/arrayModels/mSet.js\"));\n__export(__webpack_require__(/*! ./modelManager */ \"./node_modules/@toolkip/model/dist/arrayModels/modelManager.js\"));\n\n\n//# sourceURL=webpack:///./node_modules/@toolkip/model/dist/arrayModels/index.js?");
+
+/***/ }),
+
+/***/ "./node_modules/@toolkip/model/dist/arrayModels/mSet.js":
+/*!**************************************************************!*\
+  !*** ./node_modules/@toolkip/model/dist/arrayModels/mSet.js ***!
+  \**************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+eval("\nObject.defineProperty(exports, \"__esModule\", { value: true });\nconst arrayModel_1 = __webpack_require__(/*! ./arrayModel */ \"./node_modules/@toolkip/model/dist/arrayModels/arrayModel.js\");\nclass MSet extends arrayModel_1.MArray {\n    add(val) {\n        if (this.contains(val)) {\n            return false;\n        }\n        return super.add(val);\n    }\n}\nexports.MSet = MSet;\n\n\n//# sourceURL=webpack:///./node_modules/@toolkip/model/dist/arrayModels/mSet.js?");
+
+/***/ }),
+
+/***/ "./node_modules/@toolkip/model/dist/arrayModels/modelManager.js":
+/*!**********************************************************************!*\
+  !*** ./node_modules/@toolkip/model/dist/arrayModels/modelManager.js ***!
+  \**********************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+eval("\nObject.defineProperty(exports, \"__esModule\", { value: true });\nconst managers_1 = __webpack_require__(/*! @toolkip/managers */ \"./node_modules/@toolkip/managers/dist/index.js\");\nconst abstractClasses_1 = __webpack_require__(/*! ../abstractClasses */ \"./node_modules/@toolkip/model/dist/abstractClasses/index.js\");\nconst object_helpers_1 = __webpack_require__(/*! @toolkip/object-helpers */ \"./node_modules/@toolkip/object-helpers/dist/index.js\");\nconst shared_types_1 = __webpack_require__(/*! @toolkip/shared-types */ \"./node_modules/@toolkip/shared-types/dist/index.js\");\nclass MManager extends abstractClasses_1._KeyedModels {\n    _getDefaultValues() { return new managers_1.DataManager(); }\n    _getValue(output, key) {\n        return output.get(key);\n    }\n    _innerGetData() {\n        const out = super._innerGetData();\n        return out.toArray();\n    }\n    _innerExport() {\n        const out = super._innerExport();\n        return out.toArray();\n    }\n    toDataManager() {\n        return super._innerGetData();\n    }\n    toArray() {\n        return this._innerGetData();\n    }\n    toDictionary() {\n        const manager = this.toDataManager();\n        return manager.toDictionary();\n    }\n    _setValue(output, key, value) {\n        if (this._isRemoval(output, key, value)) {\n            output.remove(key);\n        }\n        else if (this._isReplacement(output, key)) {\n            output.remove(key);\n            output.add(value);\n        }\n        else if (!shared_types_1.isUndefined(value)) {\n            output.add(value);\n        }\n    }\n    _isRemoval(output, key, value) {\n        if (!managers_1.isDataManager(output)) {\n            return false;\n        }\n        if (!output.contains(key)) {\n            return false;\n        }\n        if (shared_types_1.isUndefined(value)) {\n            return true;\n        }\n        if (shared_types_1.isUndefined(value.getData())) {\n            return true;\n        }\n        return false;\n    }\n    _isReplacement(output, key) {\n        if (!managers_1.isDataManager(output)) {\n            return false;\n        }\n        if (!output.contains(key)) {\n            return false;\n        }\n        return true;\n    }\n    _map(data, mapFunc) {\n        if (managers_1.isDataManager(data)) {\n            data.map(mapFunc);\n        }\n        else if (shared_types_1.isArray(data)) {\n            object_helpers_1.map(data, (val, idx) => mapFunc(val, val.id));\n        }\n        else {\n            object_helpers_1.map(data, mapFunc);\n        }\n    }\n    add(item) {\n        if (this.contains(item)) {\n            return false;\n        }\n        this._innerSet({\n            key: item.id,\n            value: item,\n            eventType: 'add'\n        });\n        return true;\n    }\n    getIndex(item) {\n        if (this._innerModel.contains(item.id)) {\n            return item.id;\n        }\n        return undefined;\n    }\n}\nexports.MManager = MManager;\n\n\n//# sourceURL=webpack:///./node_modules/@toolkip/model/dist/arrayModels/modelManager.js?");
+
+/***/ }),
+
+/***/ "./node_modules/@toolkip/model/dist/helpers/index.js":
+/*!***********************************************************!*\
+  !*** ./node_modules/@toolkip/model/dist/helpers/index.js ***!
+  \***********************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+eval("\nfunction __export(m) {\n    for (var p in m) if (!exports.hasOwnProperty(p)) exports[p] = m[p];\n}\nObject.defineProperty(exports, \"__esModule\", { value: true });\n__export(__webpack_require__(/*! ./modelFactory */ \"./node_modules/@toolkip/model/dist/helpers/modelFactory.js\"));\n__export(__webpack_require__(/*! ./selectors */ \"./node_modules/@toolkip/model/dist/helpers/selectors.js\"));\n\n\n//# sourceURL=webpack:///./node_modules/@toolkip/model/dist/helpers/index.js?");
+
+/***/ }),
+
+/***/ "./node_modules/@toolkip/model/dist/helpers/modelFactory.js":
+/*!******************************************************************!*\
+  !*** ./node_modules/@toolkip/model/dist/helpers/modelFactory.js ***!
+  \******************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+eval("\nObject.defineProperty(exports, \"__esModule\", { value: true });\nconst _model_1 = __webpack_require__(/*! ../abstractClasses/_model */ \"./node_modules/@toolkip/model/dist/abstractClasses/_model.js\");\nconst core_1 = __webpack_require__(/*! ../_typeguards/core */ \"./node_modules/@toolkip/model/dist/_typeguards/core.js\");\nconst shared_types_1 = __webpack_require__(/*! @toolkip/shared-types */ \"./node_modules/@toolkip/shared-types/dist/index.js\");\nconst identifiable_1 = __webpack_require__(/*! @toolkip/identifiable */ \"./node_modules/@toolkip/identifiable/dist/index.js\");\nconst primitiveModels_1 = __webpack_require__(/*! ../primitiveModels */ \"./node_modules/@toolkip/model/dist/primitiveModels/index.js\");\nconst objectModels_1 = __webpack_require__(/*! ../objectModels */ \"./node_modules/@toolkip/model/dist/objectModels/index.js\");\nconst arrayModels_1 = __webpack_require__(/*! ../arrayModels */ \"./node_modules/@toolkip/model/dist/arrayModels/index.js\");\nexports.createModel = (data, transforms) => {\n    if (core_1.isModel(data)) {\n        return data.clone(transforms);\n    }\n    else {\n        return _createModelForData(data, transforms);\n    }\n};\nconst _createModelForData = (data, transforms) => {\n    if (shared_types_1.isPrimitive(data)) {\n        return new primitiveModels_1.MPrimitive(data, transforms);\n    }\n    if (shared_types_1.isDate(data)) {\n        return new primitiveModels_1.MDate(data, transforms);\n    }\n    if (identifiable_1.isIdentifiable(data)) {\n        return new objectModels_1.MIdentifiable(data, transforms);\n    }\n    if (shared_types_1.isArray(data)) {\n        return _createArrayModelForData(data, transforms);\n    }\n    if (shared_types_1.isObject(data)) {\n        return new objectModels_1.MObject(data, transforms);\n    }\n};\nconst _createArrayModelForData = (data, transforms) => {\n    if (data[0] && identifiable_1.isIdentifiable(data[0])) {\n        return new arrayModels_1.MManager(data, transforms);\n    }\n    else {\n        return new arrayModels_1.MArray(data, transforms);\n    }\n};\nexports.setupModelWrapping = () => {\n    _model_1._Model.createModel = exports.createModel;\n};\nexports.setupModelWrapping();\n\n\n//# sourceURL=webpack:///./node_modules/@toolkip/model/dist/helpers/modelFactory.js?");
+
+/***/ }),
+
+/***/ "./node_modules/@toolkip/model/dist/helpers/selectors.js":
+/*!***************************************************************!*\
+  !*** ./node_modules/@toolkip/model/dist/helpers/selectors.js ***!
+  \***************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+eval("\nObject.defineProperty(exports, \"__esModule\", { value: true });\nconst object_helpers_1 = __webpack_require__(/*! @toolkip/object-helpers */ \"./node_modules/@toolkip/object-helpers/dist/index.js\");\nconst comparable_1 = __webpack_require__(/*! @toolkip/comparable */ \"./node_modules/@toolkip/comparable/dist/index.js\");\nconst primitiveModels_1 = __webpack_require__(/*! ../primitiveModels */ \"./node_modules/@toolkip/model/dist/primitiveModels/index.js\");\nclass Selector {\n    constructor(model, processor, filters) {\n        this._applyFuncs = [];\n        this._mapFuncs = [];\n        this._processor = processor || ((data) => { return data; });\n        this._lastModel = this._processor(model.getData(), {});\n        this._setupFilters(filters || {});\n        this._addEventListener(model);\n    }\n    getData() { return this._lastModel; }\n    _setupFilters({ keys = [], eventTypes = [] }) {\n        this._filterMap = {\n            keys: object_helpers_1.arrayToMap(keys),\n            eventTypes: object_helpers_1.arrayToMap(eventTypes),\n            customFilters: []\n        };\n    }\n    filter(filterFunc) {\n        this._filterMap.customFilters.push(filterFunc);\n        return this;\n    }\n    reselect(callbacks) {\n        const event = this._createReselectEvent();\n        if (!callbacks) {\n            this._notifyCallbacks(event);\n        }\n        else {\n            const { apply, map } = callbacks;\n            if (apply) {\n                this._notifyApplySelectors(event, apply);\n            }\n            if (map) {\n                this._notifyMapSelectors(event, map);\n            }\n        }\n    }\n    _createReselectEvent() {\n        return {\n            name: 'modelchange',\n            target: this,\n            oldValue: this._lastModel,\n            value: this._lastModel,\n            eventType: 'none'\n        };\n    }\n    _addEventListener(model) {\n        model.addEventListener((payload) => {\n            if (this._isFiltered(payload)) {\n                return;\n            }\n            const processedData = this._processor(payload.target.getData(), payload);\n            if (comparable_1.equals(processedData, this._lastModel)) {\n                return;\n            }\n            const oldValue = this._lastModel;\n            this._lastModel = processedData;\n            this._notifyCallbacks(Object.assign(Object.assign({}, payload), { target: this, oldValue, value: processedData, eventChain: payload }));\n        });\n    }\n    _isFiltered(payload) {\n        const { key, eventType } = payload;\n        const { keys, eventTypes, customFilters } = this._filterMap;\n        if (keys.size > 0 && !keys.has(key)) {\n            return true;\n        }\n        if (eventTypes.size > 0 && !eventTypes.has(eventType)) {\n            return true;\n        }\n        for (let cf of customFilters) {\n            if (cf(payload)) {\n                return true;\n            }\n        }\n        return false;\n    }\n    _notifyCallbacks(payload) {\n        this._notifyApplySelectors(payload, this._applyFuncs);\n        this._notifyMapSelectors(payload, this._mapFuncs);\n    }\n    _notifyApplySelectors(payload, cbs) {\n        for (let cb of cbs) {\n            cb(payload);\n        }\n    }\n    _notifyMapSelectors(payload, cbs) {\n        const { value } = payload;\n        if (!object_helpers_1.isMappable(value)) {\n            return;\n        }\n        for (let cb of cbs) {\n            object_helpers_1.map(value, (v, k) => {\n                cb(v, k, payload);\n            });\n        }\n    }\n    apply(cb, skipInitialNotify) {\n        this._applyFuncs.push(cb);\n        if (!skipInitialNotify) {\n            this.reselect({ apply: [cb] });\n        }\n        return this;\n    }\n    addEventListener(cb, skipInitialNotify) {\n        return this.apply(cb, skipInitialNotify);\n    }\n    map(cb, skipInitialNotify) {\n        this._mapFuncs.push(cb);\n        if (!skipInitialNotify) {\n            this.reselect({ map: [cb] });\n        }\n        return this;\n    }\n    mapSelect(cb, filters) {\n        return new Selector(this, (data, payload) => {\n            const out = [];\n            if (object_helpers_1.isMappable(data)) {\n                object_helpers_1.map(data, (e, k) => {\n                    out.push(cb(e, k, payload));\n                });\n            }\n            return out;\n        }, filters);\n    }\n    select(processor, filters) {\n        return new Selector(this, processor, filters);\n    }\n}\nexports.Selector = Selector;\nexports.select = (listenable, processor, filters) => {\n    return new Selector(listenable, processor, filters);\n};\nexports.rawSelect = (rawData, processor, filters) => {\n    const model = new primitiveModels_1.Model(rawData);\n    return new Selector(model, processor, filters);\n};\n\n\n//# sourceURL=webpack:///./node_modules/@toolkip/model/dist/helpers/selectors.js?");
+
+/***/ }),
+
+/***/ "./node_modules/@toolkip/model/dist/index.js":
+/*!***************************************************!*\
+  !*** ./node_modules/@toolkip/model/dist/index.js ***!
+  \***************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+eval("\nfunction __export(m) {\n    for (var p in m) if (!exports.hasOwnProperty(p)) exports[p] = m[p];\n}\nObject.defineProperty(exports, \"__esModule\", { value: true });\n__export(__webpack_require__(/*! ./_shared */ \"./node_modules/@toolkip/model/dist/_shared/index.js\"));\n__export(__webpack_require__(/*! ./_typeguards */ \"./node_modules/@toolkip/model/dist/_typeguards/index.js\"));\n__export(__webpack_require__(/*! ./abstractClasses */ \"./node_modules/@toolkip/model/dist/abstractClasses/index.js\"));\n__export(__webpack_require__(/*! ./primitiveModels */ \"./node_modules/@toolkip/model/dist/primitiveModels/index.js\"));\n__export(__webpack_require__(/*! ./objectModels */ \"./node_modules/@toolkip/model/dist/objectModels/index.js\"));\n__export(__webpack_require__(/*! ./arrayModels */ \"./node_modules/@toolkip/model/dist/arrayModels/index.js\"));\n__export(__webpack_require__(/*! ./helpers */ \"./node_modules/@toolkip/model/dist/helpers/index.js\"));\n__export(__webpack_require__(/*! ./transforms */ \"./node_modules/@toolkip/model/dist/transforms/index.js\"));\nconst modelFactory_1 = __webpack_require__(/*! ./helpers/modelFactory */ \"./node_modules/@toolkip/model/dist/helpers/modelFactory.js\");\nmodelFactory_1.setupModelWrapping();\n\n\n//# sourceURL=webpack:///./node_modules/@toolkip/model/dist/index.js?");
+
+/***/ }),
+
+/***/ "./node_modules/@toolkip/model/dist/objectModels/identifiableModel.js":
+/*!****************************************************************************!*\
+  !*** ./node_modules/@toolkip/model/dist/objectModels/identifiableModel.js ***!
+  \****************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+eval("\nObject.defineProperty(exports, \"__esModule\", { value: true });\nconst identifiable_1 = __webpack_require__(/*! @toolkip/identifiable */ \"./node_modules/@toolkip/identifiable/dist/index.js\");\nconst modelObject_1 = __webpack_require__(/*! ./modelObject */ \"./node_modules/@toolkip/model/dist/objectModels/modelObject.js\");\nclass MIdentifiable extends modelObject_1.MObject {\n    get id() { return this.get('id'); }\n    set id(data) { this.set('id', data); }\n    static get _uniqueKey() { return this.name; }\n    static _generateNewId(suffix) {\n        const uniqueKey = suffix || this._uniqueKey;\n        return identifiable_1.generateUniqueId(uniqueKey, suffix);\n    }\n    static _updateLastId(lastId, suffix) {\n        const uniqueKey = suffix || this._uniqueKey;\n        identifiable_1.registerUniqueId(lastId, uniqueKey);\n    }\n    constructor(dataToCopy, transforms, suffix) {\n        super(dataToCopy);\n        if (dataToCopy === null || dataToCopy === void 0 ? void 0 : dataToCopy.id) {\n            this.constructor._updateLastId(dataToCopy.id, suffix);\n        }\n        else {\n            const newId = this.constructor._generateNewId(suffix);\n            this.set('id', newId);\n        }\n    }\n}\nexports.MIdentifiable = MIdentifiable;\n\n\n//# sourceURL=webpack:///./node_modules/@toolkip/model/dist/objectModels/identifiableModel.js?");
+
+/***/ }),
+
+/***/ "./node_modules/@toolkip/model/dist/objectModels/index.js":
+/*!****************************************************************!*\
+  !*** ./node_modules/@toolkip/model/dist/objectModels/index.js ***!
+  \****************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+eval("\nfunction __export(m) {\n    for (var p in m) if (!exports.hasOwnProperty(p)) exports[p] = m[p];\n}\nObject.defineProperty(exports, \"__esModule\", { value: true });\n__export(__webpack_require__(/*! ./identifiableModel */ \"./node_modules/@toolkip/model/dist/objectModels/identifiableModel.js\"));\n__export(__webpack_require__(/*! ./modelObject */ \"./node_modules/@toolkip/model/dist/objectModels/modelObject.js\"));\n\n\n//# sourceURL=webpack:///./node_modules/@toolkip/model/dist/objectModels/index.js?");
+
+/***/ }),
+
+/***/ "./node_modules/@toolkip/model/dist/objectModels/modelObject.js":
+/*!**********************************************************************!*\
+  !*** ./node_modules/@toolkip/model/dist/objectModels/modelObject.js ***!
+  \**********************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+eval("\nObject.defineProperty(exports, \"__esModule\", { value: true });\nconst abstractClasses_1 = __webpack_require__(/*! ../abstractClasses */ \"./node_modules/@toolkip/model/dist/abstractClasses/index.js\");\nconst object_helpers_1 = __webpack_require__(/*! @toolkip/object-helpers */ \"./node_modules/@toolkip/object-helpers/dist/index.js\");\nclass MObject extends abstractClasses_1._KeyedModel {\n    constructor(data, transforms) {\n        super(data, transforms);\n    }\n    _getDefaultValues() { return {}; }\n    _map(data, mapFunc) {\n        object_helpers_1.map(data, mapFunc);\n    }\n    _getValue(model, key) { return model[key]; }\n    get(key) {\n        return super.get(key);\n    }\n    _setValue(model, key, value) {\n        model[key] = value;\n    }\n    set(key, value) {\n        return super.set(key, value);\n    }\n}\nexports.MObject = MObject;\n\n\n//# sourceURL=webpack:///./node_modules/@toolkip/model/dist/objectModels/modelObject.js?");
+
+/***/ }),
+
+/***/ "./node_modules/@toolkip/model/dist/primitiveModels/index.js":
+/*!*******************************************************************!*\
+  !*** ./node_modules/@toolkip/model/dist/primitiveModels/index.js ***!
+  \*******************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+eval("\nfunction __export(m) {\n    for (var p in m) if (!exports.hasOwnProperty(p)) exports[p] = m[p];\n}\nObject.defineProperty(exports, \"__esModule\", { value: true });\n__export(__webpack_require__(/*! ./modelPrimitive */ \"./node_modules/@toolkip/model/dist/primitiveModels/modelPrimitive.js\"));\n__export(__webpack_require__(/*! ./modelDate */ \"./node_modules/@toolkip/model/dist/primitiveModels/modelDate.js\"));\n__export(__webpack_require__(/*! ./modelAny */ \"./node_modules/@toolkip/model/dist/primitiveModels/modelAny.js\"));\n\n\n//# sourceURL=webpack:///./node_modules/@toolkip/model/dist/primitiveModels/index.js?");
+
+/***/ }),
+
+/***/ "./node_modules/@toolkip/model/dist/primitiveModels/modelAny.js":
+/*!**********************************************************************!*\
+  !*** ./node_modules/@toolkip/model/dist/primitiveModels/modelAny.js ***!
+  \**********************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+eval("\nObject.defineProperty(exports, \"__esModule\", { value: true });\nconst _model_1 = __webpack_require__(/*! ../abstractClasses/_model */ \"./node_modules/@toolkip/model/dist/abstractClasses/_model.js\");\nconst core_1 = __webpack_require__(/*! ../_typeguards/core */ \"./node_modules/@toolkip/model/dist/_typeguards/core.js\");\nclass Model extends _model_1._Model {\n    _getDefaultValues() { return undefined; }\n    setData(data) {\n        const newValue = this._wrapInModel(data, this._transforms);\n        this._innerSetData({ value: newValue });\n    }\n    getData() {\n        const clonedModel = this._innerGetData();\n        return core_1.isModel(clonedModel) ? clonedModel.getData() : clonedModel;\n    }\n    getModel(asType = 'o') {\n        if (!core_1.isModel(this._innerModel)) {\n            return undefined;\n        }\n        return this._innerModel;\n    }\n}\nexports.Model = Model;\n\n\n//# sourceURL=webpack:///./node_modules/@toolkip/model/dist/primitiveModels/modelAny.js?");
+
+/***/ }),
+
+/***/ "./node_modules/@toolkip/model/dist/primitiveModels/modelDate.js":
+/*!***********************************************************************!*\
+  !*** ./node_modules/@toolkip/model/dist/primitiveModels/modelDate.js ***!
+  \***********************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+eval("\nObject.defineProperty(exports, \"__esModule\", { value: true });\nconst _model_1 = __webpack_require__(/*! ../abstractClasses/_model */ \"./node_modules/@toolkip/model/dist/abstractClasses/_model.js\");\nconst dateTransforms_1 = __webpack_require__(/*! ../transforms/dateTransforms */ \"./node_modules/@toolkip/model/dist/transforms/dateTransforms.js\");\nclass MDate extends _model_1._Model {\n    _getApplicableTransforms() {\n        const tx = super._getApplicableTransforms();\n        if (!tx) {\n            return dateTransforms_1.DefaultDateTransform;\n        }\n        return tx;\n    }\n    _getDefaultValues() {\n        return null;\n    }\n    getData() {\n        return super.getData();\n    }\n}\nexports.MDate = MDate;\n\n\n//# sourceURL=webpack:///./node_modules/@toolkip/model/dist/primitiveModels/modelDate.js?");
+
+/***/ }),
+
+/***/ "./node_modules/@toolkip/model/dist/primitiveModels/modelPrimitive.js":
+/*!****************************************************************************!*\
+  !*** ./node_modules/@toolkip/model/dist/primitiveModels/modelPrimitive.js ***!
+  \****************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+eval("\nObject.defineProperty(exports, \"__esModule\", { value: true });\nconst _model_1 = __webpack_require__(/*! ../abstractClasses/_model */ \"./node_modules/@toolkip/model/dist/abstractClasses/_model.js\");\nclass MPrimitive extends _model_1._Model {\n    _getDefaultValues() {\n        return undefined;\n    }\n}\nexports.MPrimitive = MPrimitive;\n\n\n//# sourceURL=webpack:///./node_modules/@toolkip/model/dist/primitiveModels/modelPrimitive.js?");
+
+/***/ }),
+
+/***/ "./node_modules/@toolkip/model/dist/transforms/dateTransforms.js":
+/*!***********************************************************************!*\
+  !*** ./node_modules/@toolkip/model/dist/transforms/dateTransforms.js ***!
+  \***********************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+eval("\nObject.defineProperty(exports, \"__esModule\", { value: true });\nconst primitive_helpers_1 = __webpack_require__(/*! @toolkip/primitive-helpers */ \"./node_modules/@toolkip/primitive-helpers/dist/index.js\");\nexports.ShortDateTransform = {\n    incoming: (data) => new Date(data.toString()),\n    outgoing: (data) => primitive_helpers_1.shortDate(data)\n};\nexports.ShortDateTimeTransform = {\n    incoming: (data) => new Date(data.toString()),\n    outgoing: (data) => primitive_helpers_1.shortDateTime(data)\n};\nexports.DefaultDateTransform = {\n    incoming: (data) => new Date(data.toString()),\n    outgoing: (data) => data.toString()\n};\n\n\n//# sourceURL=webpack:///./node_modules/@toolkip/model/dist/transforms/dateTransforms.js?");
+
+/***/ }),
+
+/***/ "./node_modules/@toolkip/model/dist/transforms/index.js":
+/*!**************************************************************!*\
+  !*** ./node_modules/@toolkip/model/dist/transforms/index.js ***!
+  \**************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+eval("\nfunction __export(m) {\n    for (var p in m) if (!exports.hasOwnProperty(p)) exports[p] = m[p];\n}\nObject.defineProperty(exports, \"__esModule\", { value: true });\n__export(__webpack_require__(/*! ./modelTransforms */ \"./node_modules/@toolkip/model/dist/transforms/modelTransforms.js\"));\n__export(__webpack_require__(/*! ./dateTransforms */ \"./node_modules/@toolkip/model/dist/transforms/dateTransforms.js\"));\n\n\n//# sourceURL=webpack:///./node_modules/@toolkip/model/dist/transforms/index.js?");
+
+/***/ }),
+
+/***/ "./node_modules/@toolkip/model/dist/transforms/modelTransforms.js":
+/*!************************************************************************!*\
+  !*** ./node_modules/@toolkip/model/dist/transforms/modelTransforms.js ***!
+  \************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+eval("\nObject.defineProperty(exports, \"__esModule\", { value: true });\nconst dateTransforms_1 = __webpack_require__(/*! ./dateTransforms */ \"./node_modules/@toolkip/model/dist/transforms/dateTransforms.js\");\nconst primitiveModels_1 = __webpack_require__(/*! ../primitiveModels */ \"./node_modules/@toolkip/model/dist/primitiveModels/index.js\");\nexports.createModelTransform = (ctor) => {\n    return {\n        incoming: (data) => new ctor(data)\n    };\n};\nexports.createModelDateTransform = (tx = dateTransforms_1.DefaultDateTransform) => {\n    return {\n        incoming: (data) => new primitiveModels_1.MDate(data, { \"_\": tx }),\n    };\n};\n\n\n//# sourceURL=webpack:///./node_modules/@toolkip/model/dist/transforms/modelTransforms.js?");
+
+/***/ }),
+
+/***/ "./node_modules/@toolkip/object-helpers/dist/_typeguards.js":
+/*!******************************************************************!*\
+  !*** ./node_modules/@toolkip/object-helpers/dist/_typeguards.js ***!
+  \******************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+eval("\nObject.defineProperty(exports, \"__esModule\", { value: true });\nconst shared_types_1 = __webpack_require__(/*! @toolkip/shared-types */ \"./node_modules/@toolkip/shared-types/dist/index.js\");\nconst manipulate_1 = __webpack_require__(/*! ./manipulate */ \"./node_modules/@toolkip/object-helpers/dist/manipulate.js\");\nfunction isCloneable(test) {\n    if (shared_types_1.isFunction(test.clone)) {\n        return true;\n    }\n    return false;\n}\nexports.isCloneable = isCloneable;\nfunction isMappable(test) {\n    if (shared_types_1.isArray(test)) {\n        return true;\n    }\n    if (shared_types_1.isObject(test)) {\n        return true;\n    }\n    return false;\n}\nexports.isMappable = isMappable;\nfunction isEmptyObject(object) {\n    if (!shared_types_1.isObject(object)) {\n        return false;\n    }\n    return (!manipulate_1.getNextKey(object));\n}\nexports.isEmptyObject = isEmptyObject;\nfunction isEmptyArray(object) {\n    if (!shared_types_1.isArray(object)) {\n        return false;\n    }\n    if (object.length > 0) {\n        return false;\n    }\n    return true;\n}\nexports.isEmptyArray = isEmptyArray;\n\n\n//# sourceURL=webpack:///./node_modules/@toolkip/object-helpers/dist/_typeguards.js?");
+
+/***/ }),
+
+/***/ "./node_modules/@toolkip/object-helpers/dist/cloning.js":
+/*!**************************************************************!*\
+  !*** ./node_modules/@toolkip/object-helpers/dist/cloning.js ***!
+  \**************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+eval("\nObject.defineProperty(exports, \"__esModule\", { value: true });\nconst combine_1 = __webpack_require__(/*! ./combine */ \"./node_modules/@toolkip/object-helpers/dist/combine.js\");\nconst manipulate_1 = __webpack_require__(/*! ./manipulate */ \"./node_modules/@toolkip/object-helpers/dist/manipulate.js\");\nconst shared_types_1 = __webpack_require__(/*! @toolkip/shared-types */ \"./node_modules/@toolkip/shared-types/dist/index.js\");\nconst _typeguards_1 = __webpack_require__(/*! ./_typeguards */ \"./node_modules/@toolkip/object-helpers/dist/_typeguards.js\");\nfunction cloneRect(rect) {\n    let out = {\n        x: rect.x,\n        y: rect.y,\n        w: rect.w,\n        h: rect.h\n    };\n    return out;\n}\nexports.cloneRect = cloneRect;\nfunction clonePoint(point) {\n    let out = {\n        x: point.x,\n        y: point.y\n    };\n    return out;\n}\nexports.clonePoint = clonePoint;\nfunction clonePointArray(points) {\n    let out = [];\n    let pt;\n    for (pt of points) {\n        let clone = clonePoint(pt);\n        out.push(clone);\n    }\n    return out;\n}\nexports.clonePointArray = clonePointArray;\nfunction cloneObject(obj) {\n    return JSON.parse(JSON.stringify(obj));\n}\nexports.cloneObject = cloneObject;\nfunction clone(toClone, customCloners = [], key) {\n    for (let c of customCloners) {\n        if (c.typeGuard(toClone, key)) {\n            return c.cloner(toClone, key);\n        }\n    }\n    if (shared_types_1.isPrimitive(toClone)) {\n        return _clonePrimitive(toClone);\n    }\n    else if (_typeguards_1.isCloneable(toClone)) {\n        return toClone.clone();\n    }\n    else if (shared_types_1.isDate(toClone)) {\n        return _cloneDate(toClone);\n    }\n    else if (shared_types_1.isArray(toClone)) {\n        return _cloneArray(toClone, customCloners);\n    }\n    else if (shared_types_1.isObject(toClone)) {\n        return _cloneObject(toClone, customCloners);\n    }\n}\nexports.clone = clone;\nconst _clonePrimitive = (primitive) => {\n    return primitive;\n};\nconst _cloneDate = (date) => {\n    return new Date(date.valueOf());\n};\nconst _cloneObject = (obj, customCloners) => {\n    const proto = Object.getPrototypeOf(obj);\n    const out = Object.create(proto);\n    manipulate_1.map(obj, (v, k) => {\n        out[k] = clone(v, customCloners, k);\n    });\n    return out;\n};\nconst _cloneArray = (arr, customCloners) => {\n    const out = [];\n    for (let e of arr) {\n        out.push(clone(e, customCloners));\n    }\n    return out;\n};\nfunction shallowCloneObject(object) {\n    return combine_1.combineObjects({}, object);\n}\nexports.shallowCloneObject = shallowCloneObject;\n\n\n//# sourceURL=webpack:///./node_modules/@toolkip/object-helpers/dist/cloning.js?");
+
+/***/ }),
+
+/***/ "./node_modules/@toolkip/object-helpers/dist/combine.js":
+/*!**************************************************************!*\
+  !*** ./node_modules/@toolkip/object-helpers/dist/combine.js ***!
+  \**************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+eval("\nObject.defineProperty(exports, \"__esModule\", { value: true });\nconst manipulate_1 = __webpack_require__(/*! ./manipulate */ \"./node_modules/@toolkip/object-helpers/dist/manipulate.js\");\nconst shared_types_1 = __webpack_require__(/*! @toolkip/shared-types */ \"./node_modules/@toolkip/shared-types/dist/index.js\");\nfunction combineObjects(objA, objB, deep) {\n    let ret;\n    let tmp;\n    let loopThru;\n    ret = objA || {};\n    if (objB) {\n        _loopThru(objB, ret, deep);\n    }\n    return ret;\n}\nexports.combineObjects = combineObjects;\nfunction _loopThru(objToCombine, outputObj, deep) {\n    if (!objToCombine) {\n        return outputObj;\n    }\n    if (objToCombine.__proto__) {\n        outputObj.__proto__ = Object.create(objToCombine.__proto__);\n    }\n    manipulate_1.map(objToCombine, (value, key) => {\n        if (shared_types_1.isNullOrUndefined(value)) {\n            return;\n        }\n        if (deep && (typeof (value) === \"object\")) {\n            let tmp = outputObj[key];\n            if (!tmp) {\n                outputObj[key] = value;\n                return;\n            }\n            tmp = combineObjects(tmp, value, deep);\n            outputObj[key] = tmp;\n        }\n        else {\n            outputObj[key] = value;\n        }\n    });\n}\nfunction reconcileOptions(options, defaults) {\n    let key;\n    let opt;\n    if (!options) {\n        options = {};\n    }\n    ;\n    for (key in defaults) {\n        if (defaults.hasOwnProperty(key)) {\n            opt = options[key];\n            if ((opt === undefined) || (opt === null)) {\n                options[key] = defaults[key];\n            }\n        }\n    }\n    return options;\n}\nexports.reconcileOptions = reconcileOptions;\n\n\n//# sourceURL=webpack:///./node_modules/@toolkip/object-helpers/dist/combine.js?");
+
+/***/ }),
+
+/***/ "./node_modules/@toolkip/object-helpers/dist/converter.js":
+/*!****************************************************************!*\
+  !*** ./node_modules/@toolkip/object-helpers/dist/converter.js ***!
+  \****************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+eval("\nObject.defineProperty(exports, \"__esModule\", { value: true });\nconst manipulate_1 = __webpack_require__(/*! ./manipulate */ \"./node_modules/@toolkip/object-helpers/dist/manipulate.js\");\nexports.dictionaryToArray = (dict = {}) => {\n    const out = [];\n    manipulate_1.map(dict, (val) => {\n        out.push(val);\n    });\n    return out;\n};\nexports.arrayToMap = (array = []) => {\n    const out = new Map();\n    for (let val of array) {\n        out.set(val, true);\n    }\n    return out;\n};\n\n\n//# sourceURL=webpack:///./node_modules/@toolkip/object-helpers/dist/converter.js?");
+
+/***/ }),
+
+/***/ "./node_modules/@toolkip/object-helpers/dist/formatting.js":
+/*!*****************************************************************!*\
+  !*** ./node_modules/@toolkip/object-helpers/dist/formatting.js ***!
+  \*****************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+eval("\nObject.defineProperty(exports, \"__esModule\", { value: true });\nconst primitive_helpers_1 = __webpack_require__(/*! @toolkip/primitive-helpers */ \"./node_modules/@toolkip/primitive-helpers/dist/index.js\");\nconst manipulate_1 = __webpack_require__(/*! ./manipulate */ \"./node_modules/@toolkip/object-helpers/dist/manipulate.js\");\nfunction stringify(obj, asHtml, prefix) {\n    let out = [];\n    let newLineChar = asHtml ? \"<br>\" : \"\\n\";\n    let tabChar = asHtml ? \"&nbsp;&nbsp;&nbsp;&nbsp;\" : \"\\t\";\n    if (!prefix) {\n        prefix = \"\";\n    }\n    manipulate_1.map(obj, (value, key) => {\n        let valStr;\n        switch (typeof value) {\n            case \"string\":\n                valStr = value;\n                break;\n            case \"number\":\n            case \"boolean\":\n                valStr = value.toString();\n                break;\n            default:\n                if (!value) {\n                    valStr = value;\n                    break;\n                }\n                if (value.hasOwnProperty(\"toString\")) {\n                    valStr = newLineChar + value.toString();\n                }\n                else {\n                    valStr = newLineChar + stringify(value, asHtml, tabChar);\n                }\n        }\n        out.push(_format(prefix + key, valStr, asHtml));\n    });\n    return out.join(\"\");\n}\nexports.stringify = stringify;\nfunction _format(key, value, asHtml) {\n    if (asHtml) {\n        return _formatPropertyAsHTML(key, value);\n    }\n    return _formatPropertyAsPlainText(key, value);\n}\nfunction _formatPropertyAsHTML(key, value) {\n    return primitive_helpers_1.format(\"<b>{0}</b>: {1}{2}\", key, value, \"<br>\");\n}\nfunction _formatPropertyAsPlainText(key, value) {\n    return primitive_helpers_1.format(\"{0}: {1}\\n\", key, value);\n}\n\n\n//# sourceURL=webpack:///./node_modules/@toolkip/object-helpers/dist/formatting.js?");
+
+/***/ }),
+
+/***/ "./node_modules/@toolkip/object-helpers/dist/index.js":
+/*!************************************************************!*\
+  !*** ./node_modules/@toolkip/object-helpers/dist/index.js ***!
+  \************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+eval("\nfunction __export(m) {\n    for (var p in m) if (!exports.hasOwnProperty(p)) exports[p] = m[p];\n}\nObject.defineProperty(exports, \"__esModule\", { value: true });\n__export(__webpack_require__(/*! ./_typeguards */ \"./node_modules/@toolkip/object-helpers/dist/_typeguards.js\"));\n__export(__webpack_require__(/*! ./cloning */ \"./node_modules/@toolkip/object-helpers/dist/cloning.js\"));\n__export(__webpack_require__(/*! ./combine */ \"./node_modules/@toolkip/object-helpers/dist/combine.js\"));\n__export(__webpack_require__(/*! ./formatting */ \"./node_modules/@toolkip/object-helpers/dist/formatting.js\"));\n__export(__webpack_require__(/*! ./manipulate */ \"./node_modules/@toolkip/object-helpers/dist/manipulate.js\"));\n__export(__webpack_require__(/*! ./converter */ \"./node_modules/@toolkip/object-helpers/dist/converter.js\"));\n\n\n//# sourceURL=webpack:///./node_modules/@toolkip/object-helpers/dist/index.js?");
+
+/***/ }),
+
+/***/ "./node_modules/@toolkip/object-helpers/dist/manipulate.js":
+/*!*****************************************************************!*\
+  !*** ./node_modules/@toolkip/object-helpers/dist/manipulate.js ***!
+  \*****************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+eval("\nObject.defineProperty(exports, \"__esModule\", { value: true });\nconst shared_types_1 = __webpack_require__(/*! @toolkip/shared-types */ \"./node_modules/@toolkip/shared-types/dist/index.js\");\nfunction map(toMap, callback, shouldQuit) {\n    let out = [];\n    if (!toMap) {\n        return out;\n    }\n    if (shared_types_1.isArray(toMap)) {\n        let done;\n        toMap.map((value, key, arr) => {\n            if (done) {\n                return;\n            }\n            let result = callback ? callback(value, key, arr) : value;\n            out.push(result);\n            if (!shouldQuit) {\n                return;\n            }\n            if (shouldQuit()) {\n                done = true;\n            }\n        });\n    }\n    else {\n        let cnt = 0;\n        let key;\n        for (key in toMap) {\n            if (toMap.hasOwnProperty(key)) {\n                let result = callback ? callback(toMap[key], key, toMap) : toMap[key];\n                if (result) {\n                    out.push(result);\n                }\n                cnt += 1;\n                if (!shouldQuit) {\n                    continue;\n                }\n                if (shouldQuit()) {\n                    break;\n                }\n            }\n        }\n    }\n    return out;\n}\nexports.map = map;\nfunction filter(toFilter, shouldInclude) {\n    const out = [];\n    map(toFilter, (elem, key, src) => {\n        if (shouldInclude(elem, key, src)) {\n            out.push(elem);\n        }\n    });\n    return out;\n}\nexports.filter = filter;\nfunction getNextKey(object, lastKey) {\n    let propName;\n    let nextKey = (!lastKey);\n    for (propName in object) {\n        if (object.hasOwnProperty(propName)) {\n            if (nextKey) {\n                return propName;\n            }\n            else if (propName === lastKey) {\n                nextKey = true;\n            }\n        }\n    }\n    return \"\";\n}\nexports.getNextKey = getNextKey;\nfunction getKeys(object) {\n    let keys = Object.keys(object) || [];\n    for (let i = keys.length - 1; i >= 0; i -= 1) {\n        let key = keys[i];\n        if (!object.hasOwnProperty(key)) {\n            keys.splice(i, 1);\n        }\n    }\n    return keys;\n}\nexports.getKeys = getKeys;\nfunction keyCount(object) {\n    return getKeys(object).length;\n}\nexports.keyCount = keyCount;\nfunction setDictValue(object, val, keys) {\n    if (!object) {\n        object = {};\n    }\n    let curObj = object;\n    for (let i = 0; i < keys.length; i += 1) {\n        let k = keys[i];\n        let initVal = {};\n        if (i === (keys.length - 1)) {\n            initVal = val;\n        }\n        if (!curObj[k]) {\n            curObj[k] = initVal;\n        }\n        curObj = curObj[k];\n    }\n    return object;\n}\nexports.setDictValue = setDictValue;\nfunction getPrototype(obj) {\n    if (obj.prototype) {\n        return obj.prototype;\n    }\n    if (obj.__proto__) {\n        return obj.__proto__;\n    }\n    return null;\n}\nexports.getPrototype = getPrototype;\n\n\n//# sourceURL=webpack:///./node_modules/@toolkip/object-helpers/dist/manipulate.js?");
+
+/***/ }),
+
+/***/ "./node_modules/@toolkip/primitive-helpers/dist/arrays.js":
+/*!****************************************************************!*\
+  !*** ./node_modules/@toolkip/primitive-helpers/dist/arrays.js ***!
+  \****************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+eval("\nObject.defineProperty(exports, \"__esModule\", { value: true });\nfunction contains(arr, value, equalityFunction) {\n    return (indexOf(arr, value, equalityFunction) !== -1);\n}\nexports.contains = contains;\nfunction indexOf(arr, value, equalityFunction) {\n    if (!arr) {\n        return -1;\n    }\n    for (let idx = 0; idx < arr.length; idx += 1) {\n        if (equalityFunction) {\n            if (equalityFunction(arr[idx], value)) {\n                return idx;\n            }\n        }\n        else if (arr[idx] === value) {\n            return idx;\n        }\n    }\n    return -1;\n}\nexports.indexOf = indexOf;\nfunction removeElemFromArr(arr, elem, equal) {\n    let idx;\n    let outArr;\n    if (!equal) {\n        equal = function (a, b) { return (a === b); };\n    }\n    for (idx = (arr.length - 1); idx >= 0; idx -= 1) {\n        if (equal(arr[idx], elem)) {\n            outArr = arr.splice(idx, 1);\n        }\n    }\n    return outArr;\n}\nexports.removeElemFromArr = removeElemFromArr;\n;\n\n\n//# sourceURL=webpack:///./node_modules/@toolkip/primitive-helpers/dist/arrays.js?");
+
+/***/ }),
+
+/***/ "./node_modules/@toolkip/primitive-helpers/dist/dates.js":
+/*!***************************************************************!*\
+  !*** ./node_modules/@toolkip/primitive-helpers/dist/dates.js ***!
+  \***************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+eval("\nObject.defineProperty(exports, \"__esModule\", { value: true });\nconst numbers_1 = __webpack_require__(/*! ./numbers */ \"./node_modules/@toolkip/primitive-helpers/dist/numbers.js\");\nconst strings_1 = __webpack_require__(/*! ./strings */ \"./node_modules/@toolkip/primitive-helpers/dist/strings.js\");\nfunction dateDiff(a, b, signed, includeTime, returnMilli) {\n    let ms;\n    let diff;\n    let dir;\n    ms = (1000 * 60 * 60 * 24);\n    if (!includeTime) {\n        a = clearTimeInfo(a, true);\n        b = clearTimeInfo(b, true);\n    }\n    if ((a > b) || signed) {\n        diff = (a - b);\n    }\n    else {\n        diff = (b - a);\n    }\n    if (!returnMilli) {\n        diff = diff / ms;\n    }\n    return diff;\n}\nexports.dateDiff = dateDiff;\n;\nvar InclusivityEnum;\n(function (InclusivityEnum) {\n    InclusivityEnum[InclusivityEnum[\"EXCLUSIVE\"] = -1] = \"EXCLUSIVE\";\n    InclusivityEnum[InclusivityEnum[\"DEFAULT\"] = 0] = \"DEFAULT\";\n    InclusivityEnum[InclusivityEnum[\"INCLUSIVE\"] = 1] = \"INCLUSIVE\";\n})(InclusivityEnum = exports.InclusivityEnum || (exports.InclusivityEnum = {}));\nfunction monthDiff(a, b, signed, inclusivity) {\n    let monthDiff;\n    let yearDiff;\n    if ((a > b) || signed) {\n        monthDiff = (a.getMonth()) - (b.getMonth());\n        yearDiff = (a.getFullYear()) - (b.getFullYear());\n    }\n    else {\n        monthDiff = (b.getMonth()) - (a.getMonth());\n        yearDiff = (b.getFullYear()) - (a.getFullYear());\n    }\n    let diff = yearDiff * 12 + monthDiff;\n    diff += +inclusivity;\n    return diff;\n}\nexports.monthDiff = monthDiff;\nfunction getToday(include_time) {\n    ;\n    let ret;\n    ret = new Date();\n    if (include_time)\n        return ret;\n    ret = clearTimeInfo(ret);\n    return ret;\n}\nexports.getToday = getToday;\n;\nfunction clearTimeInfo(date, clearTZ) {\n    let dateStr = shortDate(date);\n    let outDate;\n    if (clearTZ) {\n        outDate = new Date(dateStr + \" 00:00Z\");\n    }\n    else {\n        outDate = new Date(dateStr);\n    }\n    return outDate;\n}\nexports.clearTimeInfo = clearTimeInfo;\nfunction businessDateDiff(a, b, signed, includeTime, returnMilli) {\n    ;\n    let diff;\n    let dayOfWeek;\n    let dir;\n    let idx;\n    diff = dateDiff(a, b, signed, includeTime, returnMilli);\n    dayOfWeek = (b > a ? a.getDay() : b.getDay()) + 1;\n    dayOfWeek %= 7;\n    if (dayOfWeek < 0) {\n        dayOfWeek = 6;\n    }\n    let weekendDays = 0;\n    for (idx = 0; idx < Math.abs(diff); idx += 1) {\n        if (dayOfWeek === 0 || dayOfWeek === 6) {\n            weekendDays += 1;\n        }\n        dayOfWeek += 1;\n        dayOfWeek %= 7;\n        if (dayOfWeek < 0) {\n            dayOfWeek = 6;\n        }\n    }\n    if (diff < 0) {\n        dir = -1;\n    }\n    else {\n        dir = 1;\n    }\n    return diff - (weekendDays * dir);\n}\nexports.businessDateDiff = businessDateDiff;\n;\nfunction shortDate(dt) {\n    ;\n    if (!dt) {\n        return \"\";\n    }\n    let yr;\n    yr = getShortYear(dt);\n    return (dt.getMonth() + 1) + \"/\" + dt.getDate() + \"/\" + yr;\n}\nexports.shortDate = shortDate;\n;\nfunction inputDateFmt(dt) {\n    ;\n    let m;\n    let d;\n    let y;\n    y = dt.getFullYear();\n    m = (dt.getMonth() + 1);\n    if (m < 10)\n        m = \"0\" + m;\n    d = +dt.getDate();\n    if (d < 10)\n        d = \"0\" + d;\n    return (dt.getFullYear() + \"-\" + m + \"-\" + d);\n}\nexports.inputDateFmt = inputDateFmt;\n;\nfunction inputToDate(iDt, iTime) {\n    let outDate;\n    if (iDt) {\n        let dtArr = iDt.split(\"-\");\n        outDate = new Date(+dtArr[0], +dtArr[1] - 1, +dtArr[2]);\n    }\n    else if (iTime) {\n        outDate = getToday();\n    }\n    else {\n        outDate = null;\n        return outDate;\n    }\n    if (iTime) {\n        let timeArr = iTime.split(\":\");\n        outDate.setHours(+timeArr[0]);\n        outDate.setMinutes(+timeArr[1]);\n    }\n    return outDate;\n}\nexports.inputToDate = inputToDate;\n;\nfunction shortTime(dt, withExtra) {\n    ;\n    let min;\n    let min_str;\n    let hours;\n    let half;\n    min = +dt.getMinutes();\n    hours = +dt.getHours();\n    half = \"\";\n    if (min < 10) {\n        min_str = \"0\" + min;\n    }\n    else {\n        min_str = min.toString();\n    }\n    if (withExtra) {\n        half = \" AM\";\n        if (hours >= 12)\n            half = \" PM\";\n        if (hours > 12)\n            hours -= 12;\n        if (hours === 0) {\n            hours = 12;\n        }\n    }\n    return hours + \":\" + min_str + half;\n}\nexports.shortTime = shortTime;\n;\nfunction inputTimeFmt(time, includeSeconds) {\n    let out = [];\n    let hours = time.getHours();\n    out.push(numbers_1.padToDigits(hours, 2));\n    let minutes = time.getMinutes();\n    out.push(numbers_1.padToDigits(minutes, 2));\n    if (includeSeconds) {\n        let seconds = time.getSeconds();\n        out.push(numbers_1.padToDigits(seconds, 2));\n    }\n    return out.join(\":\");\n}\nexports.inputTimeFmt = inputTimeFmt;\nfunction shortDateTime(dt, with_extra) {\n    return shortDate(dt) + \" \" + shortTime(dt, with_extra);\n}\nexports.shortDateTime = shortDateTime;\n;\nfunction stopwatchDisplay(milli, noLeadingZeros, noBlanks) {\n    let seconds;\n    let minutes;\n    let hours;\n    let days;\n    let arr;\n    let sec_str;\n    let min_str;\n    let hr_str;\n    if (!noLeadingZeros) {\n        sec_str = strings_1.addLeadingZeroes(2, seconds);\n        min_str = strings_1.addLeadingZeroes(2, minutes);\n        hr_str = strings_1.addLeadingZeroes(2, hours);\n    }\n    else {\n        sec_str = seconds.toString();\n        min_str = minutes.toString();\n        hr_str = hours.toString();\n    }\n    return days + \"D  \" + hr_str + \":\" + min_str + \":\" + sec_str + \" '\" + milli;\n}\nexports.stopwatchDisplay = stopwatchDisplay;\n;\nfunction _retrieveCountsFromMilli(milli) {\n    let out = {};\n    let remaining = milli;\n    out.days = Math.floor(remaining / (24 * 60 * 60 * 1000));\n    remaining -= (out.days * 24 * 60 * 60 * 1000);\n    out.hours = Math.floor(remaining / (60 * 60 * 1000));\n    remaining -= (out.hours * 60 * 60 * 1000);\n    out.minutes = Math.floor(remaining / (60 * 1000));\n    remaining -= (out.minutes * 60 * 1000);\n    out.seconds = Math.floor(remaining / 1000);\n    remaining -= (out.seconds * 1000);\n    out.milliseconds = remaining;\n    return out;\n}\nfunction updatedStopwatchDisplay(milli, options) {\n    let diffs = _retrieveCountsFromMilli(milli);\n    let out = [];\n    if (diffs.days) {\n        out.push(diffs.days + \" days\");\n    }\n    if (diffs.hours) {\n        out.push(diffs.hours + \" hours\");\n    }\n    if (diffs.minutes) {\n        out.push(diffs.minutes + \" minutes\");\n    }\n    if (diffs.seconds) {\n        out.push(diffs.seconds + \" seconds\");\n    }\n    if (diffs.milliseconds && options.showMilli) {\n        out.push(diffs.milliseconds + \" ms\");\n    }\n    return out.join(\" \");\n}\nexports.updatedStopwatchDisplay = updatedStopwatchDisplay;\nfunction addToDate(date, counts) {\n    if (counts.milliseconds) {\n        date.setMilliseconds(date.getMilliseconds() + counts.milliseconds);\n    }\n    if (counts.seconds) {\n        date.setSeconds(date.getSeconds() + counts.seconds);\n    }\n    if (counts.minutes) {\n        date.setMinutes(date.getMinutes() + counts.minutes);\n    }\n    if (counts.hours) {\n        date.setHours(date.getHours() + counts.hours);\n    }\n    if (counts.days) {\n        date.setDate(date.getDate() + counts.days);\n    }\n    if (counts.months) {\n        date.setMonth(date.getMonth() + counts.months);\n    }\n    if (counts.years) {\n        date.setFullYear(date.getFullYear() + counts.years);\n    }\n    return date;\n}\nexports.addToDate = addToDate;\n;\nfunction getMonthName(date, short) {\n    switch (date.getMonth()) {\n        case 0:\n            if (short)\n                return \"Jan\";\n            return \"January\";\n        case 1:\n            if (short)\n                return \"Feb\";\n            return \"February\";\n        case 2:\n            if (short)\n                return \"Mar\";\n            return \"March\";\n        case 3:\n            if (short)\n                return \"Apr\";\n            return \"April\";\n        case 4:\n            return \"May\";\n        case 5:\n            if (short)\n                return \"Jun\";\n            return \"June\";\n        case 6:\n            if (short)\n                return \"Jul\";\n            return \"July\";\n        case 7:\n            if (short)\n                return \"Aug\";\n            return \"August\";\n        case 8:\n            if (short)\n                return \"Sept\";\n            return \"September\";\n        case 9:\n            if (short)\n                return \"Oct\";\n            return \"October\";\n        case 10:\n            if (short)\n                return \"Nov\";\n            return \"November\";\n        case 11:\n            if (short)\n                return \"Dec\";\n            return \"December\";\n    }\n    return \"\";\n}\nexports.getMonthName = getMonthName;\n;\nfunction getDayOfWeek(date, short) {\n    ;\n    switch (date.getDay()) {\n        case 0:\n            if (short)\n                return \"Sun\";\n            return \"Sunday\";\n        case 1:\n            if (short)\n                return \"Mon\";\n            return \"Monday\";\n        case 2:\n            if (short)\n                return \"Tues\";\n            return \"Tuesday\";\n        case 3:\n            if (short)\n                return \"Wed\";\n            return \"Wednesday\";\n        case 4:\n            if (short)\n                return \"Thurs\";\n            return \"Thursday\";\n        case 5:\n            if (short)\n                return \"Fri\";\n            return \"Friday\";\n        case 6:\n            if (short)\n                return \"Sat\";\n            return \"Saturday\";\n    }\n    return \"\";\n}\nexports.getDayOfWeek = getDayOfWeek;\n;\nfunction getLengthOfMonthInDays(date) {\n    if (!date) {\n        return -1;\n    }\n    let month = date.getMonth();\n    switch (month) {\n        case 0:\n        case 2:\n        case 4:\n        case 6:\n        case 7:\n        case 9:\n        case 11:\n            return 31;\n        case 1:\n            if (isLeapYear(date)) {\n                return 29;\n            }\n            else {\n                return 28;\n            }\n        default:\n            return 30;\n    }\n}\nexports.getLengthOfMonthInDays = getLengthOfMonthInDays;\nfunction isLeapYear(date) {\n    if (!date) {\n        return false;\n    }\n    let year = date.getFullYear();\n    if (year % 4 !== 0) {\n        return false;\n    }\n    if ((year % 100 === 0) && (year % 400 !== 0)) {\n        return false;\n    }\n    return true;\n}\nexports.isLeapYear = isLeapYear;\nfunction getShortYear(date) {\n    return (+date.getFullYear() % 100);\n}\nexports.getShortYear = getShortYear;\nfunction isWeekend(date) {\n    let dayOfWeek = date.getDay();\n    if (dayOfWeek === 0) {\n        return true;\n    }\n    if (dayOfWeek === 6) {\n        return true;\n    }\n    return false;\n}\nexports.isWeekend = isWeekend;\nfunction isToday(date) {\n    let today = getToday();\n    let cloneDate = clearTimeInfo(date);\n    return isSameDate(today, cloneDate);\n}\nexports.isToday = isToday;\nfunction isSameDate(dateA, dateB) {\n    if (shortDate(dateA) === shortDate(dateB)) {\n        return true;\n    }\n    return false;\n}\nexports.isSameDate = isSameDate;\nfunction getDisplayDuration(counts) {\n    _updateDateDifferences(1000, counts, \"milliseconds\", \"seconds\");\n    _updateDateDifferences(60, counts, \"seconds\", \"minutes\");\n    _updateDateDifferences(60, counts, \"minutes\", \"hours\");\n    _updateDateDifferences(24, counts, \"hours\", \"days\");\n    _updateDateDifferences(30, counts, \"days\", \"months\");\n    _updateDateDifferences(12, counts, \"months\", \"years\");\n    let out = [];\n    if (counts.years) {\n        out.push(_createPluralString(counts.years, \"year\"));\n    }\n    if (counts.months) {\n        out.push(_createPluralString(counts.months, \"month\"));\n    }\n    if (counts.days) {\n        out.push(_createPluralString(counts.days, \"day\"));\n    }\n    if (counts.hours) {\n        out.push(_createPluralString(counts.hours, \"hour\"));\n    }\n    if (counts.minutes) {\n        out.push(_createPluralString(counts.minutes, \"minute\"));\n    }\n    if (counts.seconds) {\n        out.push(_createPluralString(counts.seconds, \"second\"));\n    }\n    if (counts.milliseconds) {\n        out.push(_createPluralString(counts.milliseconds, \"millisecond\"));\n    }\n    return out.join(\" \");\n}\nexports.getDisplayDuration = getDisplayDuration;\nfunction _updateDateDifferences(divisor, out, startKey, endKey) {\n    if (!out[startKey]) {\n        out[startKey] = 0;\n    }\n    if (!out[endKey]) {\n        out[endKey] = 0;\n    }\n    let dividend = out[startKey];\n    let remainder = dividend % divisor;\n    let quotient = Math.floor(dividend / divisor);\n    out[startKey] = remainder;\n    out[endKey] += quotient;\n    return out;\n}\nfunction _createPluralString(amount, singular, plural) {\n    if (amount === 1) {\n        return amount + \" \" + singular;\n    }\n    else {\n        if (!plural) {\n            plural = singular + \"s\";\n        }\n        return amount + \" \" + plural;\n    }\n}\n\n\n//# sourceURL=webpack:///./node_modules/@toolkip/primitive-helpers/dist/dates.js?");
+
+/***/ }),
+
+/***/ "./node_modules/@toolkip/primitive-helpers/dist/index.js":
+/*!***************************************************************!*\
+  !*** ./node_modules/@toolkip/primitive-helpers/dist/index.js ***!
+  \***************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+eval("\nfunction __export(m) {\n    for (var p in m) if (!exports.hasOwnProperty(p)) exports[p] = m[p];\n}\nObject.defineProperty(exports, \"__esModule\", { value: true });\n__export(__webpack_require__(/*! ./arrays */ \"./node_modules/@toolkip/primitive-helpers/dist/arrays.js\"));\n__export(__webpack_require__(/*! ./dates */ \"./node_modules/@toolkip/primitive-helpers/dist/dates.js\"));\n__export(__webpack_require__(/*! ./numbers */ \"./node_modules/@toolkip/primitive-helpers/dist/numbers.js\"));\n__export(__webpack_require__(/*! ./strings */ \"./node_modules/@toolkip/primitive-helpers/dist/strings.js\"));\n\n\n//# sourceURL=webpack:///./node_modules/@toolkip/primitive-helpers/dist/index.js?");
+
+/***/ }),
+
+/***/ "./node_modules/@toolkip/primitive-helpers/dist/numbers.js":
+/*!*****************************************************************!*\
+  !*** ./node_modules/@toolkip/primitive-helpers/dist/numbers.js ***!
+  \*****************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+eval("\nObject.defineProperty(exports, \"__esModule\", { value: true });\nfunction padToDigits(toPad, numberOfDigits) {\n    let outArr = toPad.toString().split(\"\");\n    while (outArr.length < numberOfDigits) {\n        outArr.splice(0, 0, \"0\");\n    }\n    return outArr.join(\"\");\n}\nexports.padToDigits = padToDigits;\nfunction fullHexString(val, length) {\n    ;\n    let outHexString;\n    let i;\n    length = length || 0;\n    outHexString = val.toString(16);\n    if (outHexString.length < length) {\n        for (i = 0; i < (length - outHexString.length); i += 1) {\n            outHexString = \"0\" + outHexString;\n        }\n    }\n    return outHexString;\n}\nexports.fullHexString = fullHexString;\n\n\n//# sourceURL=webpack:///./node_modules/@toolkip/primitive-helpers/dist/numbers.js?");
+
+/***/ }),
+
+/***/ "./node_modules/@toolkip/primitive-helpers/dist/strings.js":
+/*!*****************************************************************!*\
+  !*** ./node_modules/@toolkip/primitive-helpers/dist/strings.js ***!
+  \*****************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+eval("\nObject.defineProperty(exports, \"__esModule\", { value: true });\nconst shared_types_1 = __webpack_require__(/*! @toolkip/shared-types */ \"./node_modules/@toolkip/shared-types/dist/index.js\");\nfunction piece(str, delim, pc = 1) {\n    let split_arr;\n    split_arr = str.split(delim);\n    return split_arr[pc] || \"\";\n}\nexports.piece = piece;\n;\nfunction addPiece(str, nextPiece, delim) {\n    if (str.length > 0) {\n        str += delim;\n    }\n    return str + nextPiece;\n}\nexports.addPiece = addPiece;\nfunction titleCase(str, delim = \" \") {\n    let words;\n    let w;\n    let out;\n    out = \"\";\n    words = str.split(delim);\n    for (w = 0; w < words.length; w += 1) {\n        if (w !== 0) {\n            out += delim;\n        }\n        out += charAt(words[w], 0).toUpperCase();\n        out += rest(words[w], 1).toLowerCase();\n    }\n    return out;\n}\nexports.titleCase = titleCase;\n;\nfunction sentenceCase(str) {\n    let out;\n    out = charAt(str, 0).toUpperCase();\n    out += rest(str, 1).toLowerCase();\n    return out;\n}\nexports.sentenceCase = sentenceCase;\n;\nfunction charAt(str, idx) {\n    return str.substr(idx, 1);\n}\nexports.charAt = charAt;\n;\nfunction rest(str, idx) {\n    return str.substring(idx, str.length);\n}\nexports.rest = rest;\n;\nfunction trim(str) {\n    let ret;\n    ret = str.replace(/^\\s*/g, \"\");\n    ret = ret.replace(/\\s*?$/g, \"\");\n    return ret;\n}\nexports.trim = trim;\n;\nfunction stripSpaces(str) {\n    let ret;\n    ret = str.replace(/\\s/g, \"\");\n    ret = ret.replace(/\\&nbsp\\;/g, \"\");\n    return ret;\n}\nexports.stripSpaces = stripSpaces;\nfunction format(str, ...replacements) {\n    let stringArr = str.split(\"\");\n    if (!replacements) {\n        replacements = [];\n    }\n    let number = \"\";\n    let lookingForNumber = false;\n    for (let idx = 0; idx < stringArr.length; idx += 1) {\n        let char = stringArr[idx];\n        if (char === \"\\\\\") {\n            stringArr[idx] = \"\";\n            idx += 1;\n            continue;\n        }\n        else if (char === \"{\") {\n            lookingForNumber = true;\n            stringArr[idx] = \"\";\n        }\n        else if (char === \"}\" && lookingForNumber) {\n            stringArr[idx] = (!shared_types_1.isNullOrUndefined(replacements[+number]) ? replacements[+number].toString() : \"{\" + number + \"}\");\n            lookingForNumber = false;\n            number = \"\";\n        }\n        else if (isNumeric(char) && lookingForNumber) {\n            number += char;\n            stringArr[idx] = \"\";\n        }\n        else if (lookingForNumber) {\n            lookingForNumber = false;\n            number = \"\";\n        }\n    }\n    return stringArr.join(\"\");\n}\nexports.format = format;\nfunction isNumeric(str) {\n    return /^[0-9]+$/.test(str);\n}\nexports.isNumeric = isNumeric;\nfunction addLeadingZeroes(count, unpadded) {\n    ;\n    let out;\n    if (typeof unpadded === \"string\") {\n        out = unpadded;\n    }\n    else {\n        out = unpadded.toString();\n    }\n    let z;\n    for (z = out.length; z < count; z += 1) {\n        out = \"0\" + out;\n    }\n    return out;\n}\nexports.addLeadingZeroes = addLeadingZeroes;\n;\nfunction stripHTML(str) {\n    let out;\n    out = str.replace(/\\<.*?\\>/g, \"\");\n    return out;\n}\nexports.stripHTML = stripHTML;\nfunction join(joinChar, ...toJoin) {\n    return toJoin.join(joinChar);\n}\nexports.join = join;\n\n\n//# sourceURL=webpack:///./node_modules/@toolkip/primitive-helpers/dist/strings.js?");
+
+/***/ }),
+
+/***/ "./node_modules/@toolkip/server/dist/ajax.js":
+/*!***************************************************!*\
+  !*** ./node_modules/@toolkip/server/dist/ajax.js ***!
+  \***************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+eval("\nObject.defineProperty(exports, \"__esModule\", { value: true });\nconst object_helpers_1 = __webpack_require__(/*! @toolkip/object-helpers */ \"./node_modules/@toolkip/object-helpers/dist/index.js\");\nfunction ajax(ajaxDetails) {\n    return new Promise((resolve, reject) => {\n        _innerAjax(ajaxDetails, resolve, reject);\n    });\n}\nexports.ajax = ajax;\nfunction _innerAjax(ajaxDetails, resolve, reject) {\n    let request = _getXmlRequestObject();\n    if (!request)\n        return null;\n    _assignXmlRequestCallbacks(request, (...params) => resolve(...params), (...params) => reject(...params));\n    _sendXmlRequest(request, ajaxDetails);\n    return request;\n}\n;\nfunction _getXmlRequestObject() {\n    let request = null;\n    try {\n        request = new XMLHttpRequest();\n    }\n    catch (e) {\n        try {\n            request = new ActiveXObject(\"Msxml2.XMLHTTP\");\n        }\n        catch (e) {\n            try {\n                request = new ActiveXObject(\"Microsoft.XMLHTTP\");\n            }\n            catch (e) {\n                return null;\n            }\n        }\n    }\n    return request;\n}\nfunction _assignXmlRequestCallbacks(request, successCb, errorCb) {\n    request.onreadystatechange = () => {\n        if (request.readyState !== 4) {\n            return;\n        }\n        if (_isValidResponse(request.status)) {\n            successCb(request.responseText);\n        }\n        else {\n            errorCb(request.responseText);\n        }\n    };\n    return request;\n}\nfunction _addHeaderData(request, headerParams) {\n    if (!headerParams) {\n        return;\n    }\n    object_helpers_1.map(headerParams, (value, key) => {\n        request.setRequestHeader(key, value);\n    });\n}\nfunction _sendXmlRequest(request, { type, requestUrl, params, headerParams }) {\n    request.open(type, requestUrl, true);\n    _addHeaderData(request, headerParams);\n    let urlParams = null;\n    if (type === \"POST\") {\n        urlParams = _setRequestHeader(request, params);\n    }\n    request.send(urlParams);\n    return request;\n}\nfunction _setRequestHeader(request, params) {\n    let reqHeaderType;\n    let outParams;\n    if (params instanceof FormData) {\n        reqHeaderType = \"multipart/form-data\";\n        outParams = params;\n    }\n    else {\n        reqHeaderType = \"application/json\";\n        outParams = JSON.stringify(params);\n    }\n    if (reqHeaderType) {\n        request.setRequestHeader(\"Content-Type\", reqHeaderType);\n    }\n    return outParams;\n}\nfunction _buildParameters(params) {\n    let paramOut = [];\n    object_helpers_1.map(params, (val, key) => {\n        let urlParam = encodeURIComponent(key) + \"=\" + encodeURIComponent(val);\n        paramOut.push(urlParam);\n    });\n    return paramOut.join(\"&\");\n}\nfunction _isValidResponse(responseCode) {\n    if (responseCode < 200) {\n        return false;\n    }\n    if (responseCode >= 300) {\n        return false;\n    }\n    return true;\n}\n\n\n//# sourceURL=webpack:///./node_modules/@toolkip/server/dist/ajax.js?");
+
+/***/ }),
+
+/***/ "./node_modules/@toolkip/server/dist/fileIO.js":
+/*!*****************************************************!*\
+  !*** ./node_modules/@toolkip/server/dist/fileIO.js ***!
+  \*****************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+eval("\nObject.defineProperty(exports, \"__esModule\", { value: true });\nconst create_elements_1 = __webpack_require__(/*! @toolkip/create-elements */ \"./node_modules/@toolkip/create-elements/dist/index.js\");\nfunction loadFile(fileDetails) {\n    return new Promise((resolve, reject) => {\n        _innerLoadFile(fileDetails, resolve, reject);\n    });\n}\nexports.loadFile = loadFile;\nfunction _innerLoadFile(fileDetails, success, error) {\n    let request = new XMLHttpRequest();\n    request.open('GET', fileDetails.filename);\n    request.onreadystatechange = () => {\n        if (request.readyState == 4 && request.status == 200) {\n            success(request.responseText);\n        }\n        else if (request.status === 404) {\n            error(request.responseText);\n        }\n    };\n    request.send();\n}\nexports._innerLoadFile = _innerLoadFile;\n;\nfunction saveFile(fileDetails) {\n    return new Promise((resolve) => {\n        _innerSaveFile(fileDetails, resolve);\n    });\n}\nexports.saveFile = saveFile;\nfunction _innerSaveFile({ filename, content }, resolve) {\n    let blob;\n    if (typeof content === \"string\") {\n        blob = new Blob([content], { type: \"text/plain\" });\n    }\n    else {\n        blob = content;\n    }\n    _generateDownload(filename, blob);\n}\nfunction _generateDownload(filename, file) {\n    if (window.navigator.msSaveOrOpenBlob) {\n        window.navigator.msSaveBlob(file, \"u\");\n    }\n    else {\n        let elem = create_elements_1.createElement({\n            type: \"a\",\n            attr: {\n                \"href\": window.URL.createObjectURL(file),\n                \"download\": filename\n            }\n        });\n        document.body.appendChild(elem);\n        elem.click();\n        document.body.removeChild(elem);\n    }\n}\n\n\n//# sourceURL=webpack:///./node_modules/@toolkip/server/dist/fileIO.js?");
+
+/***/ }),
+
+/***/ "./node_modules/@toolkip/server/dist/index.js":
+/*!****************************************************!*\
+  !*** ./node_modules/@toolkip/server/dist/index.js ***!
+  \****************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+eval("\nfunction __export(m) {\n    for (var p in m) if (!exports.hasOwnProperty(p)) exports[p] = m[p];\n}\nObject.defineProperty(exports, \"__esModule\", { value: true });\n__export(__webpack_require__(/*! ./ajax */ \"./node_modules/@toolkip/server/dist/ajax.js\"));\n__export(__webpack_require__(/*! ./fileIO */ \"./node_modules/@toolkip/server/dist/fileIO.js\"));\n\n\n//# sourceURL=webpack:///./node_modules/@toolkip/server/dist/index.js?");
+
+/***/ }),
+
+/***/ "./node_modules/@toolkip/shared-types/dist/_typeGuards.js":
+/*!****************************************************************!*\
+  !*** ./node_modules/@toolkip/shared-types/dist/_typeGuards.js ***!
+  \****************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+eval("\nObject.defineProperty(exports, \"__esModule\", { value: true });\nfunction isUndefined(value) {\n    if (value === undefined) {\n        return true;\n    }\n    return false;\n}\nexports.isUndefined = isUndefined;\nfunction isNullOrUndefined(value) {\n    if (value === undefined) {\n        return true;\n    }\n    if (value === null) {\n        return true;\n    }\n    return false;\n}\nexports.isNullOrUndefined = isNullOrUndefined;\nfunction isFalsy(value, falsyTypesToIgnore = []) {\n    if (!!value) {\n        return false;\n    }\n    for (let ignoredType of falsyTypesToIgnore) {\n        if (ignoredType === value) {\n            return false;\n        }\n    }\n    return true;\n}\nexports.isFalsy = isFalsy;\nfunction isTruthy(value, falsyTypesToTreatAsTruthy = []) {\n    return !this.isFalsy(value, falsyTypesToTreatAsTruthy);\n}\nexports.isTruthy = isTruthy;\nfunction isInterface(test, full_imp) {\n    let prop;\n    let req_match = true;\n    let val;\n    for (prop in full_imp) {\n        if (full_imp.hasOwnProperty(prop)) {\n            val = full_imp[prop];\n            if (val && (test[prop] === undefined)) {\n                req_match = false;\n                break;\n            }\n        }\n    }\n    if (!req_match) {\n        return false;\n    }\n    let has_extra = false;\n    for (prop in test) {\n        if (test.hasOwnProperty(prop)) {\n            if (full_imp[prop] === undefined) {\n                has_extra = true;\n                break;\n            }\n        }\n    }\n    return (!has_extra);\n}\nexports.isInterface = isInterface;\nfunction isString(test) {\n    return (typeof test === \"string\");\n}\nexports.isString = isString;\nfunction isKeyof(test, reference) {\n    if (!reference) {\n        return isString(test);\n    }\n    return reference.hasOwnProperty(test);\n}\nexports.isKeyof = isKeyof;\nfunction isNumber(test) {\n    return (typeof test === \"number\");\n}\nexports.isNumber = isNumber;\nfunction isBoolean(test) {\n    return (typeof test === \"boolean\");\n}\nexports.isBoolean = isBoolean;\nfunction isPrimitive(test) {\n    if (test === null) {\n        return true;\n    }\n    switch (typeof test) {\n        case 'boolean':\n        case 'number':\n        case 'string':\n        case 'undefined':\n            return true;\n        default:\n            return false;\n    }\n}\nexports.isPrimitive = isPrimitive;\nfunction isFunction(test) {\n    return (typeof test === \"function\");\n}\nexports.isFunction = isFunction;\nfunction isArray(test) {\n    return (test instanceof Array);\n}\nexports.isArray = isArray;\nfunction isObject(test) {\n    return (typeof test === typeof {});\n}\nexports.isObject = isObject;\nfunction isDate(test) {\n    if (!(test instanceof Date)) {\n        return false;\n    }\n    const protoName = Object.prototype.toString.call(test);\n    return protoName === '[object Date]';\n}\nexports.isDate = isDate;\nfunction isPromise(test) {\n    if (test instanceof Promise) {\n        return true;\n    }\n    return false;\n}\nexports.isPromise = isPromise;\nfunction isPromiseLike(test) {\n    if (!test.then) {\n        return false;\n    }\n    if (typeof test.then !== 'function') {\n        return false;\n    }\n    return true;\n}\nexports.isPromiseLike = isPromiseLike;\nfunction isStandardElement(test) {\n    if (test instanceof HTMLElement) {\n        return true;\n    }\n    if (test instanceof SVGElement) {\n        return true;\n    }\n    return false;\n}\nexports.isStandardElement = isStandardElement;\nfunction isDrawable(test) {\n    return !!test.draw;\n}\nexports.isDrawable = isDrawable;\nfunction isDrawableElement(test) {\n    return (!!(test.appendChild));\n}\nexports.isDrawableElement = isDrawableElement;\nfunction isUpdatable(test) {\n    if (!test) {\n        return;\n    }\n    return !!(test.update);\n}\nexports.isUpdatable = isUpdatable;\n\n\n//# sourceURL=webpack:///./node_modules/@toolkip/shared-types/dist/_typeGuards.js?");
+
+/***/ }),
+
+/***/ "./node_modules/@toolkip/shared-types/dist/index.js":
+/*!**********************************************************!*\
+  !*** ./node_modules/@toolkip/shared-types/dist/index.js ***!
+  \**********************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+eval("\nfunction __export(m) {\n    for (var p in m) if (!exports.hasOwnProperty(p)) exports[p] = m[p];\n}\nObject.defineProperty(exports, \"__esModule\", { value: true });\n__export(__webpack_require__(/*! ./_typeGuards */ \"./node_modules/@toolkip/shared-types/dist/_typeGuards.js\"));\n\n\n//# sourceURL=webpack:///./node_modules/@toolkip/shared-types/dist/index.js?");
+
+/***/ }),
+
+/***/ "./node_modules/@toolkip/style-helpers/dist/_constants.js":
+/*!****************************************************************!*\
+  !*** ./node_modules/@toolkip/style-helpers/dist/_constants.js ***!
+  \****************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+eval("\nObject.defineProperty(exports, \"__esModule\", { value: true });\nexports.THEME_BG_COLOR_CLS = \"themeBGColor\";\nexports.THEME_COLOR_CLS = \"themeColor\";\nexports.THEME_COLOR_HOVER_CLS = \"themeBGHoverColor\";\n\n\n//# sourceURL=webpack:///./node_modules/@toolkip/style-helpers/dist/_constants.js?");
+
+/***/ }),
+
+/***/ "./node_modules/@toolkip/style-helpers/dist/combiner.js":
+/*!**************************************************************!*\
+  !*** ./node_modules/@toolkip/style-helpers/dist/combiner.js ***!
+  \**************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+eval("\nObject.defineProperty(exports, \"__esModule\", { value: true });\nconst object_helpers_1 = __webpack_require__(/*! @toolkip/object-helpers */ \"./node_modules/@toolkip/object-helpers/dist/index.js\");\nclass _StyleCombiner {\n    combine(...styles) {\n        return this._combineStyles(...styles);\n    }\n    _combineStyles(...styles) {\n        let outStyles = {};\n        for (let style of styles) {\n            if (!style) {\n                continue;\n            }\n            object_helpers_1.map(style, (curCls, selector) => {\n                if (curCls instanceof Array) {\n                    outStyles[selector] = this._combineFontStyle(outStyles[selector] || [], curCls);\n                }\n                else {\n                    outStyles[selector] = this._combineStandardStyle(outStyles[selector] || {}, curCls);\n                }\n            });\n        }\n        ;\n        return outStyles;\n    }\n    _combineStandardStyle(existingStyles, curCls) {\n        let mergedDef = this._combineStyle(existingStyles, curCls);\n        if (!mergedDef) {\n            return;\n        }\n        return mergedDef;\n    }\n    _combineFontStyle(existingFonts, curFonts) {\n        return existingFonts.concat(curFonts);\n    }\n    _combineStyle(startingStyles, curCls) {\n        let mergedDef = this._mergeClassDefinition(startingStyles, curCls);\n        if (object_helpers_1.isEmptyObject(mergedDef)) {\n            return null;\n        }\n        return mergedDef;\n    }\n    _mergeClassDefinition(...definitions) {\n        let mergedDef = {};\n        for (let def of definitions) {\n            object_helpers_1.map(def, (val, property) => {\n                mergedDef[property] = val;\n            });\n        }\n        return mergedDef;\n    }\n}\nconst StyleCombiner = new _StyleCombiner();\nfunction combineStyles(...styles) {\n    return StyleCombiner.combine(...styles);\n}\nexports.combineStyles = combineStyles;\n\n\n//# sourceURL=webpack:///./node_modules/@toolkip/style-helpers/dist/combiner.js?");
+
+/***/ }),
+
+/***/ "./node_modules/@toolkip/style-helpers/dist/css.js":
+/*!*********************************************************!*\
+  !*** ./node_modules/@toolkip/style-helpers/dist/css.js ***!
+  \*********************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+eval("\nObject.defineProperty(exports, \"__esModule\", { value: true });\nconst primitive_helpers_1 = __webpack_require__(/*! @toolkip/primitive-helpers */ \"./node_modules/@toolkip/primitive-helpers/dist/index.js\");\nconst shared_types_1 = __webpack_require__(/*! @toolkip/shared-types */ \"./node_modules/@toolkip/shared-types/dist/index.js\");\nconst getClassableElement = (elem) => {\n    if (shared_types_1.isDrawable(elem)) {\n        return elem.base;\n    }\n    else {\n        return elem;\n    }\n};\nfunction getClass(elem) {\n    const e = getClassableElement(elem);\n    return e.getAttribute('class') || '';\n}\nexports.getClass = getClass;\nfunction getClasses(elem) {\n    const cls = getClass(elem);\n    if (!cls) {\n        return [];\n    }\n    return cls.split(' ');\n}\nexports.getClasses = getClasses;\nfunction addClass(elem, clsName) {\n    if (!elem || !clsName)\n        return;\n    const e = getClassableElement(elem);\n    const cls = e.getAttribute(\"class\");\n    if (!cls) {\n        e.setAttribute(\"class\", primitive_helpers_1.trim(clsName));\n        return;\n    }\n    const paddedCls = \" \" + cls + \" \";\n    if (paddedCls.indexOf(' ' + clsName + ' ') === -1) {\n        e.setAttribute(\"class\", primitive_helpers_1.trim(cls + ' ' + clsName));\n    }\n    return elem;\n}\nexports.addClass = addClass;\n;\nfunction addClasses(elem, ...clsNames) {\n    if (!elem ||\n        !clsNames ||\n        clsNames.length === 0) {\n        return;\n    }\n    const e = getClassableElement(elem);\n    const classes = getClasses(elem);\n    for (let clsName of clsNames) {\n        if (!clsName) {\n            continue;\n        }\n        if (primitive_helpers_1.indexOf(classes, clsName) !== -1) {\n            continue;\n        }\n        classes.push(clsName);\n    }\n    e.setAttribute('class', classes.join(' '));\n    return elem;\n}\nexports.addClasses = addClasses;\nfunction removeClass(elem, clsName) {\n    if (!elem || !clsName)\n        return;\n    let e;\n    if (shared_types_1.isDrawable(elem)) {\n        e = elem.base;\n    }\n    else {\n        e = elem;\n    }\n    let cls = \" \" + e.getAttribute(\"class\") + \" \";\n    const len = cls.length;\n    cls = cls.replace(\" \" + clsName + \" \", \" \");\n    if (cls.length !== len) {\n        e.setAttribute(\"class\", primitive_helpers_1.trim(cls));\n    }\n    return elem;\n}\nexports.removeClass = removeClass;\n;\nfunction addOrRemoveClass(elem, clsName, shouldAdd) {\n    if (shouldAdd) {\n        addClass(elem, clsName);\n    }\n    else {\n        removeClass(elem, clsName);\n    }\n    return elem;\n}\nexports.addOrRemoveClass = addOrRemoveClass;\nfunction hasClass(elem, cls) {\n    let e;\n    let cur_cls;\n    if (!elem)\n        return;\n    if (shared_types_1.isDrawable(elem)) {\n        e = elem.base;\n    }\n    else {\n        e = elem;\n    }\n    cur_cls = \" \" + e.getAttribute(\"class\") + \" \";\n    if (cur_cls.indexOf(\" \" + cls + \" \") === -1) {\n        return false;\n    }\n    return true;\n}\nexports.hasClass = hasClass;\n;\nfunction clearClass(elem) {\n    if (!elem) {\n        return;\n    }\n    let e;\n    if (shared_types_1.isDrawable(elem)) {\n        e = elem.base;\n    }\n    else {\n        e = elem;\n    }\n    e.setAttribute(\"class\", \"\");\n    return elem;\n}\nexports.clearClass = clearClass;\nfunction toggleClass(elem, clsName) {\n    return addOrRemoveClass(elem, clsName, !hasClass(elem, clsName));\n}\nexports.toggleClass = toggleClass;\nfunction setProperty(cls, item, val, force) {\n    let i;\n    let css;\n    let sIdx;\n    let rules;\n    let rule;\n    for (sIdx = 0; sIdx < document.styleSheets.length; sIdx += 1) {\n        css = document.all ? 'rules' : 'cssRules';\n        rules = document.styleSheets[sIdx][css];\n        if (rules) {\n            for (i = 0; i < rules.length; i += 1) {\n                rule = rules[i];\n                if (rule.selectorText === cls) {\n                    if ((rule.style[item]) || (force)) {\n                        rule.style[item] = val;\n                        return true;\n                    }\n                }\n            }\n        }\n    }\n    return false;\n}\nexports.setProperty = setProperty;\n;\nfunction getProperty(cls, item) {\n    let i;\n    let css;\n    let sIdx;\n    let rules;\n    let rule;\n    for (sIdx = 0; sIdx < document.styleSheets.length; sIdx += 1) {\n        css = document.all ? 'rules' : 'cssRules';\n        rules = document.styleSheets[sIdx][css];\n        if (rules) {\n            for (i = 0; i < rules.length; i += 1) {\n                rule = rules[i];\n                if (rule.selectorText === cls) {\n                    return (rule.style[item]);\n                }\n            }\n        }\n    }\n    return \"\";\n}\nexports.getProperty = getProperty;\n;\nfunction _old_CreateClass(selector, attr, noAppend) {\n    let cls;\n    let a;\n    let styles;\n    styles = document.getElementsByTagName(\"style\");\n    if (noAppend || styles.length > 0) {\n        cls = styles[0];\n    }\n    else {\n        cls = document.createElement(\"style\");\n        cls.innerHTML = \"\";\n    }\n    cls.innerHTML += \"\\n\" + selector + \" {\\n\";\n    for (a in attr) {\n        if (attr.hasOwnProperty(a)) {\n            if (attr[a].key) {\n                cls.innerHTML += \"\\t\" + attr[a].key + \": \" + attr[a].val + \";\\n\";\n            }\n            else {\n                cls.innerHTML += \"\\t\" + a + \" : \" + attr[a] + \";\\n\";\n            }\n        }\n    }\n    cls.innerHTML += \"\\n}\";\n    if (!noAppend) {\n        document.head.appendChild(cls);\n    }\n    return cls;\n}\nfunction getComputedStyle(elem, attr) {\n    let style;\n    let e;\n    if (shared_types_1.isDrawable(elem)) {\n        e = elem.base;\n    }\n    else {\n        e = elem;\n    }\n    if (window.getComputedStyle) {\n        style = window.getComputedStyle(e);\n        if (attr) {\n            return style.getPropertyValue(attr);\n        }\n        else {\n            return style;\n        }\n    }\n    else if (e.currentStyle) {\n        style = e.currentStyle;\n        if (attr) {\n            return style[attr];\n        }\n        else {\n            return style;\n        }\n    }\n    return null;\n}\nexports.getComputedStyle = getComputedStyle;\n\n\n//# sourceURL=webpack:///./node_modules/@toolkip/style-helpers/dist/css.js?");
+
+/***/ }),
+
+/***/ "./node_modules/@toolkip/style-helpers/dist/flattener.js":
+/*!***************************************************************!*\
+  !*** ./node_modules/@toolkip/style-helpers/dist/flattener.js ***!
+  \***************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+eval("\nObject.defineProperty(exports, \"__esModule\", { value: true });\nconst object_helpers_1 = __webpack_require__(/*! @toolkip/object-helpers */ \"./node_modules/@toolkip/object-helpers/dist/index.js\");\nconst combiner_1 = __webpack_require__(/*! ./combiner */ \"./node_modules/@toolkip/style-helpers/dist/combiner.js\");\nclass _StyleFlattener {\n    flatten(styles) {\n        return this._flattenStyles(styles, \"\");\n    }\n    _flattenStyles(styles, lastSelector) {\n        let outStyles = {};\n        object_helpers_1.map(styles, (value, selector) => {\n            let newSelectors = this._buildNewSelectors(selector, lastSelector);\n            for (let selector of newSelectors) {\n                let calculatedStyles = this._flattenClassDefinition(selector, value);\n                outStyles = combiner_1.combineStyles(outStyles, calculatedStyles);\n            }\n        });\n        return outStyles;\n    }\n    _flattenClassDefinition(selector, classDef) {\n        let topStyles = {\n            [selector]: {},\n        };\n        object_helpers_1.map(classDef, (propertyValue, propertyName) => {\n            if (propertyName === \"nested\") {\n                let subnestedStyles = this._flattenStyles(propertyValue, selector);\n                topStyles = combiner_1.combineStyles(topStyles, subnestedStyles);\n            }\n            else {\n                topStyles[selector][propertyName] = propertyValue;\n            }\n        });\n        return topStyles;\n    }\n    _buildNewSelectors(curSelector, lastSelector) {\n        let newSelectors = curSelector.split(\",\");\n        if (!lastSelector) {\n            return newSelectors;\n        }\n        for (let i = 0; i < newSelectors.length; i += 1) {\n            newSelectors[i] = this._buildNewSelector(newSelectors[i], lastSelector);\n        }\n        return newSelectors;\n    }\n    _buildNewSelector(newSelector, lastSelector) {\n        let out = \"\";\n        if (newSelector.indexOf(\"&\") !== -1) {\n            out = newSelector.replace(/&/g, lastSelector);\n        }\n        else {\n            out = lastSelector + \" \" + newSelector;\n        }\n        return out;\n    }\n}\nconst StyleFlattener = new _StyleFlattener();\nfunction flattenStyles(styles) {\n    return StyleFlattener.flatten(styles);\n}\nexports.flattenStyles = flattenStyles;\n\n\n//# sourceURL=webpack:///./node_modules/@toolkip/style-helpers/dist/flattener.js?");
+
+/***/ }),
+
+/***/ "./node_modules/@toolkip/style-helpers/dist/index.js":
+/*!***********************************************************!*\
+  !*** ./node_modules/@toolkip/style-helpers/dist/index.js ***!
+  \***********************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+eval("\nfunction __export(m) {\n    for (var p in m) if (!exports.hasOwnProperty(p)) exports[p] = m[p];\n}\nObject.defineProperty(exports, \"__esModule\", { value: true });\n__export(__webpack_require__(/*! ./_constants */ \"./node_modules/@toolkip/style-helpers/dist/_constants.js\"));\n__export(__webpack_require__(/*! ./combiner */ \"./node_modules/@toolkip/style-helpers/dist/combiner.js\"));\n__export(__webpack_require__(/*! ./css */ \"./node_modules/@toolkip/style-helpers/dist/css.js\"));\n__export(__webpack_require__(/*! ./flattener */ \"./node_modules/@toolkip/style-helpers/dist/flattener.js\"));\n__export(__webpack_require__(/*! ./placeholders */ \"./node_modules/@toolkip/style-helpers/dist/placeholders.js\"));\n__export(__webpack_require__(/*! ./rules */ \"./node_modules/@toolkip/style-helpers/dist/rules.js\"));\n__export(__webpack_require__(/*! ./stringifier */ \"./node_modules/@toolkip/style-helpers/dist/stringifier.js\"));\n__export(__webpack_require__(/*! ./styleElement */ \"./node_modules/@toolkip/style-helpers/dist/styleElement.js\"));\n__export(__webpack_require__(/*! ./transition */ \"./node_modules/@toolkip/style-helpers/dist/transition.js\"));\n\n\n//# sourceURL=webpack:///./node_modules/@toolkip/style-helpers/dist/index.js?");
+
+/***/ }),
+
+/***/ "./node_modules/@toolkip/style-helpers/dist/placeholders.js":
+/*!******************************************************************!*\
+  !*** ./node_modules/@toolkip/style-helpers/dist/placeholders.js ***!
+  \******************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+eval("\nObject.defineProperty(exports, \"__esModule\", { value: true });\nconst object_helpers_1 = __webpack_require__(/*! @toolkip/object-helpers */ \"./node_modules/@toolkip/object-helpers/dist/index.js\");\nclass _StylePlaceholders {\n    splitOutPlaceholders(flattenedStyles) {\n        let out = { standard: {}, withPlaceholders: {} };\n        object_helpers_1.map(flattenedStyles, (def, selector) => {\n            object_helpers_1.map(def, (pVal, pName) => {\n                if (this._containsPlaceholder(pVal)) {\n                    object_helpers_1.setDictValue(out.withPlaceholders, pVal, [selector, pName]);\n                }\n                else {\n                    object_helpers_1.setDictValue(out.standard, pVal, [selector, pName]);\n                }\n            });\n        });\n        return out;\n    }\n    findContainedPlaceholder(value) {\n        let placeholderRegex = /<(.+?)>/;\n        let result = placeholderRegex.exec(value);\n        if (!result || !result[1]) {\n            return null;\n        }\n        let splitPlaceholder = result[1].split(\":\");\n        return {\n            name: splitPlaceholder[0],\n            defaultValue: splitPlaceholder[1]\n        };\n    }\n    _containsPlaceholder(value) {\n        let placeholder = this.findContainedPlaceholder(value);\n        return !!placeholder;\n    }\n    indexStyleDictByPlaceholder(styleDict) {\n        let idx = {};\n        object_helpers_1.map(styleDict, (styles, uniqueKey) => {\n            object_helpers_1.map(styles, (def, selector) => {\n                object_helpers_1.map(def, (pVal, pName) => {\n                    let placeholder = this.findContainedPlaceholder(pVal);\n                    if (!placeholder) {\n                        return;\n                    }\n                    object_helpers_1.setDictValue(idx, true, [placeholder.name, uniqueKey, selector, pName]);\n                });\n            });\n        });\n        return idx;\n    }\n    mapIndexToStyle(index, styles) {\n        let out = {};\n        object_helpers_1.map(index, (d, selector) => {\n            object_helpers_1.map(d, (unused, pName) => {\n                if (!styles[selector]) {\n                    return;\n                }\n                object_helpers_1.setDictValue(out, styles[selector][pName], [selector, pName]);\n            });\n        });\n        return out;\n    }\n    replacePlaceholders(styles, placeholder, replaceWith) {\n        let matchRegex = new RegExp(\"<\" + placeholder + \".*?>\", \"g\");\n        let out = object_helpers_1.cloneObject(styles);\n        object_helpers_1.map(out, (def, selector) => {\n            object_helpers_1.map(def, (pVal, pName) => {\n                out[selector][pName] = pVal.replace(matchRegex, replaceWith);\n            });\n        });\n        return out;\n    }\n}\nexports.StylePlaceholders = new _StylePlaceholders();\nfunction findContainedPlaceholder(value) {\n    return exports.StylePlaceholders.findContainedPlaceholder(value);\n}\nexports.findContainedPlaceholder = findContainedPlaceholder;\nfunction splitStyles(flattenedStyles) {\n    return exports.StylePlaceholders.splitOutPlaceholders(flattenedStyles);\n}\nexports.splitStyles = splitStyles;\nfunction indexByPlaceholder(styleDict) {\n    return exports.StylePlaceholders.indexStyleDictByPlaceholder(styleDict);\n}\nexports.indexByPlaceholder = indexByPlaceholder;\nfunction replacePlaceholders(styles, placeholder, replaceWith) {\n    return exports.StylePlaceholders.replacePlaceholders(styles, placeholder, replaceWith);\n}\nexports.replacePlaceholders = replacePlaceholders;\nfunction mapIndexToStyle(index, styles) {\n    return exports.StylePlaceholders.mapIndexToStyle(index, styles);\n}\nexports.mapIndexToStyle = mapIndexToStyle;\n\n\n//# sourceURL=webpack:///./node_modules/@toolkip/style-helpers/dist/placeholders.js?");
+
+/***/ }),
+
+/***/ "./node_modules/@toolkip/style-helpers/dist/rules.js":
+/*!***********************************************************!*\
+  !*** ./node_modules/@toolkip/style-helpers/dist/rules.js ***!
+  \***********************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+eval("\nObject.defineProperty(exports, \"__esModule\", { value: true });\nclass _StyleRuleHelper {\n    getCssRule(selector, skipExistingSelector) {\n        return this._getCssRule(selector, skipExistingSelector);\n    }\n    _getCssRule(selector, skipExistingSelector) {\n        let cssRule;\n        if (!skipExistingSelector) {\n            cssRule = this._getExistingSelector(selector);\n        }\n        if (!cssRule) {\n            cssRule = { style: {} };\n        }\n        return cssRule;\n    }\n    _getExistingSelector(selector) {\n        for (let stylesheet of document.styleSheets) {\n            let rules = this._getRules(stylesheet);\n            if (rules) {\n                continue;\n            }\n            let foundRule = this._searchRulesForSelector(selector, rules);\n            if (foundRule) {\n                return foundRule;\n            }\n        }\n        return null;\n    }\n    _getRules(stylesheet) {\n        let css = document.all ? 'rules' : 'cssRules';\n        let rules;\n        try {\n            rules = stylesheet[css];\n        }\n        catch (err) {\n            return null;\n        }\n        return rules;\n    }\n    _searchRulesForSelector(selector, rules) {\n        for (let rule of rules) {\n            if (rule.selectorText === selector) {\n                return rule;\n            }\n        }\n        return null;\n    }\n}\nconst StyleRuleHelper = new _StyleRuleHelper();\nfunction getCssRule(selector, skipExistingSelector) {\n    return StyleRuleHelper.getCssRule(selector, skipExistingSelector);\n}\nexports.getCssRule = getCssRule;\n\n\n//# sourceURL=webpack:///./node_modules/@toolkip/style-helpers/dist/rules.js?");
+
+/***/ }),
+
+/***/ "./node_modules/@toolkip/style-helpers/dist/stringifier.js":
+/*!*****************************************************************!*\
+  !*** ./node_modules/@toolkip/style-helpers/dist/stringifier.js ***!
+  \*****************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+eval("\nObject.defineProperty(exports, \"__esModule\", { value: true });\nconst object_helpers_1 = __webpack_require__(/*! @toolkip/object-helpers */ \"./node_modules/@toolkip/object-helpers/dist/index.js\");\nconst placeholders_1 = __webpack_require__(/*! ./placeholders */ \"./node_modules/@toolkip/style-helpers/dist/placeholders.js\");\nconst MAX_LENGTH = 10000;\nclass _StyleStringifier {\n    stringify(styles) {\n        if (!styles) {\n            return [];\n        }\n        return this._stringify(styles);\n    }\n    _stringify(styles) {\n        let out = [];\n        let curStr = \"\";\n        object_helpers_1.map(styles, (cssDeclaration, selector) => {\n            let clsStr = this.generateContentForStyle(selector, cssDeclaration);\n            if (!clsStr) {\n                return;\n            }\n            if ((curStr.length + clsStr.length) >= MAX_LENGTH) {\n                out.push(curStr);\n                curStr = clsStr;\n            }\n            else {\n                curStr += clsStr;\n            }\n        });\n        if (curStr) {\n            out.push(curStr);\n        }\n        return out;\n    }\n    generateContentForStyle(selector, attr) {\n        if (attr instanceof Array) {\n            return this._generateContentForFontDefinition(selector, attr);\n        }\n        else {\n            return this._generateContentForCssClass(selector, attr);\n        }\n    }\n    _generateContentForCssClass(selector, attr) {\n        let styleString = this._buildCssClassContentString(selector, attr);\n        if (styleString) {\n            styleString = this._formatClass(selector, styleString);\n            if (selector.indexOf(\"{\") !== -1) {\n                styleString += \"\\n}\";\n            }\n        }\n        return styleString;\n    }\n    _generateContentForFontDefinition(fontName, srcFiles) {\n        let src = [];\n        for (let srcFile of srcFiles) {\n            src.push(this._formatFontface(srcFile.url, srcFile.format));\n        }\n        let attr = {\n            fontFamily: fontName,\n            src: src.join(\",\")\n        };\n        return this._generateContentForCssClass(\"@font-face\", attr);\n    }\n    _buildCssClassContentString(selector, attr) {\n        let isGeneratingAnimation = (selector.indexOf(\"@keyframes\") !== -1);\n        let styleString = [];\n        object_helpers_1.map(attr, (propertyValue, propertyName) => {\n            if (isGeneratingAnimation) {\n                styleString.push(this._buildAnimationValueString(propertyName, propertyValue));\n            }\n            else {\n                styleString.push(this._formatProperty(propertyName, propertyValue));\n            }\n        });\n        return styleString.join(\"\");\n    }\n    _buildAnimationValueString(propertyName, propertyValue) {\n        let styleString = \"\";\n        object_helpers_1.map(propertyValue, (pValue, pName) => {\n            if (!pValue) {\n                return;\n            }\n            styleString += this._formatProperty(pName, pValue);\n        });\n        if (!styleString) {\n            return \"\";\n        }\n        return this._formatClass(propertyName, styleString);\n    }\n    getPropertyName(jsPropName) {\n        let prop = jsPropName;\n        if (prop.toLowerCase() === prop) {\n            return prop;\n        }\n        const regex = /([A-Z])/g;\n        let segments = prop.split(regex);\n        for (let idx = 0; idx < segments.length; idx++) {\n            segments[idx] = this._getUpdatedSegment(segments[idx], idx === 0);\n        }\n        return segments.join(\"\");\n    }\n    _getUpdatedSegment(segment, isFirst) {\n        if (isFirst && this._isCssPrefix(segment)) {\n            segment = \"-\" + segment;\n        }\n        if (segment.toLowerCase() !== segment) {\n            segment = \"-\" + segment.toLowerCase();\n        }\n        return segment;\n    }\n    _isCssPrefix(test) {\n        switch (test) {\n            case \"webkit\":\n            case \"moz\":\n            case \"ms\":\n            case \"o\":\n                return true;\n        }\n        return false;\n    }\n    _formatClass(selector, value) {\n        return `${selector} {\\n${value}}\\n`;\n    }\n    _formatProperty(key, value) {\n        let placeholder = placeholders_1.findContainedPlaceholder(value);\n        if (placeholder) {\n            value = value.replace(`<${placeholder.name}:${placeholder.defaultValue}>`, placeholder.defaultValue);\n        }\n        return `\\t${this.getPropertyName(key)} : ${value};\\n`;\n    }\n    _formatFontface(url, format) {\n        return `url(${url}) format(${format})`;\n    }\n}\nconst StyleStringifier = new _StyleStringifier();\nfunction stringifyStyles(styles) {\n    return StyleStringifier.stringify(styles);\n}\nexports.stringifyStyles = stringifyStyles;\nfunction stringifyStyle(selector, definition) {\n    return StyleStringifier.generateContentForStyle(selector, definition);\n}\nexports.stringifyStyle = stringifyStyle;\nfunction getCssPropertyName(jsPropName) {\n    return StyleStringifier.getPropertyName(jsPropName);\n}\nexports.getCssPropertyName = getCssPropertyName;\ngetCssPropertyName(\"webkitAlignContent\");\n\n\n//# sourceURL=webpack:///./node_modules/@toolkip/style-helpers/dist/stringifier.js?");
+
+/***/ }),
+
+/***/ "./node_modules/@toolkip/style-helpers/dist/styleElement.js":
+/*!******************************************************************!*\
+  !*** ./node_modules/@toolkip/style-helpers/dist/styleElement.js ***!
+  \******************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+eval("\nObject.defineProperty(exports, \"__esModule\", { value: true });\nconst stringifier_1 = __webpack_require__(/*! ./stringifier */ \"./node_modules/@toolkip/style-helpers/dist/stringifier.js\");\nclass _StyleElementGenerator {\n    createElement(id) {\n        return this._createElement(id);\n    }\n    _createElement(id) {\n        let elem;\n        if (id) {\n            elem = document.getElementById(id);\n            if (elem) {\n                return elem;\n            }\n        }\n        elem = document.createElement(\"style\");\n        if (id) {\n            elem.setAttribute(\"id\", id);\n        }\n        return elem;\n    }\n    createElementForStyles(styles, id, addToDocument) {\n        if (!styles) {\n            return [];\n        }\n        return this._createElementForStyles(styles, id, addToDocument);\n    }\n    _createElementForStyles(styles, id, addToDocument) {\n        let stringified = stringifier_1.stringifyStyles(styles);\n        let out = [];\n        for (let s of stringified) {\n            let elem = this._createElement(id);\n            elem.innerHTML = s;\n            if (addToDocument) {\n                document.head.appendChild(elem);\n            }\n            out.push(elem);\n        }\n        return out;\n    }\n}\nconst StyleElementGenerator = new _StyleElementGenerator();\nfunction createStyleElement(id) {\n    return StyleElementGenerator.createElement(id);\n}\nexports.createStyleElement = createStyleElement;\nfunction createElementForStyles(styles, id, addToDocument) {\n    return StyleElementGenerator.createElementForStyles(styles, id, addToDocument);\n}\nexports.createElementForStyles = createElementForStyles;\n\n\n//# sourceURL=webpack:///./node_modules/@toolkip/style-helpers/dist/styleElement.js?");
+
+/***/ }),
+
+/***/ "./node_modules/@toolkip/style-helpers/dist/transition.js":
+/*!****************************************************************!*\
+  !*** ./node_modules/@toolkip/style-helpers/dist/transition.js ***!
+  \****************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+eval("\nvar __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {\n    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }\n    return new (P || (P = Promise))(function (resolve, reject) {\n        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }\n        function rejected(value) { try { step(generator[\"throw\"](value)); } catch (e) { reject(e); } }\n        function step(result) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }\n        step((generator = generator.apply(thisArg, _arguments || [])).next());\n    });\n};\nObject.defineProperty(exports, \"__esModule\", { value: true });\nconst object_helpers_1 = __webpack_require__(/*! @toolkip/object-helpers */ \"./node_modules/@toolkip/object-helpers/dist/index.js\");\nconst async_1 = __webpack_require__(/*! @toolkip/async */ \"./node_modules/@toolkip/async/dist/index.js\");\nconst css_1 = __webpack_require__(/*! ./css */ \"./node_modules/@toolkip/style-helpers/dist/css.js\");\nconst styleElement_1 = __webpack_require__(/*! ./styleElement */ \"./node_modules/@toolkip/style-helpers/dist/styleElement.js\");\nconst stringifier_1 = __webpack_require__(/*! ./stringifier */ \"./node_modules/@toolkip/style-helpers/dist/stringifier.js\");\nclass _TransitionController {\n    constructor() {\n        this._lastClsId = 0;\n        this._generatedClasses = {};\n    }\n    transition(details) {\n        return __awaiter(this, void 0, void 0, function* () {\n            if (!details.elem) {\n                return Promise.reject(\"no element\");\n            }\n            if (!details.time) {\n                return Promise.reject(\"no time\");\n            }\n            let startName = this._getClass(details.start, details.elem);\n            if (!details.end.transition) {\n                details.end.transition = \"all ease-in-out \" + (details.time / 1000) + \"s\";\n            }\n            let endName = this._getClass(details.end, details.elem);\n            yield this._animate(details, startName, endName);\n        });\n    }\n    _getClass(classDef, elem) {\n        classDef = this._replacePlaceholders(classDef, elem);\n        let strDef = JSON.stringify(classDef).replace(/ /g, \"\");\n        if (this._generatedClasses[strDef]) {\n            return this._generatedClasses[strDef];\n        }\n        let name = this._generateRandomClassName();\n        this._generatedClasses[strDef] = name;\n        this._createTransitionClass(name, classDef, elem);\n        return name;\n    }\n    _generateRandomClassName() {\n        this._lastClsId += 1;\n        return \"gencls\" + this._lastClsId;\n    }\n    _createTransitionClass(className, classDef, elem) {\n        if (!this._styleElem) {\n            this._createStyleElem();\n        }\n        this._styleElem.innerHTML += stringifier_1.stringifyStyle(\".\" + className, classDef);\n    }\n    _replacePlaceholders(classDef, elem) {\n        object_helpers_1.map(classDef, (value, key) => {\n            value = value.replace(\"<width>\", (elem.offsetWidth + 1) + \"px\");\n            value = value.replace(\"<height>\", elem.offsetHeight + \"px\");\n            value = value.replace(\"<left>\", elem.offsetLeft + \"px\");\n            value = value.replace(\"<top>\", elem.offsetTop + \"px\");\n            value = value.replace(\"<right>\", (elem.offsetLeft + elem.offsetWidth) + \"px\");\n            value = value.replace(\"<bottom>\", (elem.offsetTop + elem.offsetHeight) + \"px\");\n            classDef[key] = value;\n        });\n        return classDef;\n    }\n    _createStyleElem() {\n        this._styleElem = styleElement_1.createStyleElement();\n        document.head.appendChild(this._styleElem);\n    }\n    _animate(details, startName, endName) {\n        return __awaiter(this, void 0, void 0, function* () {\n            yield async_1.nextRender();\n            css_1.addClass(details.elem, startName);\n            yield async_1.wait(details.delay || 0);\n            css_1.addClass(details.elem, endName);\n            yield async_1.wait(details.time);\n            css_1.removeClass(details.elem, startName);\n            yield async_1.nextRender();\n            this._removeEndClass(details.elem, endName);\n            return;\n        });\n    }\n    _removeEndClass(elem, endName) {\n        return __awaiter(this, void 0, void 0, function* () {\n            yield async_1.wait(10);\n            css_1.removeClass(elem, endName);\n        });\n    }\n}\nconst TransitionController = new _TransitionController();\nfunction transition(element, startStyle, endStyle, time, delay) {\n    return TransitionController.transition({\n        elem: element,\n        start: startStyle,\n        end: endStyle,\n        time: time,\n        delay: delay || 0\n    });\n}\nexports.transition = transition;\n\n\n//# sourceURL=webpack:///./node_modules/@toolkip/style-helpers/dist/transition.js?");
+
+/***/ }),
+
+/***/ "./node_modules/@toolkip/style-libraries/dist/_library.js":
+/*!****************************************************************!*\
+  !*** ./node_modules/@toolkip/style-libraries/dist/_library.js ***!
+  \****************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+eval("\nObject.defineProperty(exports, \"__esModule\", { value: true });\nconst style_helpers_1 = __webpack_require__(/*! @toolkip/style-helpers */ \"./node_modules/@toolkip/style-helpers/dist/index.js\");\nconst object_helpers_1 = __webpack_require__(/*! @toolkip/object-helpers */ \"./node_modules/@toolkip/object-helpers/dist/index.js\");\nconst html_helpers_1 = __webpack_require__(/*! @toolkip/html-helpers */ \"./node_modules/@toolkip/html-helpers/dist/index.js\");\nconst async_1 = __webpack_require__(/*! @toolkip/async */ \"./node_modules/@toolkip/async/dist/index.js\");\nconst comparable_1 = __webpack_require__(/*! @toolkip/comparable */ \"./node_modules/@toolkip/comparable/dist/index.js\");\nclass _Library {\n    constructor() {\n        this._rawStyles = {};\n        this._elems = {};\n        this._lastId = 0;\n    }\n    getNextId() {\n        this._lastId += 1;\n        return this._lastId.toString();\n    }\n    hasStyles(uniqueKey) {\n        return !!this._rawStyles[uniqueKey];\n    }\n    add(uniqueKey, styles, force) {\n        const existingStyles = this._getOrCreateExistingStyles(uniqueKey);\n        const mergedStyles = this._merge([existingStyles, styles]);\n        if (!this._shouldAdd(existingStyles, mergedStyles, force)) {\n            return;\n        }\n        this._rawStyles[uniqueKey] = mergedStyles;\n        this._updateElems(mergedStyles, uniqueKey);\n    }\n    _shouldAdd(existingStyles, mergedStyles, force) {\n        if (force) {\n            return true;\n        }\n        if (object_helpers_1.isEmptyObject(existingStyles)) {\n            return true;\n        }\n        if (!comparable_1.equals(existingStyles, mergedStyles)) {\n            return true;\n        }\n        return false;\n    }\n    remove(uniqueKey) {\n        if (!this._rawStyles[uniqueKey]) {\n            return false;\n        }\n        html_helpers_1.removeElement(this._elems[uniqueKey]);\n        delete this._rawStyles[uniqueKey];\n        delete this._elems[uniqueKey];\n        return true;\n    }\n    _merge(styles) {\n        if (styles.length < 1) {\n            return null;\n        }\n        return style_helpers_1.combineStyles(...styles);\n    }\n    _stringify(styles) {\n        return style_helpers_1.stringifyStyles(styles);\n    }\n    _updateElems(styles, uniqueKey) {\n        let stringifiedStyles = this._stringify(styles);\n        for (let cIdx = 0; cIdx < stringifiedStyles.length; cIdx += 1) {\n            let elem = this._getOrCreateElem(uniqueKey);\n            elem.innerHTML = stringifiedStyles[cIdx];\n        }\n    }\n    _getOrCreateElem(uniqueKey) {\n        if (this._elems[uniqueKey]) {\n            return this._elems[uniqueKey];\n        }\n        let elem = style_helpers_1.createStyleElement(`${uniqueKey}-${this._idSuffix}`);\n        this._elems[uniqueKey] = elem;\n        async_1.nextRender().then(() => document.head.appendChild(elem));\n        return elem;\n    }\n    _getOrCreateExistingStyles(uniqueKey) {\n        if (!this._rawStyles[uniqueKey]) {\n            this._rawStyles[uniqueKey] = {};\n        }\n        return this._rawStyles[uniqueKey];\n    }\n    getElemForKey(uniqueKey) {\n        if (!this._elems[uniqueKey]) {\n            return null;\n        }\n        return this._elems[uniqueKey];\n    }\n    get(uniqueKey) {\n        if (!this._rawStyles[uniqueKey]) {\n            return null;\n        }\n        return this._rawStyles[uniqueKey];\n    }\n}\nexports._Library = _Library;\n\n\n//# sourceURL=webpack:///./node_modules/@toolkip/style-libraries/dist/_library.js?");
+
+/***/ }),
+
+/***/ "./node_modules/@toolkip/style-libraries/dist/fontLibrary.js":
+/*!*******************************************************************!*\
+  !*** ./node_modules/@toolkip/style-libraries/dist/fontLibrary.js ***!
+  \*******************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+eval("\nObject.defineProperty(exports, \"__esModule\", { value: true });\nconst _library_1 = __webpack_require__(/*! ./_library */ \"./node_modules/@toolkip/style-libraries/dist/_library.js\");\nclass _FontLibrary extends _library_1._Library {\n    get _idSuffix() { return \"fonts\"; }\n}\nexports.FontLibrary = new _FontLibrary();\n\n\n//# sourceURL=webpack:///./node_modules/@toolkip/style-libraries/dist/fontLibrary.js?");
+
+/***/ }),
+
+/***/ "./node_modules/@toolkip/style-libraries/dist/helpers.js":
+/*!***************************************************************!*\
+  !*** ./node_modules/@toolkip/style-libraries/dist/helpers.js ***!
+  \***************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+eval("\nObject.defineProperty(exports, \"__esModule\", { value: true });\nconst styleLibrary_1 = __webpack_require__(/*! ./styleLibrary */ \"./node_modules/@toolkip/style-libraries/dist/styleLibrary.js\");\nfunction createCssClass(selector, def, key) {\n    key = key || styleLibrary_1.StyleLibrary.getNextId();\n    styleLibrary_1.StyleLibrary.add(key, { [selector]: def });\n    return styleLibrary_1.StyleLibrary.getElemForKey(key);\n}\nexports.createCssClass = createCssClass;\nfunction addHiddenClass(clsName = 'hidden') {\n    const cls = {\n        display: \"none\"\n    };\n    return createCssClass(`.${clsName}`, cls);\n}\nexports.addHiddenClass = addHiddenClass;\nfunction addUnselectableClass(clsName = 'unselectable') {\n    const cls = {\n        userSelect: \"none\",\n        mozUserSelect: \"none\",\n        webkitUserSelect: \"none\",\n        khtmlUserSelect: \"none\",\n        oUserSelect: \"none\"\n    };\n    return createCssClass(`.${clsName}`, cls);\n}\nexports.addUnselectableClass = addUnselectableClass;\n\n\n//# sourceURL=webpack:///./node_modules/@toolkip/style-libraries/dist/helpers.js?");
+
+/***/ }),
+
+/***/ "./node_modules/@toolkip/style-libraries/dist/index.js":
+/*!*************************************************************!*\
+  !*** ./node_modules/@toolkip/style-libraries/dist/index.js ***!
+  \*************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+eval("\nfunction __export(m) {\n    for (var p in m) if (!exports.hasOwnProperty(p)) exports[p] = m[p];\n}\nObject.defineProperty(exports, \"__esModule\", { value: true });\n__export(__webpack_require__(/*! ./_library */ \"./node_modules/@toolkip/style-libraries/dist/_library.js\"));\n__export(__webpack_require__(/*! ./styleLibrary */ \"./node_modules/@toolkip/style-libraries/dist/styleLibrary.js\"));\n__export(__webpack_require__(/*! ./placeholderlibrary */ \"./node_modules/@toolkip/style-libraries/dist/placeholderlibrary.js\"));\n__export(__webpack_require__(/*! ./fontLibrary */ \"./node_modules/@toolkip/style-libraries/dist/fontLibrary.js\"));\n__export(__webpack_require__(/*! ./helpers */ \"./node_modules/@toolkip/style-libraries/dist/helpers.js\"));\n\n\n//# sourceURL=webpack:///./node_modules/@toolkip/style-libraries/dist/index.js?");
+
+/***/ }),
+
+/***/ "./node_modules/@toolkip/style-libraries/dist/placeholderlibrary.js":
+/*!**************************************************************************!*\
+  !*** ./node_modules/@toolkip/style-libraries/dist/placeholderlibrary.js ***!
+  \**************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+eval("\nObject.defineProperty(exports, \"__esModule\", { value: true });\nconst _library_1 = __webpack_require__(/*! ./_library */ \"./node_modules/@toolkip/style-libraries/dist/_library.js\");\nconst object_helpers_1 = __webpack_require__(/*! @toolkip/object-helpers */ \"./node_modules/@toolkip/object-helpers/dist/index.js\");\nconst style_helpers_1 = __webpack_require__(/*! @toolkip/style-helpers */ \"./node_modules/@toolkip/style-helpers/dist/index.js\");\nconst html_helpers_1 = __webpack_require__(/*! @toolkip/html-helpers */ \"./node_modules/@toolkip/html-helpers/dist/index.js\");\nclass _PlaceholderLibrary extends _library_1._Library {\n    constructor() {\n        super(...arguments);\n        this._indexedPlaceholders = {};\n    }\n    get _idSuffix() { return \"placeholder\"; }\n    _indexByPlaceholder(styles, uniqueKey) {\n        let d = { [uniqueKey]: styles };\n        let out = style_helpers_1.indexByPlaceholder(d);\n        object_helpers_1.map(out, (dict, placeholder) => {\n            if (!dict[uniqueKey]) {\n                return;\n            }\n            let placeholderIdx = this._indexedPlaceholders[placeholder] || {};\n            let uniqueIdx = placeholderIdx[uniqueKey] || {};\n            let combo = object_helpers_1.combineObjects(uniqueIdx, dict[uniqueKey]);\n            object_helpers_1.setDictValue(this._indexedPlaceholders, combo, [placeholder, uniqueKey]);\n        });\n        return out;\n    }\n    _updateElems(styles, uniqueKey) {\n        let indexed = this._indexByPlaceholder(styles, uniqueKey);\n        object_helpers_1.map(indexed, (dict, placeholder) => {\n            let idx = dict[uniqueKey];\n            let builtStyles = style_helpers_1.mapIndexToStyle(idx, this._rawStyles[uniqueKey]);\n            if (!builtStyles) {\n                return;\n            }\n            this._updatePlaceholderElem(builtStyles, uniqueKey, placeholder);\n        });\n    }\n    _updatePlaceholderElem(styles, uniqueKey, placeholder) {\n        super._updateElems(styles, this._formatElemString(uniqueKey, placeholder));\n    }\n    replacePlaceholder(opts) {\n        if (opts.baseElem) {\n            this._replaceSingleElemPlaceholders(opts);\n        }\n        else if (opts.uniqueKey) {\n            this._replacePlaceholderForKey(opts);\n        }\n        else {\n            this._replacePlaceholdersForMultipleKeys(opts);\n        }\n    }\n    _replacePlaceholdersForMultipleKeys(opts) {\n        const idx = this._indexedPlaceholders[opts.placeholder];\n        if (!idx || object_helpers_1.isEmptyObject(idx)) {\n            return;\n        }\n        object_helpers_1.map(idx, (_, uniqueKey) => {\n            opts.uniqueKey = uniqueKey;\n            this._replacePlaceholderForKey(opts);\n            opts.uniqueKey = null;\n        });\n    }\n    _replacePlaceholderForKey(opts) {\n        if (!opts.uniqueKey) {\n            return;\n        }\n        const replacedStyles = this._replacePlaceholderViaIndex(opts);\n        this._updatePlaceholderElem(replacedStyles, opts.uniqueKey, opts.placeholder);\n    }\n    _replaceSingleElemPlaceholders(opts) {\n        if (!opts.uniqueKey || !opts.newValue) {\n            return;\n        }\n        const replacedStyles = this._replacePlaceholderViaIndex(opts);\n        const matches = this._findMatches(opts.baseElem, object_helpers_1.getKeys(replacedStyles));\n        object_helpers_1.map(matches, (matchedElems, selector) => {\n            for (let matchedElem of matchedElems) {\n                object_helpers_1.map(replacedStyles[selector], (pVal, pName) => {\n                    matchedElem.style[pName] = pVal;\n                });\n            }\n        });\n    }\n    _findMatches(parent, selectors) {\n        let out = {};\n        for (let s of selectors) {\n            out[s] = this._findMatch(parent, s);\n        }\n        return out;\n    }\n    _findMatch(parent, selector) {\n        let out = [];\n        let nodeQueue = [parent];\n        let cnt = 0;\n        while (cnt < nodeQueue.length) {\n            let currentNode = nodeQueue[cnt];\n            if (html_helpers_1.doesElementMatchSelector(currentNode, selector)) {\n                out.push(currentNode);\n            }\n            nodeQueue = nodeQueue.concat([...currentNode.childNodes]);\n            cnt += 1;\n        }\n        return out;\n    }\n    _replacePlaceholderViaIndex(opts) {\n        if (!this._indexedPlaceholders[opts.placeholder]) {\n            this._indexedPlaceholders[opts.placeholder] = {};\n        }\n        const styles = this._indexedPlaceholders[opts.placeholder][opts.uniqueKey] || {};\n        let mappedStyles = style_helpers_1.mapIndexToStyle(styles, this._rawStyles[opts.uniqueKey]);\n        return style_helpers_1.replacePlaceholders(mappedStyles, opts.placeholder, opts.newValue);\n    }\n    _formatElemString(uniqueKey, placeholder) {\n        return `${uniqueKey}-${placeholder}`;\n    }\n}\nexports.PlaceholderLibrary = new _PlaceholderLibrary();\n\n\n//# sourceURL=webpack:///./node_modules/@toolkip/style-libraries/dist/placeholderlibrary.js?");
+
+/***/ }),
+
+/***/ "./node_modules/@toolkip/style-libraries/dist/styleLibrary.js":
+/*!********************************************************************!*\
+  !*** ./node_modules/@toolkip/style-libraries/dist/styleLibrary.js ***!
+  \********************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+eval("\nObject.defineProperty(exports, \"__esModule\", { value: true });\nconst _library_1 = __webpack_require__(/*! ./_library */ \"./node_modules/@toolkip/style-libraries/dist/_library.js\");\nclass _StyleLibrary extends _library_1._Library {\n    get _idSuffix() { return \"styles\"; }\n}\nexports.StyleLibrary = new _StyleLibrary();\n\n\n//# sourceURL=webpack:///./node_modules/@toolkip/style-libraries/dist/styleLibrary.js?");
+
+/***/ }),
+
 /***/ "./node_modules/classnames/index.js":
 /*!******************************************!*\
   !*** ./node_modules/classnames/index.js ***!
@@ -1344,7 +2436,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) *
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"EXPAND_COLLAPSE_ICON\", function() { return EXPAND_COLLAPSE_ICON; });\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"EX_ICON\", function() { return EX_ICON; });\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"IC_COMPETENCIES\", function() { return IC_COMPETENCIES; });\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"MANAGER_COMPETENCIES\", function() { return MANAGER_COMPETENCIES; });\nvar EXPAND_COLLAPSE_ICON = './res/down_caret.png';\nvar EX_ICON = './res/ex.png';\nvar IC_COMPETENCIES = '../README.md';\nvar MANAGER_COMPETENCIES = '../managers.md';\n\n//# sourceURL=webpack:///./src/helpers/constants.ts?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"EXPAND_COLLAPSE_ICON\", function() { return EXPAND_COLLAPSE_ICON; });\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"EX_ICON\", function() { return EX_ICON; });\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"IC_COMPETENCIES\", function() { return IC_COMPETENCIES; });\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"MANAGER_COMPETENCIES\", function() { return MANAGER_COMPETENCIES; });\nvar EXPAND_COLLAPSE_ICON = './competency-explorer/res/down_caret.png';\nvar EX_ICON = './competency-explorer/res/ex.png';\nvar IC_COMPETENCIES = 'README.md';\nvar MANAGER_COMPETENCIES = 'managers.md';\n\n//# sourceURL=webpack:///./src/helpers/constants.ts?");
 
 /***/ }),
 
@@ -1368,7 +2460,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) *
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"loadEngCompetencies\", function() { return loadEngCompetencies; });\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"loadManagerCompetencies\", function() { return loadManagerCompetencies; });\n/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/regenerator */ \"./node_modules/@babel/runtime/regenerator/index.js\");\n/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var _babel_runtime_helpers_asyncToGenerator__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @babel/runtime/helpers/asyncToGenerator */ \"./node_modules/@babel/runtime/helpers/asyncToGenerator.js\");\n/* harmony import */ var _babel_runtime_helpers_asyncToGenerator__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_asyncToGenerator__WEBPACK_IMPORTED_MODULE_1__);\n/* harmony import */ var _constants__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./constants */ \"./src/helpers/constants.ts\");\n\n\n\n\nvar loadFile = /*#__PURE__*/function () {\n  var _ref = _babel_runtime_helpers_asyncToGenerator__WEBPACK_IMPORTED_MODULE_1___default()( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee(filename) {\n    var response;\n    return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee$(_context) {\n      while (1) {\n        switch (_context.prev = _context.next) {\n          case 0:\n            _context.next = 2;\n            return fetch(filename);\n\n          case 2:\n            response = _context.sent;\n            return _context.abrupt(\"return\", response.text());\n\n          case 4:\n          case \"end\":\n            return _context.stop();\n        }\n      }\n    }, _callee);\n  }));\n\n  return function loadFile(_x) {\n    return _ref.apply(this, arguments);\n  };\n}();\n\nvar loadEngCompetencies = /*#__PURE__*/function () {\n  var _ref2 = _babel_runtime_helpers_asyncToGenerator__WEBPACK_IMPORTED_MODULE_1___default()( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee2() {\n    var fileContents;\n    return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee2$(_context2) {\n      while (1) {\n        switch (_context2.prev = _context2.next) {\n          case 0:\n            _context2.next = 2;\n            return loadFile(_constants__WEBPACK_IMPORTED_MODULE_2__[\"IC_COMPETENCIES\"]);\n\n          case 2:\n            fileContents = _context2.sent;\n            return _context2.abrupt(\"return\", fileContents);\n\n          case 4:\n          case \"end\":\n            return _context2.stop();\n        }\n      }\n    }, _callee2);\n  }));\n\n  return function loadEngCompetencies() {\n    return _ref2.apply(this, arguments);\n  };\n}();\nvar loadManagerCompetencies = /*#__PURE__*/function () {\n  var _ref3 = _babel_runtime_helpers_asyncToGenerator__WEBPACK_IMPORTED_MODULE_1___default()( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee3() {\n    var fileContents;\n    return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee3$(_context3) {\n      while (1) {\n        switch (_context3.prev = _context3.next) {\n          case 0:\n            _context3.next = 2;\n            return loadFile(_constants__WEBPACK_IMPORTED_MODULE_2__[\"MANAGER_COMPETENCIES\"]);\n\n          case 2:\n            fileContents = _context3.sent;\n            return _context3.abrupt(\"return\", fileContents);\n\n          case 4:\n          case \"end\":\n            return _context3.stop();\n        }\n      }\n    }, _callee3);\n  }));\n\n  return function loadManagerCompetencies() {\n    return _ref3.apply(this, arguments);\n  };\n}();\n\n//# sourceURL=webpack:///./src/helpers/loadFile.ts?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"loadEngCompetencies\", function() { return loadEngCompetencies; });\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"loadManagerCompetencies\", function() { return loadManagerCompetencies; });\n/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/regenerator */ \"./node_modules/@babel/runtime/regenerator/index.js\");\n/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var _babel_runtime_helpers_asyncToGenerator__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @babel/runtime/helpers/asyncToGenerator */ \"./node_modules/@babel/runtime/helpers/asyncToGenerator.js\");\n/* harmony import */ var _babel_runtime_helpers_asyncToGenerator__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_asyncToGenerator__WEBPACK_IMPORTED_MODULE_1__);\n/* harmony import */ var _constants__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./constants */ \"./src/helpers/constants.ts\");\n/* harmony import */ var _toolkip_server__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @toolkip/server */ \"./node_modules/@toolkip/server/dist/index.js\");\n/* harmony import */ var _toolkip_server__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_toolkip_server__WEBPACK_IMPORTED_MODULE_3__);\n\n\n\n\n\nvar loadFile = /*#__PURE__*/function () {\n  var _ref = _babel_runtime_helpers_asyncToGenerator__WEBPACK_IMPORTED_MODULE_1___default()( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee(filename) {\n    return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee$(_context) {\n      while (1) {\n        switch (_context.prev = _context.next) {\n          case 0:\n            _context.next = 2;\n            return Object(_toolkip_server__WEBPACK_IMPORTED_MODULE_3__[\"loadFile\"])({\n              filename: filename\n            });\n\n          case 2:\n            return _context.abrupt(\"return\", _context.sent);\n\n          case 3:\n          case \"end\":\n            return _context.stop();\n        }\n      }\n    }, _callee);\n  }));\n\n  return function loadFile(_x) {\n    return _ref.apply(this, arguments);\n  };\n}();\n\nvar loadEngCompetencies = /*#__PURE__*/function () {\n  var _ref2 = _babel_runtime_helpers_asyncToGenerator__WEBPACK_IMPORTED_MODULE_1___default()( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee2() {\n    var fileContents;\n    return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee2$(_context2) {\n      while (1) {\n        switch (_context2.prev = _context2.next) {\n          case 0:\n            _context2.next = 2;\n            return loadFile(_constants__WEBPACK_IMPORTED_MODULE_2__[\"IC_COMPETENCIES\"]);\n\n          case 2:\n            fileContents = _context2.sent;\n            return _context2.abrupt(\"return\", fileContents);\n\n          case 4:\n          case \"end\":\n            return _context2.stop();\n        }\n      }\n    }, _callee2);\n  }));\n\n  return function loadEngCompetencies() {\n    return _ref2.apply(this, arguments);\n  };\n}();\nvar loadManagerCompetencies = /*#__PURE__*/function () {\n  var _ref3 = _babel_runtime_helpers_asyncToGenerator__WEBPACK_IMPORTED_MODULE_1___default()( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee3() {\n    var fileContents;\n    return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee3$(_context3) {\n      while (1) {\n        switch (_context3.prev = _context3.next) {\n          case 0:\n            _context3.next = 2;\n            return loadFile(_constants__WEBPACK_IMPORTED_MODULE_2__[\"MANAGER_COMPETENCIES\"]);\n\n          case 2:\n            fileContents = _context3.sent;\n            return _context3.abrupt(\"return\", fileContents);\n\n          case 4:\n          case \"end\":\n            return _context3.stop();\n        }\n      }\n    }, _callee3);\n  }));\n\n  return function loadManagerCompetencies() {\n    return _ref3.apply(this, arguments);\n  };\n}();\n\n//# sourceURL=webpack:///./src/helpers/loadFile.ts?");
 
 /***/ }),
 

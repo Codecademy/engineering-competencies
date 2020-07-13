@@ -52,8 +52,8 @@ module.exports = {
   ],
 
   devServer: {
-    contentBase: [path.join(__dirname, './'), path.join(__dirname, '../')],
-    publicPath: '/dist/',
+    contentBase: [path.join(__dirname, '../'), path.join(__dirname, '../..')],
+    publicPath: '/competency-explorer/dist/',
     compress: true,
     port: 5000
   }

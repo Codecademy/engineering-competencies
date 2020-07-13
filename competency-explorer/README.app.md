@@ -8,14 +8,14 @@ This is a standard react-redux app with some markdown parsing. It is designed to
 
 ## Running Locally
 
-1. Go to the `docs` directory
+1. Go to the `competency-explorer` directory
 2. Run `yarn start` to open the live-reloading dev server
 3. Go to `localhost:5000`
 4. Make sure the competencies are being loaded and shown
 
 ## Publishing to Github Pages
 
-1. Go to the `docs` directory
+1. Go to the `competency-explorer` directory
 2. Run `yarn build` to generate the compiled script
 3. Commit the updated version of `bundle.js` to the master branch
 4. Github takes care of the rest!
