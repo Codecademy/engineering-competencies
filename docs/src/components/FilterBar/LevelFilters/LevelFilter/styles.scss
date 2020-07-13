@@ -12,7 +12,7 @@
 
     &.hidden {
         display: block !important;
-        text-decoration: line-through;
         opacity: 0.5;
+        font-size: 1rem;
     }
 }

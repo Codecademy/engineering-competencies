@@ -5,12 +5,14 @@ module.exports = {
   mode: "development",
   // the app entry point is /src/index.js
   entry: path.resolve(__dirname, "src", "index"),
+
   output: {
     // the output of the webpack build will be in /dist directory
     path: path.resolve(__dirname, "dist"),
     // the filename of the JS bundle will be bundle.js
     filename: "bundle.js",
   },
+
   module: {
     rules: [
       // we use babel-loader to load our jsx and tsx files
@@ -40,10 +42,20 @@ module.exports = {
       },
     ],
   },
+
   resolve: {
     extensions: [".tsx", ".ts", ".js"],
   },
+  
   // add a custom index.html as the template
   plugins: [
   ],
+
+  devServer: {
+    contentBase: [path.join(__dirname, './'), path.join(__dirname, '../')],
+    publicPath: '/dist/',
+    compress: true,
+    port: 5000
+  }
+  
 };
