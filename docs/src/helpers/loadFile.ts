@@ -1,8 +1,8 @@
 import { MANAGER_COMPETENCIES, IC_COMPETENCIES } from './constants';
+import { loadFile as lf } from '@toolkip/server';
 
 const loadFile = async (filename: string) => {
-  const response = await fetch(filename);
-  return response.text();
+  return await lf({ filename });
 };
 
 export const loadEngCompetencies = async () => {

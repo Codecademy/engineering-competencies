@@ -1269,9 +1269,9 @@
     "@toolkip/shared-types" "^2.2.3"
 
 "@toolkip/server@^2.3.2":
-  version "2.3.2"
-  resolved "https://registry.yarnpkg.com/@toolkip/server/-/server-2.3.2.tgz#d0312105140c6d538273c2350c094ad0591e945b"
-  integrity sha512-mnVIoWqIqWWl4XftG23W0D/3OH6f38geeEE3dSYGmjnrHsw3ggUsSCUfN/yGsigzNMCAbnZ9NZwkFWid0sj4JQ==
+  version "2.3.3"
+  resolved "https://registry.yarnpkg.com/@toolkip/server/-/server-2.3.3.tgz#7c3f2e7aaf9e955c031f91fe459ba3a1598e9dfd"
+  integrity sha512-J5TyY9r2WalCskjiIihLODwigtXq1HHENk0G1z6ddEXM5Up7A0uONZqMYVXWtRYLMzxEQCGsDHXife1l5GBv0g==
   dependencies:
     "@toolkip/create-elements" "^2.3.2"
     "@toolkip/object-helpers" "^2.3.0"
