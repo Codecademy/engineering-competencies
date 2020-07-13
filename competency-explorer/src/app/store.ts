@@ -1,4 +1,3 @@
-//import { configureStore, ThunkAction, Action } from "@reduxjs/toolkit";
 import { createStore, combineReducers, applyMiddleware } from "redux";
 import { State } from "../models";
 import thunk from "redux-thunk";
