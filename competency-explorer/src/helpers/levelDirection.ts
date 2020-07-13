@@ -28,30 +28,3 @@ export const getLevelDirection = (levelA: Level, levelB: Level, levels: Level[])
 
   return LevelDirection.EQUAL;
 };
-
-// export const isFirstLevelWithCompetency = (
-//   level: Level,
-//   competency: Competency
-// ): boolean => {
-//   for (let l of competency.levels) {
-//     if (getLevelDirection(level, l) === LevelDirection.B_BEFORE_A) {
-//       return false;
-//     }
-//   }
-//   return true;
-// };
-
-// export const isContinuationOfCompetency = (
-//   level: Level,
-//   competency: ICompetency
-// ): boolean => {
-//   if (competency.levels.length === 1) {
-//     return false;
-//   }
-//   return !isFirstLevelWithCompetency(level, competency);
-// };
-
-// export const getOriginLevel = (competency: ICompetency) => {
-//   const sortedLevels = competency.levels.sort(getLevelDirection);
-//   return sortedLevels[0];
-// };

@@ -36,38 +36,3 @@ export const MatrixView: React.FC = () => {
         </div>
     )
 }
-
-/**
- * const clsSelector = selectDisplay().select((display) =>
-    display === "matrix" ? "matrix" : "hidden"
-  );
-
-  const childSelector = selectCategoriesAndLevels().select((payload) => {
-    let out: IChild[] = [{ cls: "blank" }];
-
-    const { levels, categories } = payload;
-
-    // add the categories
-    for (let c of categories) {
-      out.push({ cls: "category label", content: c });
-    }
-
-    // add the levels
-    for (let l of levels) {
-      out.push(renderLevelLabel(l));
-
-      for (let c of categories) {
-        out.push(renderCompetencies(l, c));
-      }
-    }
-    return out;
-  });
-
-  const elem = createElement({
-    cls: clsSelector,
-    styles: {
-     
-    },
-    children: childSelector,
-  });
- */
