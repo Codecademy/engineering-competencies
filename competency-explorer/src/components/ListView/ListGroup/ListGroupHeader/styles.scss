@@ -1,0 +1,22 @@
+h3, h2 {
+    margin: 0;
+    padding: 0;
+}
+
+.colName {
+    margin: 1rem;
+    font-family: "Zilla Slab";
+    font-size: 0.9em;
+    font-weight: 500;
+    cursor: pointer;
+    display: flex;
+    align-items: end;
+    margin-left: -1.2em;
+  
+    img {
+      width: 1.5em;
+      height: 1.5em;
+      transform: rotate(180deg);
+      transform-origin: 50% 50%;
+    }
+  }

@@ -1,0 +1,17 @@
+.hidden {
+  display: none;
+}
+
+.column {
+  font-size: 0.9em;
+  width: 50vw;
+  margin-bottom: 1em;
+
+  &.collapsed .colName img {
+    transform: rotate(0deg);
+  }
+
+  &.collapsed .groupChildren {
+    display: none;
+  }
+}
