@@ -235,4 +235,4 @@ Certain competencies include “established a track record of”. Generally it t
 
 ### Can I see these competencies in a matrix form?
 
-Yes! You can go the [GitHub Page](codecademy.github.io/engineering-competencies) to see the interactive matrix view. It pulls from this markdown file so it should always be up to date.
+Yes! You can go the [GitHub Page](https://codecademy.github.io/engineering-competencies) to see the interactive matrix view. It pulls from this markdown file so it should always be up to date.
