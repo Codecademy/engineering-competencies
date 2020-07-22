@@ -232,3 +232,7 @@ Establishing a strong performance baseline at your level will further set you up
 
 The further you progress in your career the more time it will take to demonstrate proficiency in specific areas.
 Certain competencies include “established a track record of”. Generally it takes a minimum of 3-4 quarters to be able to repeat a certain set of expectations and demonstrate consistent proficiency.
+
+### Can I see these competencies in a matrix form?
+
+Yes! You can go the [GitHub Page](https://codecademy.github.io/engineering-competencies) to see the interactive matrix view. It pulls from this markdown file so it should always be up to date.
