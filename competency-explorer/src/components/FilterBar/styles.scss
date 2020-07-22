@@ -1,31 +1,77 @@
+@import "../../constants.scss";
+
 .label {
-    font-size: 0.8rem;
-    opacity: 0.8;
-    font-family: "Zilla Slab";
+  font-size: 0.8rem;
+  opacity: 0.8;
+  font-family: $header-font;
 }
 
 .filterBar {
-    height: 100%;
-    background-color: #333;
-    font-family: "Anonymous Pro";
-    color: #FFF;
-    display: flex;
-    flex-direction: column;
+  height: 100%;
+  background-color: $dark;
+  font-family: $body-font;
+  color: $light;
+  display: flex;
+  flex-direction: column;
+  position: relative;
 
-    .label {
-        margin-bottom: 0.25rem;
+  &.collapsed {
+    max-width: 4rem;
+
+    .label,
+    .title,
+    .subtitle,
+    .levelFilter,
+    .displayMode {
+      display: none;
     }
 
-    .title {
-        font-size: 1.2rem;
-        margin-left: 1rem;
-        margin-bottom: 1rem;
+    button img {
+      transform: rotate(-90deg);
+    }
+  }
+
+  .label {
+    margin-bottom: 0.25rem;
+  }
+
+  .title {
+    font-size: 1.2rem;
+    margin-left: 1rem;
+    margin-bottom: 1rem;
+  }
+
+  .subtitle {
+    font-size: 0.7rem;
+    margin-left: 1rem;
+    margin-top: 1rem;
+    margin-bottom: 0.2rem;
+  }
+
+  button {
+    width: 3rem;
+    height: 3rem;
+    border-radius: 50%;
+    border: none;
+    background-color: $dark;
+    position: absolute;
+    left: calc(100% - 1.5rem);
+    top: -1px;
+    cursor: pointer;
+    //box-shadow: 0 0 0 3px $light;
+
+    &:focus,
+    &:hover {
+      outline: none;
+      box-shadow: 0 0 0 2px $light, 0 0 0 4px $dark;
     }
 
-    .subtitle {
-        font-size: 0.7rem;
-        margin-left: 1rem;
-        margin-top: 1rem;
-        margin-bottom: 0.2rem;
+    img {
+      width: 100%;
+      height: 100%;
+      transform-origin: 50% 50%;
+      transform: rotate(90deg);
+      filter: invert(1);
     }
+  }
 }

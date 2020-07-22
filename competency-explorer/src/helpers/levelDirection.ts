@@ -1,9 +1,9 @@
-import { Level, Competency } from '../models';
+import { Level } from "../models";
 
 export enum SortOrderEnum {
   CORRECT_ORDER = -1,
   SAME = 0,
-  INCORRECT_ORDER = 1
+  INCORRECT_ORDER = 1,
 }
 
 export enum LevelDirection {
@@ -16,7 +16,11 @@ export const getLevelIndex = (level: Level, levels: Level[]) => {
   return levels.indexOf(level);
 };
 
-export const getLevelDirection = (levelA: Level, levelB: Level, levels: Level[]) => {
+export const getLevelDirection = (
+  levelA: Level,
+  levelB: Level,
+  levels: Level[]
+) => {
   const idxA = getLevelIndex(levelA, levels);
   const idxB = getLevelIndex(levelB, levels);
   if (idxA < idxB) {

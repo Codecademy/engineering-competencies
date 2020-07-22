@@ -1,12 +1,15 @@
-import { Competency, Level } from '../models';
-import { getLevelIndex } from './levelDirection';
+import { Competency, Level } from "../models";
+import { getLevelIndex } from "./levelDirection";
 
 type CompetencyBucket = {
-    competencies: Competency[];
-    originLevel: Level;
-};  
+  competencies: Competency[];
+  originLevel: Level;
+};
 
-export const bucketByOriginLevel = (competencies: Competency[], levels: Level[]): CompetencyBucket[] => {
+export const bucketByOriginLevel = (
+  competencies: Competency[],
+  levels: Level[]
+): CompetencyBucket[] => {
   const buckets: Record<string, CompetencyBucket> = {};
 
   for (let c of competencies) {
@@ -24,7 +27,10 @@ export const bucketByOriginLevel = (competencies: Competency[], levels: Level[])
   return sortByLevel(buckets, levels);
 };
 
-const sortByLevel = (buckets: Record<number, CompetencyBucket>, levels: Level[]) => {
+const sortByLevel = (
+  buckets: Record<number, CompetencyBucket>,
+  levels: Level[]
+) => {
   const out = [];
   for (let i = 0; i < levels.length; i += 1) {
     if (!buckets[i]) {
@@ -38,3 +44,23 @@ const sortByLevel = (buckets: Record<number, CompetencyBucket>, levels: Level[])
   return out;
 };
 
+export const bucketBySpecificLevel = (
+  competencies: Competency[],
+  level: Level
+): CompetencyBucket[] => {
+  const buckets: Record<string, CompetencyBucket> = {};
+
+  for (let c of competencies) {
+    const originLevel = c.originLevel;
+    const originKey = originLevel === level ? originLevel : "other";
+
+    if (!buckets[originKey]) {
+      buckets[originKey] = { competencies: [], originLevel: originKey };
+    }
+
+    buckets[originKey].competencies.push(c);
+  }
+
+  // sort the buckets appropriately
+  return [buckets["other"], buckets[level]];
+};

@@ -1,14 +1,10 @@
-import { Level } from '../models';
-import { getLevelIndex } from './levelDirection';
+import { Level } from "../models";
 
-const MIN_OPACITY = 0.4;
+const MIN_OPACITY = 0.7;
 
-export const getLevelOpacity = (originLevel: Level, level: Level, levels: Level[]) => {
-  if (originLevel === level) {
-    return 1;
+export const getLevelOpacity = (level: Level) => {
+  if (level === "other") {
+    return MIN_OPACITY;
   }
-  const idx = getLevelIndex(originLevel, levels);
-  const len = levels.length;
-
-  return MIN_OPACITY + ((1 - MIN_OPACITY) / len) * idx;
+  return 1;
 };

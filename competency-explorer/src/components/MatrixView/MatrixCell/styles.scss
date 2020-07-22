@@ -1,6 +1,9 @@
+@import "../../../constants.scss";
+
 .matrixCompetencies {
-    font-family: 'Anonymous Pro';
-    margin: 0;
-    padding: 0;
-    padding-left: 1rem;
+  font-family: $body-font;
+  margin: 0;
+  padding: 0;
+  padding-left: 1rem;
+  padding-top: 0.25rem;
 }
