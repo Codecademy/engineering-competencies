@@ -12,8 +12,15 @@ export type FilterProps = {
 export const Filter = ({ label, isSelected, onToggle }: FilterProps) => {
   return (
     <div
+      tabIndex={0}
       className={cx("levelFilter", !isSelected && "hidden")}
       onClick={onToggle}
+      onKeyDown={(event) => {
+        if (event.keyCode === 13 || event.keyCode === 32) {
+          onToggle();
+          event.preventDefault();
+        }
+      }}
     >
       {label}
     </div>

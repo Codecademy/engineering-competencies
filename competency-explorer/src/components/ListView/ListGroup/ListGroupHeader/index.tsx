@@ -1,5 +1,5 @@
 import { ListGroupProps } from "..";
-import React, { useCallback } from "react";
+import React, { useCallback, KeyboardEvent } from "react";
 import { useDispatch } from "react-redux";
 import { createFilterAction } from "../../../../reducers";
 import "./styles.scss";
@@ -19,6 +19,13 @@ export const ListGroupHeader = ({
     dispatch(createFilterAction(level, "HIDE_LEVEL"));
   }, [dispatch, level]);
 
+  const onKeyDown = (event: KeyboardEvent<any>) => {
+    if (event.keyCode === 13 || event.keyCode === 32) {
+      onExpandCollapse();
+      event.preventDefault();
+    }
+  };
+
   const collapseIcon = (
     <img
       className="caret"
@@ -29,7 +36,12 @@ export const ListGroupHeader = ({
 
   if (category) {
     return (
-      <span className="colName" onClick={onExpandCollapse}>
+      <span
+        tabIndex={0}
+        className="colName"
+        onClick={onExpandCollapse}
+        onKeyDown={onKeyDown}
+      >
         {collapseIcon}
         <h3>{category}</h3>
       </span>
@@ -37,7 +49,12 @@ export const ListGroupHeader = ({
   }
 
   return (
-    <span className="colName" onClick={onExpandCollapse}>
+    <span
+      tabIndex={0}
+      className="colName"
+      onClick={onExpandCollapse}
+      onKeyDown={onKeyDown}
+    >
       {collapseIcon}
       <h2>{level}</h2>
       <img

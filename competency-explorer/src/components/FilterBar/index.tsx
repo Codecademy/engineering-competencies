@@ -10,13 +10,17 @@ export const FilterBar: React.FC = () => {
   const [isCollapsed, setIsCollapsed] = useState(false);
   return (
     <div className={cx("filterBar", isCollapsed && "collapsed")}>
-      <div className="subtitle">Competency Explorer</div>
-      <div className="title">Codecademy Engineering</div>
+      <h2 className="subtitle">Competency Explorer</h2>
+      <h1 className="title">Codecademy Engineering</h1>
       <DisplayModeFilter />
       <LevelFilters />
       <CategoryFilters />
-      <button className="collapse" onClick={() => setIsCollapsed(!isCollapsed)}>
-        <img src={EXPAND_COLLAPSE_ICON}></img>
+      <button
+        title="collapse the sidebar"
+        className="collapse"
+        onClick={() => setIsCollapsed(!isCollapsed)}
+      >
+        <img aria-hidden="true" src={EXPAND_COLLAPSE_ICON}></img>
       </button>
     </div>
   );

@@ -17,7 +17,7 @@ export const CategoryFilter = ({ category }: CategoryFilterProps) => {
 
   const onClick = useCallback(() => {
     dispatch(createFilterAction(category, "TOGGLE_CATEGORY"));
-  }, [isVisible]);
+  }, []);
 
   return <Filter label={category} onToggle={onClick} isSelected={isVisible} />;
 };
