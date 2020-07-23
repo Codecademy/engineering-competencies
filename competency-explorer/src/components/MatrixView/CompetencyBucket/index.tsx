@@ -54,7 +54,7 @@ export const CompetencyBucket: React.FC<CompetencyBucketProps> = ({
       <ul className="hiddenCompetencies">
         {competencies.map((c) => (
           <li key={`mx-${originLevel}-${c.id}`} className="matrixCompetency">
-            {c.name}
+            {c.name} {header && ` [${c.originLevel}]`}
           </li>
         ))}
       </ul>
