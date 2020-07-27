@@ -32,7 +32,7 @@ export const MatrixView: React.FC = () => {
                 gridTemplateColumns: `minmax(2rem, 10rem) repeat(${categories.length}, 1fr)`
             }}
         >
-            {children.map((c) => c)}
+            {children}
         </div>
     )
 }
