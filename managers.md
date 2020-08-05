@@ -42,6 +42,8 @@ You are a frontline manager who is responsible for a functional area and leads a
 - You help engineers on your team with the end-to-end delivery of their code from design, code, tests, monitoring/alerts, deployment and rollout.
 - You are a thoughtful verbal and written communicator, both within your team and across teams.
 - You share vision and perspective with your team and the broader engineering team as a whole.
+- You foster an inclusive team culture that supports constructive feedback and encourages diversity of thought.
+- You amplify all voices on the team to ensure all are heard.
 
 ### Community & Citizenship
 
@@ -97,6 +99,8 @@ You are a manager who is responsible for multiple functional areas, owns a budge
 - You may help engineers on your team with the end-to-end delivery of their code from design, code, tests, monitoring/alerts, deployment and rollout.
 - You are a thoughtful verbal and written communicator, both within your team and across teams.
 - You share vision and perspective with your team and the broader engineering team as a whole.
+- You foster an inclusive team culture that supports constructive feedback and encourages diversity of thought.
+- You amplify all voices on the team to ensure all are heard.
 
 ### Community & Citizenship
 
@@ -151,6 +155,8 @@ You are a manager who is responsible for an entire department, contributes to th
 - You proactively communicate your progress and blockers to stakeholders (eg. PM, Design, Ops, etc.), your team, and manager and ensure timely project delivery.
 - You are a thoughtful verbal and written communicator, both within your team and across teams. You represent engineering both internally and externally.
 - You work closely with leaders of other departments to empower them to be successful and achieve their teams’ OKRs.
+- You foster an inclusive team culture that supports constructive feedback and encourages diversity of thought.
+- You amplify all voices on the team to ensure all are heard.
 
 ### Community & Citizenship
 
