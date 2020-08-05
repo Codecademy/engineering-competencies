@@ -2,12 +2,15 @@
   align-self: center;
   height: 100%;
   font-size: 1rem;
+  font-weight: bold;
 
   &.top {
-    margin-left: 1rem;
+    margin-left: 1.5rem;
+    text-align: left;
   }
 
   &.left {
     margin: 0 0.5rem;
+    text-align: right;
   }
 }

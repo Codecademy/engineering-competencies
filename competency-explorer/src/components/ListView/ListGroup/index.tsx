@@ -5,14 +5,12 @@ import "./styles.scss";
 import { useSelector, useDispatch } from "react-redux";
 import {
   selectLevelVisibility,
-  selectCategoryVisibility,
   selectCategoryAndLevelVisibility,
 } from "../../../selectors/visibility";
-import { createFilterAction } from "../../../reducers";
 import { selectCategories } from "../../../selectors/categories";
 import { selectCompetenciesForLevelAndCategory } from "../../../selectors/competencies";
 import { ListItem } from "../ListItem";
-import { ListGroupHeader } from './ListGroupHeader';
+import { ListGroupHeader } from "./ListGroupHeader";
 
 export type ListGroupProps = {
   category?: Category;
@@ -32,8 +30,6 @@ export const ListGroup = ({ level, category }: ListGroupProps) => {
     selectCompetenciesForLevelAndCategory(s, level, category || "")
   );
 
-  const dispatch = useDispatch();
-
   const onExpandCollapse = useCallback(() => {
     setIsExpanded(!isExpanded);
   }, [isExpanded]);
@@ -43,10 +39,9 @@ export const ListGroup = ({ level, category }: ListGroupProps) => {
       className={cx(
         "column",
         (!isLevelVisible || (category && !isCategoryVisible)) && "hidden",
-        !isExpanded && 'collapsed'
+        !isExpanded && "collapsed"
       )}
     >
-    
       {/** header */}
       <ListGroupHeader
         category={category}
@@ -58,10 +53,18 @@ export const ListGroup = ({ level, category }: ListGroupProps) => {
       <span className="groupChildren">
         {category
           ? competencies.map((comp) => (
-              <ListItem key={`listitem-${comp.id}`} level={level} competency={comp} />
+              <ListItem
+                key={`listitem-${comp.id}`}
+                level={level}
+                competency={comp}
+              />
             ))
           : [...categories].map((cat) => (
-              <ListGroup key={`listgroup-${level}-${cat}`} level={level} category={cat} />
+              <ListGroup
+                key={`listgroup-${level}-${cat}`}
+                level={level}
+                category={cat}
+              />
             ))}
       </span>
     </div>

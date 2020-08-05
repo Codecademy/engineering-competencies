@@ -1,8 +1,8 @@
 # Competency Explorerer
 
-This is a tool to be able to parse the current set of Codecademy Engineering competencies & to turn them into an explorable github page. 
+This is a tool to be able to parse the current set of Codecademy Engineering competencies & to turn them into an explorable github page.
 
-## Technical 
+## Technical
 
 This is a standard react-redux app with some markdown parsing. It is designed to not need updates when updates to the competencies are published. It uses GitHub pages to render appropriately.
 
@@ -22,6 +22,6 @@ This is a standard react-redux app with some markdown parsing. It is designed to
 
 ## Fixes & Improvements
 
-[ ] Make the font very readable in the matrix view
-[ ] Collapse all prior competencies into one bucket
+[x] Make the font very readable in the matrix view
+[x] Collapse all prior competencies into one bucket
 [ ] Use a diff tool to detect similar competencies

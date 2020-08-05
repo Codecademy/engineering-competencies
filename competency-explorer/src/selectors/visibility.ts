@@ -4,8 +4,8 @@ import {
   selectCompetenciesForCategory,
   selectCompetenciesForLevelAndCategory,
 } from "./competencies";
-import { selectCategories } from './categories';
-import { selectLevels } from './levels';
+import { selectCategories } from "./categories";
+import { selectLevels } from "./levels";
 
 export const HIDDEN = false;
 export const VISIBLE = true;
@@ -31,7 +31,19 @@ export const selectCompetencyVisibility = (
   return HIDDEN;
 };
 
-export const selectCategoryVisibility = (state: State, category: Category) => {
+export const selectCategoryVisibility = (
+  state: State,
+  category: Category,
+  onlyByFilter?: boolean
+) => {
+  const { hiddenCategories } = state;
+  if (hiddenCategories.has(category)) {
+    return HIDDEN;
+  }
+  if (onlyByFilter) {
+    return VISIBLE;
+  }
+
   const competencies = selectCompetenciesForCategory(state, category);
   for (let c of competencies) {
     if (selectCompetencyVisibility(state, c.id) === VISIBLE) {
@@ -41,9 +53,22 @@ export const selectCategoryVisibility = (state: State, category: Category) => {
   return HIDDEN;
 };
 
-export const selectCategoryAndLevelVisibility = (state: State, level: Level, category: Category) => {
-  if (!selectLevelVisibility(state, level)) { return HIDDEN; }
-  const competencies = selectCompetenciesForLevelAndCategory(state, level, category);
+export const selectCategoryAndLevelVisibility = (
+  state: State,
+  level: Level,
+  category: Category
+) => {
+  if (!selectLevelVisibility(state, level)) {
+    return HIDDEN;
+  }
+  if (!selectCategoryVisibility(state, category, true)) {
+    return HIDDEN;
+  }
+  const competencies = selectCompetenciesForLevelAndCategory(
+    state,
+    level,
+    category
+  );
 
   for (let c of competencies) {
     if (selectCompetencyVisibility(state, c.id) === VISIBLE) {
@@ -52,26 +77,26 @@ export const selectCategoryAndLevelVisibility = (state: State, level: Level, cat
   }
 
   return HIDDEN;
-}
+};
 
 export const selectVisibleCategories = (state: State) => {
   const categories = selectCategories(state);
   const out = [];
   for (let cat of categories) {
     if (selectCategoryVisibility(state, cat)) {
-      out.push(cat)
+      out.push(cat);
     }
   }
   return out;
-}
+};
 
 export const selectVisibleLevels = (state: State) => {
   const levels = selectLevels(state);
   const out = [];
   for (let level of levels) {
     if (selectLevelVisibility(state, level)) {
-      out.push(level)
+      out.push(level);
     }
   }
   return out;
-}
+};
