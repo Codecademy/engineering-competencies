@@ -31,7 +31,8 @@ Data structures are chosen appropriately for low complexity and low memory alloc
 
 ### Bonus
 
-This category may be used as a tie-breaker for candidates who score similarly in other categories. Please [review the challenge requirements for the bonus](https://github.com/Codecademy/internship-code-challenge/tree/master/backend#bonus)
+This category may be used as a tie-breaker for candidates who score similarly in other categories. Please [review the challenge requirements for the bonus](https://github.com/Codecademy/internship-code-challenge/tree/master/backend#bonus).
+
 Note that bonus points may be reduced if Solution Quality is not great.
 
 - ⭐️ 4: Requested delighter content completed fully.
