@@ -6368,10 +6368,10 @@ react-is@^16.12.0, react-is@^16.7.0, react-is@^16.8.1, react-is@^16.9.0:
   resolved "https://registry.yarnpkg.com/react-is/-/react-is-16.13.1.tgz#789729a4dc36de2999dc156dd6c1d9c18cea56a4"
   integrity sha512-24e6ynE2H+OKt4kqsOvNd8kBpV65zoxbA4BVsEOB3ARVWQki/DHzaUoC5KuON/BiccDaCCTZBuOcfZs70kR8bQ==
 
-react-markdown-to-matrix@^1.0.2:
-  version "1.0.2"
-  resolved "https://registry.yarnpkg.com/react-markdown-to-matrix/-/react-markdown-to-matrix-1.0.2.tgz#1ff2c58e091b3233d809cb40e1c5f43636992438"
-  integrity sha512-0439XfhJonGTgM4YZqw3OXTlfA7bYnXA5LjZ0851ivumZS0qaSc1Fhj8CL8pogHJsrBiDTiDyT+G4II+OYzQyw==
+react-markdown-to-matrix@^1.0.3:
+  version "1.0.3"
+  resolved "https://registry.yarnpkg.com/react-markdown-to-matrix/-/react-markdown-to-matrix-1.0.3.tgz#4010abd0b4126a8dc8c293c764ee5daec49a8c34"
+  integrity sha512-Q+85aIYiREOuFhJasZ+7XmARziq3BC6PN60mXChWgKJmq2chXJK/3sEa+N681PF+Zz3P1XSCohmYBMQXWaB3sA==
   dependencies:
     "@emotion/core" "^10.0.35"
     "@emotion/styled" "^10.0.27"
