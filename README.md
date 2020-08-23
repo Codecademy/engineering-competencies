@@ -37,6 +37,7 @@ Jump to competencies for a particular level:
 - You are responsive to peer feedback on code reviews and learn from it.
 - You proactively communicate your progress and blockers to stakeholders (eg. PM, Design, Ops, etc.), your team, and manager and ensure timely project delivery.
 - You work with your manager and senior engineers to challenge assumptions and make sure you are solving the right problems.
+- You foster an inclusive team culture that supports constructive feedback and encourages diversity of thought.
 
 ### Community & Citizenship
 
@@ -65,6 +66,7 @@ Jump to competencies for a particular level:
 - You provide timely code reviews and are responsive to peer feedback on code reviews and learn from them.
 - You proactively communicate your progress and blockers to stakeholders (eg. PM, Design, Ops, etc.), your team, and manager and ensure timely project delivery.
 - You ask thoughtful questions and challenge assumptions to ensure you are solving the right problems.
+- You foster an inclusive team culture that supports constructive feedback and encourages diversity of thought.
 
 ### Community & Citizenship
 
@@ -98,6 +100,7 @@ Jump to competencies for a particular level:
 - You ask thoughtful questions and challenge assumptions to ensure you are solving the right problems.
 - You proactively communicate your progress and blockers to stakeholders (eg. PM, Design, Ops, etc.), your team, and manager and ensure timely project delivery.
 - You help other engineers on the end to end delivery of their code from design, code, tests, monitoring/alerts, deployment and rollout.
+- You foster an inclusive team culture that supports constructive feedback and encourages diversity of thought.
 
 ### Community & Citizenship
 
@@ -136,6 +139,7 @@ Jump to competencies for a particular level:
 - You proactively communicate your progress and blockers to stakeholders (eg. PM, Design, Ops, etc.), your team, and manager and ensure timely project delivery.
 - You help other engineers on the end to end delivery of their code from design, code, tests, monitoring/alerts, deployment and rollout.
 - You start becoming a domain resource to engineers outside of your team and help them leverage the right solutions.
+- You foster an inclusive team culture that supports constructive feedback and encourages diversity of thought.
 
 ### Community & Citizenship
 
@@ -176,6 +180,7 @@ Jump to competencies for a particular level:
 - You proactively communicate your progress and blockers to stakeholders (eg. PM, Design, Ops, etc.), your team, and manager and ensure timely project delivery.
 - You help other engineers on the end to end delivery of their code from design, code, tests, monitoring/alerts, deployment and rollout.
 - You are a domain resource to engineers outside of your team and help them leverage the right solutions.
+- You foster an inclusive team culture that supports constructive feedback and encourages diversity of thought.
 
 ### Community & Citizenship
 
