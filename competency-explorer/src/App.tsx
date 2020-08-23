@@ -1,23 +1,23 @@
-import React, { useEffect } from "react";
+import React from "react";
 import "./App.scss";
-import { FilterBar } from "./components/FilterBar";
-import { ListView } from "./components/ListView";
-import { MatrixView } from "./components/MatrixView";
-import { useDispatch } from "react-redux";
-import { loadFiles } from "./thunks/load";
+import { MarkdownToMatrix } from 'react-markdown-to-matrix';
 
 function App() {
-  const dispatch = useDispatch();
-  useEffect(() => {
-    dispatch(loadFiles());
-  }, []);
 
   return (
-    <div className="layout">
-      <FilterBar />
-      <ListView />
-      <MatrixView />
-    </div>
+    <MarkdownToMatrix 
+      title='Codecademy Engineering'
+      subtitle='Competency Explorer'
+      enabledOptions={['diff', 'filters', 'displayMode']} 
+      fileUrls={['../README.md', '../managers.md']}
+      excludeHeaders={['FAQ']}
+      customTheme={{
+        light: '#FFFFFF',
+        lightTheme: '#fff0e5',
+        darkTheme: '#10162f',
+        dark: `#10162f`
+      }}
+    />
   );
 }
 
