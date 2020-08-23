@@ -13,15 +13,9 @@
     "@babel/runtime": "^7.11.2",
     "@emotion/core": "^10.0.35",
     "@emotion/styled": "^10.0.27",
-    "@toolkip/server": "^2.4.0",
-    "@types/redux": "^3.6.0",
-    "classnames": "^2.2.6",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
-    "react-markdown-to-matrix": "^1.0.3",
-    "react-redux": "^7.2.1",
-    "redux": "^4.0.5",
-    "redux-thunk": "^2.3.0"
+    "react-markdown-to-matrix": "^1.0.3"
   },
   "devDependencies": {
     "@babel/core": "^7.11.4",
@@ -35,7 +29,6 @@
     "@types/jest": "^26.0.10",
     "@types/react": "^16.9.46",
     "@types/react-dom": "^16.9.8",
-    "@types/react-redux": "^7.1.9",
     "babel-loader": "^8.1.0",
     "css-loader": "^4.2.1",
     "html-webpack-plugin": "^4.3.0",
