@@ -9,7 +9,7 @@ function App() {
       title='Codecademy Engineering'
       subtitle='Competency Explorer'
       enabledOptions={['diff', 'filters', 'displayMode']} 
-      fileUrls={['./engineering-competencies/README.md', './engineering-competencies/managers.md']}
+      fileUrls={['README.md', 'managers.md']}
       excludeHeaders={['FAQ']}
       customTheme={{
         light: '#FFFFFF',
