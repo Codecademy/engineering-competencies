@@ -4,7 +4,7 @@ This is a tool to be able to parse the current set of Codecademy Engineering com
 
 ## Technical
 
-This is a standard react-redux app with some markdown parsing. It is designed to not need updates when updates to the competencies are published. It uses GitHub pages to render appropriately.
+This is a standard react app using the `react-markdown-to-matrix` library to render competencies in a matrix form. It is designed to not need updates when updates to the competencies are published. It uses GitHub pages to render appropriately.
 
 ## Running Locally
 
@@ -23,5 +23,11 @@ This is a standard react-redux app with some markdown parsing. It is designed to
 ## Fixes & Improvements
 
 [x] Make the font very readable in the matrix view
+
 [x] Collapse all prior competencies into one bucket
-[ ] Use a diff tool to detect similar competencies
+
+[x] Use a diff tool to detect similar competencies
+
+[x] Switch to the library version of this app
+
+See issues on [kipprice/markdown-matrix](https://github.com/kipprice/markdown-matrix/issues) for additional upcoming features.
