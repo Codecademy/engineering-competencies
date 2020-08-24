@@ -25,9 +25,9 @@ You are a frontline manager who is responsible for a functional area and leads a
 
 ### Execution & Results
 
-- You have established a track record of effectively managing your time and know when to ask for help to unblock yourself. When blocked, you are resourceful - and take initiative in finding other tasks to complete.
-- You help create organization and structure around large projects & problems that aren’t well defined, thereby setting your team up to successfully deliver on - initiatives.
-- You have established a track record of investigating and vetting the reuse of existing components and services when approaching new projects and feature - requests.
+- You have established a track record of effectively managing your time and know when to ask for help to unblock yourself. When blocked, you are resourceful and take initiative in finding other tasks to complete.
+- You help create organization and structure around large projects & problems that aren’t well defined, thereby setting your team up to successfully deliver on initiatives.
+- You have established a track record of investigating and vetting the reuse of existing components and services when approaching new projects and feature requests.
 - You can orchestrate and coordinate projects & solve problems that span across multiple teams.
 - You are responsible for working with stakeholders (PM, Design, DS, etc) to drive planning for your teams OKRs and goals.
 - You partner with stakeholders (PM, Design, DS, etc) to prioritize quarterly and sprint goals as well as allocate work accordingly and effectively.
@@ -35,7 +35,7 @@ You are a frontline manager who is responsible for a functional area and leads a
 
 ### Collaboration & Communication
 
-- You seek feedback on your own design & technical proposals while facilitating technical discussions on your team and make sure other engineers follow the - same best practices.
+- You seek feedback on your own design & technical proposals while facilitating technical discussions on your team and make sure other engineers follow the same best practices.
 - You ask thoughtful questions and challenge assumptions to ensure you and your team are solving the right problems.
 - You listen attentively to team members’ ideas and concerns, consider their viewpoints, and ask clarifying questions that elicit clearer responses.
 - You proactively communicate your progress and blockers to stakeholders (eg. PM, Design, Ops, etc.), your team, and manager and ensure timely project delivery.
@@ -80,10 +80,10 @@ You are a manager who is responsible for multiple functional areas, owns a budge
 
 ### Execution & Results
 
-- You have established a track record of effectively managing your time and know when to ask for help to unblock yourself. When blocked, you are resourceful - and take initiative in finding other tasks to complete.
-- You help create organization and structure around large projects & problems that aren’t well defined, thereby setting your team up to successfully deliver on - initiatives.
+- You have established a track record of effectively managing your time and know when to ask for help to unblock yourself. When blocked, you are resourceful and take initiative in finding other tasks to complete.
+- You help create organization and structure around large projects & problems that aren’t well defined, thereby setting your team up to successfully deliver on initiatives.
 - You identify when to delegate tasks appropriately to your managers and team.
-- You have established a track record of investigating and vetting the reuse of existing components and services when approaching new projects and feature - requests.
+- You have established a track record of investigating and vetting the reuse of existing components and services when approaching new projects and feature requests.
 - You can orchestrate and coordinate projects & solve problems that span across multiple teams.
 - You are responsible for working with stakeholders (PM, Design, EMs, DS, etc) to drive planning for your teams OKRs and goals.
 - You partner with stakeholders (PM, Design, DS, etc) to prioritize quarterly and sprint goals as well as allocate work accordingly and effectively.
@@ -137,12 +137,12 @@ You are a manager who is responsible for an entire department, contributes to th
 
 ### Execution & Results
 
-- You have established a track record of effectively managing your time and know when to ask for help to unblock yourself. When blocked, you are resourceful - and take initiative in finding other tasks to complete.
+- You have established a track record of effectively managing your time and know when to ask for help to unblock yourself. When blocked, you are resourceful and take initiative in finding other tasks to complete.
 - You work with your leadership team to lead multiple disparate teams and are able to effectively manage projects and initiatives across those functional areas.
 - You own the budget for your department and are responsible for expenses and hiring plans.
 - You and your team are responsible for making sure the company hits its objectives and key results.
-- You help create organization and structure around large projects & problems that aren’t well defined, thereby setting your team up to successfully deliver on - initiatives.
-- You have established a track record of investigating and vetting the reuse of existing components and services when approaching new projects and feature - requests.
+- You help create organization and structure around large projects & problems that aren’t well defined, thereby setting your team up to successfully deliver on initiatives.
+- You have established a track record of investigating and vetting the reuse of existing components and services when approaching new projects and feature requests.
 - You can orchestrate and coordinate projects & solve problems that span across multiple teams.
 - You are responsible for working with stakeholders (PM, Design, DS, etc) to drive planning for your teams OKRs and goals.
 - You partner with stakeholders (PM, Design, DS, etc) to prioritize quarterly and sprint goals as well as allocate work accordingly and effectively.
@@ -151,7 +151,7 @@ You are a manager who is responsible for an entire department, contributes to th
 
 - You facilitate technical discussions across your teams and make sure other directors, managers and engineers follow the same best practices.
 - You ask thoughtful questions and challenge assumptions to ensure you and your team are solving the right problems.
-- You listen attentively to team members’ ideas and concerns, consider their viewpoints, and ask clarifying questions that elicit clearer responses. - Additionally you regularly collect feedback across the department to understand what works well and what doesn’t. You address and act on that feedback in a - timely manner.
+- You listen attentively to team members’ ideas and concerns, consider their viewpoints, and ask clarifying questions that elicit clearer responses. Additionally you regularly collect feedback across the department to understand what works well and what doesn’t. You address and act on that feedback in a timely manner.
 - You proactively communicate your progress and blockers to stakeholders (eg. PM, Design, Ops, etc.), your team, and manager and ensure timely project delivery.
 - You are a thoughtful verbal and written communicator, both within your team and across teams. You represent engineering both internally and externally.
 - You work closely with leaders of other departments to empower them to be successful and achieve their teams’ OKRs.
