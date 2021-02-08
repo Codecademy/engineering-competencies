@@ -58,7 +58,7 @@ Jump to competencies for a particular level:
 
 - You effectively manage your time and know when to ask for help to unblock yourself. When blocked, you are resourceful and take initiative in finding other tasks to complete.
 - You are given a set of large tasks and are able to effectively break them down into smaller tasks, which are easier to complete.
-- You actively participate in your team’s on-call rotation.
+- You actively participate in your team's on-call rotation.
 
 ### Collaboration & Communication
 
@@ -96,7 +96,7 @@ Jump to competencies for a particular level:
 ### Collaboration & Communication
 
 - You seek feedback on your own design & technical proposals while encouraging other engineers on the team to follow the same best practices.
-- You provide timely code reviews and are responsive to peer feedback on code reviews and learn from them.
+- You provide timely code reviews and are responsive to peer feedback on code reviews and learn from it.
 - You ask thoughtful questions and challenge assumptions to ensure you are solving the right problems.
 - You proactively communicate your progress and blockers to stakeholders (eg. PM, Design, Ops, etc.), your team, and manager and ensure timely project delivery.
 - You help other engineers on the end to end delivery of their code from design, code, tests, monitoring/alerts, deployment and rollout.
