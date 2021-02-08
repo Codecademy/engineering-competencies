@@ -13,7 +13,7 @@ You are a frontline manager who is responsible for a functional area and leads a
 - You are a role model and celebrate people on your team and the broader engineering team who are acting as role models themselves.
 - You set clear goals and expectations.
 - You provide continuous feedback on whether goals and expectations are being met and how engineers can improve.
-- You are focused on identifying and supporting ways to help the individuals on your team learn and grow through clear career development goals and objectives.
+- You are focused on identifying and supporting ways to help the members on your team learn and grow through clear career development goals and objectives.
 - You coach members of your team and help them grow and develop.
 - You work with the engineering leadership team, your teams, and corresponding stakeholders to set a successful strategy and vision for your functional area.
 
@@ -31,7 +31,7 @@ You are a frontline manager who is responsible for a functional area and leads a
 - You can orchestrate and coordinate projects & solve problems that span across multiple teams.
 - You are responsible for working with stakeholders (PM, Design, DS, etc) to drive planning for your teams OKRs and goals.
 - You partner with stakeholders (PM, Design, DS, etc) to prioritize quarterly and sprint goals as well as allocate work accordingly and effectively.
-- You provide code reviews and are responsive to peer feedback on code reviews and learn from it.
+- You provide timely code reviews and are responsive to peer feedback on code reviews and learn from it.
 
 ### Collaboration & Communication
 
@@ -68,12 +68,12 @@ You are a manager who is responsible for multiple functional areas, owns a budge
 - You are focused on identifying and supporting ways to help the members on your team learn and grow through clear career development goals and objectives.
 - You coach members of your team and help them grow and develop.
 - You are able to and might manage multiple teams and managers.
-- You work with the engineering leadership team, your teams and corresponding stakeholders to set a successful strategy and vision for your functional areas.
+- You work with the engineering leadership team, your teams, and corresponding stakeholders to set a successful strategy and vision for your functional areas.
 
 ### Software Engineering & Design
 
 - You hold your team to the software engineering and design standards we have set for individual contributors.
-- You provide an environment (process, tools, goals, sprints etc) that allows managers and individual contributors to do their best work.
+- You provide an environment (process, tools, goals, sprints, etc) that allows managers and individual contributors to do their best work.
 - You contribute to technical decision making and exemplify the same standards we set for individual contributors.
 - You work with your teams to help set software engineering and design standards.
 - You facilitate adoption of your team's standards across the broader engineering team.
