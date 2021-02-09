@@ -58,12 +58,12 @@ Jump to competencies for a particular level:
 
 - You effectively manage your time and know when to ask for help to unblock yourself. When blocked, you are resourceful and take initiative in finding other tasks to complete.
 - You are given a set of large tasks and are able to effectively break them down into smaller tasks, which are easier to complete.
-- You actively participate in your team’s on-call rotation.
+- You actively participate in your team's on-call rotation.
 
 ### Collaboration & Communication
 
 - You seek and provide feedback from engineers on the team in regards to design & technical decisions, technical proposals, and production readiness.
-- You provide timely code reviews and are responsive to peer feedback on code reviews and learn from them.
+- You provide timely code reviews and are responsive to peer feedback on code reviews and learn from it.
 - You proactively communicate your progress and blockers to stakeholders (eg. PM, Design, Ops, etc.), your team, and manager and ensure timely project delivery.
 - You ask thoughtful questions and challenge assumptions to ensure you are solving the right problems.
 - You foster an inclusive team culture that supports constructive feedback and encourages diversity of thought.
@@ -74,7 +74,7 @@ Jump to competencies for a particular level:
 - You advocate for yourself and others when something is unclear.
 - You ask questions about approaches to solving problems and suggest alternate options.
 - You escalate early and often with feedback on product features, product bug reports, and constructive criticism.
-- You fix out of date code, tests, scripts and documentation.
+- You fix out of date code, tests, scripts, runbooks, and documentation.
 
 ## Software Engineer 2
 
@@ -91,12 +91,12 @@ Jump to competencies for a particular level:
 
 - You effectively manage your time and know when to ask for help to unblock yourself. When blocked, you are resourceful and take initiative in finding other tasks to complete.
 - You break down well defined requirements into milestones and larger tasks.
-- You actively participate in your teams on-call rotation.
+- You actively participate in your team's on-call rotation.
 
 ### Collaboration & Communication
 
-- You seek and provide feedback on your own design & technical proposals while encouraging other engineers on the team to follow the same best practices.
-- You provide timely code reviews and are responsive to peer feedback on code reviews and learn from them.
+- You seek feedback on your own design & technical proposals while encouraging other engineers on the team to follow the same best practices.
+- You provide timely code reviews and are responsive to peer feedback on code reviews and learn from it.
 - You ask thoughtful questions and challenge assumptions to ensure you are solving the right problems.
 - You proactively communicate your progress and blockers to stakeholders (eg. PM, Design, Ops, etc.), your team, and manager and ensure timely project delivery.
 - You help other engineers on the end to end delivery of their code from design, code, tests, monitoring/alerts, deployment and rollout.
@@ -109,7 +109,7 @@ Jump to competencies for a particular level:
 - You ask questions about approaches to solving problems and suggest alternate options.
 - You provide feedback on product features, file detailed bugs, and voice constructive comments in small- and large-group discussions.
 - You fix out of date code, tests, scripts, runbooks, and documentation.
-- You are interviewing trained and share the interview load for your team.
+- You are interview-trained and share the interview load for your team.
 
 ## Senior Software Engineer
 
@@ -128,11 +128,11 @@ Jump to competencies for a particular level:
 - You help create organization and structure around large projects & problems that aren’t well defined, thereby setting your team up to successfully deliver on initiatives.
 - You have established a track record of investigating and vetting the reuse of existing components and services when approaching new projects and feature requests.
 - You can orchestrate and coordinate projects & solve problems that span across multiple teams.
-- You actively participate in your teams on-call rotation and consistently help identify root causes of issues and help resolve them. You proactively communicate with your peers on incident status and create post-mortems when appropriate.
+- You actively participate in your team's on-call rotation and consistently help identify root causes of issues and help resolve them. You proactively communicate with your peers on incident status and create post-mortems when appropriate.
 
 ### Collaboration & Communication
 
-- You seek feedback on your own design & technical proposals while facilitating technical discussions on the team and making sure other engineers follow the same best practices.
+- You seek feedback on your own design & technical proposals while facilitating technical discussions on the team and make sure other engineers follow the same best practices.
 - You provide timely code reviews and are responsive to peer feedback on code reviews and learn from it.
 - You ask thoughtful questions and challenge assumptions to ensure you and your team are solving the right problems.
 - You listen attentively to team members’ ideas and concerns, consider their viewpoints, and ask clarifying questions that elicit clearer responses.
@@ -170,7 +170,7 @@ Jump to competencies for a particular level:
 - You have established a track record of investigating and vetting the reuse of existing components and services when approaching new projects and feature requests.
   I.e. you have delivered projects and work that shows this in a repeatable fashion
 - You have established a track record of orchestrating and coordinating projects, solving problems, and delivering successful solutions that may span across multiple teams.
-- You actively participate in your teams on-call rotation.
+- You actively participate in your team's on-call rotation.
 
 ### Collaboration & Communication
 
