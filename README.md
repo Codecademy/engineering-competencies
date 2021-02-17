@@ -155,7 +155,7 @@ Jump to competencies for a particular level:
 ### Software Engineering & Design
 
 - You have established a track record of writing efficient and readable code, you evaluate the pros and cons of various approaches, and write high quality technical proposals that are easy to maintain for the next six months.
-- You are applying and and consistently defining our standards around design, testing, error handling, monitoring, alerting, and documentation.
+- You are applying and consistently defining our standards around design, testing, error handling, monitoring, alerting, and documentation.
 - You proactively maintain, debug, and fix problems in your code.
 - You have established a track record of handling the responsibility of delivery of your code including design, coding, testing, monitoring/alerts, deployment and rollout.
 - Your code handles interactions between multiple systems/components that span multiple diffs to address complex projects.
