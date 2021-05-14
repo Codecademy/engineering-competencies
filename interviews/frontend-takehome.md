@@ -43,7 +43,7 @@ Non-core features encouraged for completion after the core features.
 
 ### What We Look For
 
-- Use of framework best practices, particularly when it showcases understanding of proper use.
+- Use of framework and language best practices
 - Concise, readable code that uses declarative constructs (e.g. .map) reasonably
 - React and other UI frameworks:
   - DOM: no unnecessary DOM manipulation (i.e. unless for 3rd party libraries)
@@ -51,7 +51,7 @@ Non-core features encouraged for completion after the core features.
 
 ### What We Ignore
 
-We don't penalize candidates for consistent style choices that don't demonstrate significant knowledge gaps, such as ones that could legitimately be preferable.
+We don't penalize candidates for consistent style choices that don't demonstrate significant knowledge gaps.
 
 - Nitpicks: we don't require completely optimal declarative or functional patterns
 - Performance: e.g. .forEach vs. for-const-of
