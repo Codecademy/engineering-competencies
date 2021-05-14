@@ -39,7 +39,9 @@ Non-core features encouraged for completion after the core features.
 - 👍 3: Requested delighter mostly completed or completed with a few minor bugs/flaws
 - 👎 2: Little to no delighter content was completed
 
-## What We Look For
+## Frontend Specifics
+
+### What We Look For
 
 - Use of framework and best practices
 - Concise, readable code that uses declarative constructs (e.g. .map) reasonably
@@ -47,7 +49,7 @@ Non-core features encouraged for completion after the core features.
   - DOM: no unnecessary DOM manipulation (i.e. unless for 3rd party libraries)
   - State: immutability, pure functions, and isolated side effects per the framework's preferences
 
-## What We Ignore
+### What We Ignore
 
 We don't penalize candidates for consistent style choices that don't demonstrate significant knowledge gaps.
 
