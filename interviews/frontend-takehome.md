@@ -43,7 +43,7 @@ Non-core features encouraged for completion after the core features.
 
 ### What We Look For
 
-- Use of framework and best practices
+- Use of framework and language best practices
 - Concise, readable code that uses declarative constructs (e.g. .map) reasonably
 - React and other UI frameworks:
   - DOM: no unnecessary DOM manipulation (i.e. unless for 3rd party libraries)
