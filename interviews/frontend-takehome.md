@@ -39,19 +39,17 @@ Non-core features encouraged for completion after the core features.
 - 👍 3: Requested delighter mostly completed or completed with a few minor bugs/flaws
 - 👎 2: Little to no delighter content was completed
 
-## Frontend Specifics
+## What We Look For
 
-### What We Look For
-
-- Use of framework best practices, particularly when it showcases understanding of proper use.
+- Use of framework and best practices
 - Concise, readable code that uses declarative constructs (e.g. .map) reasonably
 - React and other UI frameworks:
   - DOM: no unnecessary DOM manipulation (i.e. unless for 3rd party libraries)
   - State: immutability, pure functions, and isolated side effects per the framework's preferences
 
-### What We Ignore
+## What We Ignore
 
-We don't penalize candidates for consistent style choices that don't demonstrate significant knowledge gaps, such as ones that could legitimately be preferable.
+We don't penalize candidates for consistent style choices that don't demonstrate significant knowledge gaps.
 
 - Nitpicks: we don't require completely optimal declarative or functional patterns
 - Performance: e.g. .forEach vs. for-const-of
