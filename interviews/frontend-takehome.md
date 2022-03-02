@@ -60,5 +60,5 @@ We don't penalize candidates for consistent style choices that don't demonstrate
 
 We don't have a preference for patterns or APIs the applicant wouldn't need to know:
 
-- CSS: naming principles such as [BEM](https://en.wikipedia.org/wiki/Single_responsibility_principle)
+- CSS: naming principles such as [BEM](http://getbem.com/introduction/)
 - Style choices within frameworks; for example, within React, class components vs. function components _(not everyone has been taught hooks yet!)_
