@@ -5,7 +5,7 @@ Engineering Manager, Senior Engineering Manager, Director, and VP.
 
 ## Engineering Manager
 
-You are a frontline manager who is responsible for a functional area and leads a small team of up to six engineers.
+You are a frontline manager who is responsible for a functional area and leads a small to medium sized team.
 
 ### Management & Leadership
 
