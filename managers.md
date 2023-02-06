@@ -1,6 +1,7 @@
-# Engineering Management Competencies V2
+# Engineering Management Competencies
 
-The engineering manager ladder consists of three levels, Engineering Manager, Director and VP.
+The engineering manager ladder consists of four levels:
+Engineering Manager, Senior Engineering Manager, Director, and VP.
 
 ## Engineering Manager
 
@@ -53,6 +54,40 @@ You are a frontline manager who is responsible for a functional area and leads a
 - You fix broken processes and improve upon successful ones.
 - You cultivate blameless culture that focuses on fixing problems not pointing fingers.
 - You attend and contribute to conversations within our tech community (e.g. book club, lighting talks, blog posts)
+
+## Senior Engineering Manager
+
+You are an experienced manager who manages one large team or up to two teams directly or
+through managing a manager.
+
+### Management & Leadership
+
+- You manage up to two teams either directly or through managing a manager within the same Organization.
+- You manage & coach ICs. You look for opportunities to grow or manage new engineering managers (EMs) or Staff Engineers. You have multiple instances of successful promos.
+- You plan for team needs through suggesting headcount, proposing tools & integrations, and identifying dependencies. You understand what needs other teams within the same Organization have, and escalate or adjust if those needs will impede your team’s needs. You understand the strategy for the Organization, and ensure your team is lined up to support it.
+- You scout and attract talent. You build relationships with potential candidates. You influence org wide hiring and staffing. You moderate hiring decisions.
+- You identify macro-level patterns of team engagement, influence decisions on retention.
+
+### Software Engineering & Design
+
+- You build technical experts within the team who can continue building out best practices (e.g. tech leads). You ensure these technical experts have opportunities to help the team build technical skills.
+- You are a technical and interpersonal role model. You help resolve technical issues and advise on technical decisions.
+
+### Execution & Results
+
+- You delegate team process ownership to members of the team, load balancing as needed. You identify areas that need improvement and solicit owners from the team. You share team processes across the same Organization.
+- You ensure all members of your team have the opportunity to demonstrate project ownership, including in cases of high stakes or high urgency initiatives. You may opt to take project management for some high stakes or high urgency initiatives.
+- You demonstrate change management strategies that bring the team into more context, but does not overwhelm them with trepidation. You emphasize the why and give opportunities for the team to influence decisions that will affect them. You shield the team as needed from external requests, but aim for transparency.
+
+### Collaboration & Communication
+
+- In addition to direct partnership, you empower, encourage, and ensure your direct reports are partnering with relevant counterparts in order to build team roadmaps, establish best practices, etc. You have started to define direction and vision for the Organization and how the team fits into.
+- You escalate challenges the team is facing to the larger engineering (or engineering leadership) team and own implementing solutions to these problems.
+
+### Community & Citizenship
+
+- You own the success of both the team and the Organization the team sits within. You ensure celebrations across teams are recognized, and failures are opportunities to learn.
+- You own at least one engineering-wide initiative (e.g. tech community pillar, interviewing, revising competencies).
 
 ## Director
 
