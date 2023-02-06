@@ -37,7 +37,7 @@ You are a frontline manager who is responsible for a functional area and leads a
 
 ## Senior Engineering Manager
 
-You are an experienced manager who manages up to two teams directly or
+You are an experienced manager who manages one large team or up to two teams directly or
 through managing a manager.
 
 ### Management & Leadership
