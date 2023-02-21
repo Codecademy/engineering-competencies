@@ -77,11 +77,11 @@ through managing a manager.
 
 - You delegate team process ownership to members of the team, load balancing as needed. You identify areas that need improvement and solicit owners from the team. You share team processes across the same Organization.
 - You ensure all members of your team have the opportunity to demonstrate project ownership, including in cases of high stakes or high urgency initiatives. You may opt to take project management for some high stakes or high urgency initiatives.
-- You demonstrate change management strategies that bring the team into more context, but does not overwhelm them with trepidation. You emphasize the why and give opportunities for the team to influence decisions that will affect them. You shield the team as needed from external requests, but aim for transparency.
+- You demonstrate change management strategies that bring the team into more context, but do not overwhelm them with trepidation. You emphasize the why and give opportunities for the team to influence decisions that will affect them. You shield the team as needed from external requests, but aim for transparency.
 
 ### Collaboration & Communication
 
-- In addition to direct partnership, you empower, encourage, and ensure your direct reports are partnering with relevant counterparts in order to build team roadmaps, establish best practices, etc. You have started to define direction and vision for the Organization and how the team fits into.
+- In addition to direct partnership, you empower, encourage, and ensure your direct reports are partnering with relevant counterparts in order to build team roadmaps, establish best practices, etc. You have started to define direction and vision for the Organization and how the team fits into it.
 - You escalate challenges the team is facing to the larger engineering (or engineering leadership) team and own implementing solutions to these problems.
 
 ### Community & Citizenship
